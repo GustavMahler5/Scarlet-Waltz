@@ -1,8 +1,8 @@
 {
   "b": 255,
   "disableInputWhenNotFocused": true,
-  "mangledName": "Untitled_32scene",
-  "name": "Untitled scene",
+  "mangledName": "scene_321",
+  "name": "scene 1",
   "r": 255,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
@@ -23,20 +23,46 @@
     "selectedLayer": ""
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "PatternSwitchInterval",
+      "type": "number",
+      "value": 0.5
+    },
+    {
+      "name": "CurrentFiringPattern",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "DinoVitaInitialY",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "DinoVitaInitialX",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "DinoVitaStartX",
+      "type": "number",
+      "value": 0
+    }
+  ],
   "instances": [
     {
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 486,
+      "height": 838,
       "keepRatio": true,
       "layer": "",
       "name": "borderBackground",
       "persistentUuid": "3f6f649f-8e31-488c-9b87-6db3ae9a652c",
-      "width": 1543,
-      "x": -135,
-      "y": 672,
+      "width": 320,
+      "x": 960,
+      "y": -64,
       "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
@@ -46,14 +72,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 486,
+      "height": 870,
       "keepRatio": true,
       "layer": "",
       "name": "borderBackground",
       "persistentUuid": "d1c8f2f1-72e3-4ff3-badc-d400d612c611",
-      "width": 1543,
-      "x": -135,
-      "y": -422,
+      "width": 320,
+      "x": 0,
+      "y": -96,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
@@ -170,6 +196,16 @@
           "Topdown": "TopDownMovement"
         },
         {
+          "name": "StayOnScreen",
+          "type": "StayOnScreen::StayOnScreen",
+          "MarginTop": 0,
+          "MarginBottom": 0,
+          "MarginLeft": 280,
+          "MarginRight": 280
+        },
+        {
+          "name": "TopDownMovement",
+          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
           "acceleration": 15000,
           "allowDiagonals": true,
           "angleOffset": 0,
@@ -179,9 +215,7 @@
           "ignoreDefaultControls": false,
           "maxSpeed": 250,
           "movementAngleOffset": 0,
-          "name": "TopDownMovement",
           "rotateObject": false,
-          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
           "useLegacyTurnBack": false,
           "viewpoint": "TopDown"
         }
@@ -243,7 +277,13 @@
       "name": "Dino_Vita",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "dinoMoving",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
@@ -252,8 +292,8 @@
           "FireCooldown": 0.1,
           "HasJustFired": false,
           "RotateBullet": true,
-          "FiringArc": 360,
-          "BulletQuantity": 16,
+          "FiringArc": 180,
+          "BulletQuantity": 8,
           "AngleVariance": 0,
           "BulletSpeedVariance": 0,
           "AmmoQuantity": 0,
@@ -275,6 +315,62 @@
           "ExponentialCoolingRate": 0.3,
           "BulletLayer": "",
           "RandomizedAngle": 0
+        },
+        {
+          "name": "Health",
+          "type": "Health::Health",
+          "Health": 1000,
+          "CurrentHealth": 0,
+          "MaxHealth": 1000,
+          "DamageCooldown": 6,
+          "AllowOverHealing": false,
+          "IsHealthJustDamaged": false,
+          "DamageToBeApplied": 0,
+          "HitAtLeastOnce": false,
+          "ChanceToDodge": 0,
+          "IsJustDodged": false,
+          "HealToBeApplied": 0,
+          "HealthRegenRate": 0,
+          "HealthRegenDelay": 0,
+          "IsJustHealed": false,
+          "CurrentShieldPoints": 2.0247e-320,
+          "MaxShieldPoints": 0,
+          "ShieldDuration": 5,
+          "ShieldRegenRate": 0,
+          "BlockExcessDamage": false,
+          "ShieldRegenDelay": 0,
+          "IsShieldJustDamaged": false,
+          "ShieldDamageTaken": 2.0247e-320,
+          "FlatDamageReduction": 0,
+          "PercentDamageReduction": 0
+        },
+        {
+          "name": "RepeatTimer",
+          "type": "RepeatEveryXSeconds::RepeatTimer",
+          "TimerName": "MyTimer",
+          "TimerLength": 1,
+          "Limit": -1,
+          "Counter": 0
+        },
+        {
+          "name": "TopDownMovement",
+          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
+          "acceleration": 15000,
+          "allowDiagonals": true,
+          "angleOffset": 0,
+          "angularMaxSpeed": 180,
+          "customIsometryAngle": 30,
+          "deceleration": 800,
+          "ignoreDefaultControls": false,
+          "maxSpeed": 500,
+          "movementAngleOffset": 0,
+          "rotateObject": true,
+          "useLegacyTurnBack": false,
+          "viewpoint": "TopDown"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
         }
       ],
       "animations": [
@@ -296,10 +392,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -332,10 +428,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -368,10 +464,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -404,10 +500,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -452,10 +548,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -500,10 +596,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -536,10 +632,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -572,10 +668,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -608,10 +704,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -656,10 +752,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -692,10 +788,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -728,10 +824,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -776,10 +872,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -812,10 +908,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -848,10 +944,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -884,10 +980,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -920,10 +1016,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -956,10 +1052,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -1004,10 +1100,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -1040,10 +1136,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -1076,10 +1172,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -1112,10 +1208,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -1148,10 +1244,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -1184,10 +1280,10 @@
                     "y": 0
                   },
                   "centerPoint": {
-                    "automatic": true,
+                    "automatic": false,
                     "name": "centre",
-                    "x": 0,
-                    "y": 0
+                    "x": 12,
+                    "y": 8.5
                   },
                   "customCollisionMask": [
                     [
@@ -2235,14 +2331,182 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior",
           "bottomEdgeAnchor": 2,
           "leftEdgeAnchor": 1,
-          "name": "Anchor",
           "relativeToOriginalWindowSize": true,
           "rightEdgeAnchor": 2,
           "topEdgeAnchor": 1,
-          "type": "AnchorBehavior::AnchorBehavior",
           "useLegacyBottomAndRightAnchors": false
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "2be38a26b07393f7529be32c6afe9f97d947ebe5f079d70f0970bf0d91516221",
+      "name": "EnemyBullet",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.125,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Main Ship Auto Cannon Bullet_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 11
+                      },
+                      {
+                        "x": 24,
+                        "y": 11
+                      },
+                      {
+                        "x": 24,
+                        "y": 21
+                      },
+                      {
+                        "x": 7,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Main Ship Auto Cannon Bullet_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 11
+                      },
+                      {
+                        "x": 24,
+                        "y": 11
+                      },
+                      {
+                        "x": 24,
+                        "y": 21
+                      },
+                      {
+                        "x": 7,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Main Ship Auto Cannon Bullet_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 11
+                      },
+                      {
+                        "x": 24,
+                        "y": 11
+                      },
+                      {
+                        "x": 24,
+                        "y": 21
+                      },
+                      {
+                        "x": 7,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Main Ship Auto Cannon Bullet_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 7,
+                        "y": 11
+                      },
+                      {
+                        "x": 24,
+                        "y": 11
+                      },
+                      {
+                        "x": 24,
+                        "y": 21
+                      },
+                      {
+                        "x": 7,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -2264,6 +2528,9 @@
       },
       {
         "objectName": "borderBackground"
+      },
+      {
+        "objectName": "EnemyBullet"
       }
     ]
   },
@@ -2291,7 +2558,7 @@
             "FireBullet",
             "Pancakes.X()",
             "Pancakes.Y()",
-            "Dino_Doux",
+            "EnemyBullet",
             "Pancakes.X()",
             "Pancakes.Angle() - 90 ",
             "500",
@@ -2301,6 +2568,7 @@
       ]
     },
     {
+      "disabled": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -2309,7 +2577,7 @@
           },
           "parameters": [
             "",
-            "\"Untitled scene\""
+            "\"scene 1\""
           ]
         }
       ],
@@ -2331,6 +2599,859 @@
           ]
         }
       ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDPR7Q689TP43YBRP9CDT5",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "DinoVitaStartX",
+            "=",
+            "Dino_Vita.X()"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\"",
+            "900",
+            "\"linear\"",
+            "1",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDPR7Q689TP43YBRP9CDT5",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\""
+          ]
+        },
+        {
+          "type": {
+            "value": "BooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "True",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\"",
+            "300",
+            "\"linear\"",
+            "2",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::RemoveTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\""
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDPR7Q689TP43YBRP9CDT5",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\""
+          ]
+        },
+        {
+          "type": {
+            "value": "BooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "True",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\"",
+            "900",
+            "\"linear\"",
+            "2",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::RemoveTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\""
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDSMZEPTT9QE706F38R54N",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "DinoVitaInitialX",
+            "=",
+            "Dino_Vita.X()"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "DinoVitaInitialY",
+            "=",
+            "Dino_Vita.Y()"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_1\"",
+            "DinoVitaInitialX + 50",
+            "DinoVitaInitialY - 50",
+            "\"linear\"",
+            "1",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDSMZEPTT9QE706F38R54N",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_1\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::RemoveTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_1\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_2\"",
+            "DinoVitaInitialX - 50",
+            "DinoVitaInitialY - 50",
+            "\"linear\"",
+            "1",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDSMZEPTT9QE706F38R54N",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_2\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::RemoveTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_2\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_3\"",
+            "DinoVitaInitialX - 50",
+            "DinoVitaInitialY + 50",
+            "\"linear\"",
+            "1",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDSMZEPTT9QE706F38R54N",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_3\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::RemoveTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_3\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_4\"",
+            "DinoVitaInitialX + 50",
+            "DinoVitaInitialY + 50",
+            "\"linear\"",
+            "1",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDSMZEPTT9QE706F38R54N",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_4\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::RemoveTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_4\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_5\"",
+            "DinoVitaInitialX",
+            "DinoVitaInitialY",
+            "\"linear\"",
+            "1",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DDSMZEPTT9QE706F38R54N",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_5\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::RemoveTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_5\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"Figure8_1\"",
+            "DinoVitaInitialX + 50",
+            "DinoVitaInitialY - 50",
+            "\"linear\"",
+            "1",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DEB77WF44VWF99GHSFWZM4",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "RepeatEveryXSeconds::RepeatTimer::Repeat2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "RepeatTimer",
+            "\"PatternSwitchTimer\"",
+            "PatternSwitchInterval",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "CurrentFiringPattern",
+            "=",
+            "RandomInRange(0, 3)"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DEBNBEP2K81WG0E4280654",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "CurrentFiringPattern",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "2",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "20",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::Fire"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "Dino_Doux",
+            "90",
+            "150",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.1",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "True",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DEBNBEP2K81WG0E4280654",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "CurrentFiringPattern",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "12",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "120",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::Fire"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "Dino_Doux",
+            "90",
+            "150",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.1",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "True",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DEBNBEP2K81WG0E4280654",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "CurrentFiringPattern",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "6",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "80",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::Fire"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "Dino_Doux",
+            "90",
+            "150",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.1",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "True",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9DEBNBEP2K81WG0E4280654",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "CurrentFiringPattern",
+            "=",
+            "3"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "16",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "360",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::Fire"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "Dino_Doux",
+            "90",
+            "150",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.1",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "False",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\"",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Pancakes",
+            "borderBackground",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ],
   "layers": [
@@ -2433,6 +3554,10 @@
       "type": "BehaviorRemapper::RemapForTopdown"
     },
     {
+      "name": "RepeatTimer",
+      "type": "RepeatEveryXSeconds::RepeatTimer"
+    },
+    {
       "name": "Resizable",
       "type": "ResizableCapability::ResizableBehavior"
     },
@@ -2441,8 +3566,16 @@
       "type": "ScalableCapability::ScalableBehavior"
     },
     {
+      "name": "StayOnScreen",
+      "type": "StayOnScreen::StayOnScreen"
+    },
+    {
       "name": "TopDownMovement",
       "type": "TopDownMovementBehavior::TopDownMovementBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
     }
   ]
 }

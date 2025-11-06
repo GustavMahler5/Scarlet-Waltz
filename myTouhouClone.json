@@ -1318,6 +1318,70 @@
         "name": "NewSprite3",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Main Ship Auto Cannon Bullet_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/FoozleCC/Void Collection/Main Ship/Projectiles/10702efd7c3f65c0cdf2cab7d63f723457bf4a2957ae0bb04ed80a4e857a9c27_Main Ship Auto Cannon Bullet_1.png",
+          "name": "Main Ship Auto Cannon Bullet_1.png"
+        }
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Main Ship Auto Cannon Bullet_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/FoozleCC/Void Collection/Main Ship/Projectiles/7b616fe43c13b204475ab0901c1ecae177ebc133df53dd6717af3fbcee9e26ac_Main Ship Auto Cannon Bullet_2.png",
+          "name": "Main Ship Auto Cannon Bullet_2.png"
+        }
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Main Ship Auto Cannon Bullet_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/FoozleCC/Void Collection/Main Ship/Projectiles/647f6f30e094d38dd08ab71e2dd0e183317614a62c793b010f6003e0f0fd5d8e_Main Ship Auto Cannon Bullet_3.png",
+          "name": "Main Ship Auto Cannon Bullet_3.png"
+        }
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Main Ship Auto Cannon Bullet_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/FoozleCC/Void Collection/Main Ship/Projectiles/a634e9ead73c233131cff5300aece9981f29eecc5cd5a34b9090c64086e5e612_Main Ship Auto Cannon Bullet_4.png",
+          "name": "Main Ship Auto Cannon Bullet_4.png"
+        }
+      },
+      {
+        "file": "assets/NewSprite4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite4",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite5.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite5",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1331,7 +1395,7 @@
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/untitled-scene"
+      "referenceTo": "/layouts/scene-1"
     }
   ],
   "externalEvents": [],
@@ -1351,6 +1415,18 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/behaviorremapper"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/ellipsemovement"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/repeateveryxseconds"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/stayonscreen"
     }
   ],
   "externalLayouts": []
