@@ -90,7 +90,28 @@
     "currentPlatform": "GDevelop JS platform"
   },
   "resources": {
-    "resources": [],
+    "resources": [
+      {
+        "file": "Untitled design.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "Untitled design.jpg",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Pancakes.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Pancakes.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/32x32 Pixel art items/Pixel Food/Dishes/d39f004e02a5120afa41260225f0f847ab0d1c7ab1f15e99d46ec5f2a731cfbd_Pancakes.png",
+          "name": "Pancakes.png"
+        }
+      }
+    ],
     "resourceFolders": []
   },
   "objects": [],
@@ -106,6 +127,11 @@
     }
   ],
   "externalEvents": [],
-  "eventsFunctionsExtensions": [],
+  "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/health"
+    }
+  ],
   "externalLayouts": []
 }
