@@ -106,7 +106,7 @@
       {
         "file": "assets/Pancakes.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"assets/Pancakes.png\",\"extension\":\".png\"}",
         "name": "Pancakes.png",
         "smoothed": false,
         "userAdded": false,
@@ -1382,6 +1382,46 @@
         "name": "NewSprite5",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Shaded Blue Fill Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Shaded Blue Fill Bar.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/efb17aade7ab227ae611ea6c681413bedfaecd4b661b793675b1dd59ca941d2e_Shaded Blue Fill Bar.png",
+          "name": "Shaded Blue Fill Bar.png"
+        }
+      },
+      {
+        "file": "assets/Wood Bar Border.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Wood Bar Border.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/5c3135f6fa8587da82ddea950881fc8b35d422bb806d9331f8b47fdc715ee76a_Wood Bar Border.png",
+          "name": "Wood Bar Border.png"
+        }
+      },
+      {
+        "file": "assets/NewSprite6.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite6",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/default.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "default",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1427,6 +1467,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/stayonscreen"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/panelspritecontinuousbar"
     }
   ],
   "externalLayouts": []

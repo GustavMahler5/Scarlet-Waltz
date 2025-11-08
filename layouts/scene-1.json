@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5468750000000012,
+    "zoomFactor": 0.6672773998329987,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -110,9 +110,26 @@
       "name": "Dino_Vita",
       "persistentUuid": "9f7906b3-48a8-495d-8c99-b7d577c4887e",
       "width": 0,
-      "x": 608,
-      "y": 96,
+      "x": 640,
+      "y": 72,
       "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 64,
+      "height": 32,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Health",
+      "persistentUuid": "8a00272a-5d87-41b4-a48c-f42a8d87270b",
+      "width": 192,
+      "x": 1024,
+      "y": 608,
+      "zOrder": 7,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -120,12 +137,18 @@
   ],
   "objects": [
     {
-      "adaptCollisionMaskAutomatically": true,
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "db934eedae76ad7230ca28194b447522689f5db23c40315306499441e2f6e1f7",
       "name": "Pancakes",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "name": "Health",
+          "type": "number",
+          "value": 1000
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
@@ -161,9 +184,9 @@
         {
           "name": "Health",
           "type": "Health::Health",
-          "Health": 100,
+          "Health": 1000,
           "CurrentHealth": 0,
-          "MaxHealth": 100,
+          "MaxHealth": 1000,
           "DamageCooldown": 0.5,
           "AllowOverHealing": false,
           "IsHealthJustDamaged": false,
@@ -247,20 +270,20 @@
                   "customCollisionMask": [
                     [
                       {
-                        "x": 6,
-                        "y": 6
+                        "x": 13,
+                        "y": 13
                       },
                       {
-                        "x": 26,
-                        "y": 6
+                        "x": 19,
+                        "y": 13
                       },
                       {
-                        "x": 26,
-                        "y": 27
+                        "x": 19,
+                        "y": 19
                       },
                       {
-                        "x": 6,
-                        "y": 27
+                        "x": 13,
+                        "y": 19
                       }
                     ]
                   ]
@@ -322,7 +345,7 @@
           "Health": 1000,
           "CurrentHealth": 0,
           "MaxHealth": 1000,
-          "DamageCooldown": 6,
+          "DamageCooldown": 1,
           "AllowOverHealing": false,
           "IsHealthJustDamaged": false,
           "DamageToBeApplied": 0,
@@ -2509,6 +2532,59 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "ebc9bc64e9525d8e827938e246f37b4398590f18a3444735dc50edbea0317f03",
+      "name": "Health",
+      "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+      "variant": "Wood Blue Bar",
+      "variables": [
+        {
+          "name": "Health",
+          "type": "number",
+          "value": 1000
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Health",
+          "type": "Health::Health",
+          "Health": 1000,
+          "CurrentHealth": 0,
+          "MaxHealth": 1000,
+          "DamageCooldown": 1,
+          "AllowOverHealing": false,
+          "IsHealthJustDamaged": false,
+          "DamageToBeApplied": 0,
+          "HitAtLeastOnce": false,
+          "ChanceToDodge": 0,
+          "IsJustDodged": false,
+          "HealToBeApplied": 0,
+          "HealthRegenRate": 0,
+          "HealthRegenDelay": 0,
+          "IsJustHealed": false,
+          "CurrentShieldPoints": 2.0247e-320,
+          "MaxShieldPoints": 0,
+          "ShieldDuration": 5,
+          "ShieldRegenRate": 0,
+          "BlockExcessDamage": false,
+          "ShieldRegenDelay": 0,
+          "IsShieldJustDamaged": false,
+          "ShieldDamageTaken": 2.0247e-320,
+          "FlatDamageReduction": 0,
+          "PercentDamageReduction": 0
+        }
+      ],
+      "content": {
+        "InitialValue": 1000,
+        "MaxValue": 1000,
+        "BarTopPadding": 8,
+        "BarRightPadding": 10,
+        "BarBottomPadding": 8,
+        "BarLeftPadding": 10,
+        "PreviousHighValueDuration": 0
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -2531,6 +2607,9 @@
       },
       {
         "objectName": "EnemyBullet"
+      },
+      {
+        "objectName": "Health"
       }
     ]
   },
@@ -3107,7 +3186,7 @@
             "FireBullet",
             "Dino_Vita.CenterX()",
             "Dino_Vita.CenterY()",
-            "Dino_Doux",
+            "EnemyBullet",
             "90",
             "400",
             ""
@@ -3197,7 +3276,7 @@
             "FireBullet",
             "Dino_Vita.CenterX()",
             "Dino_Vita.CenterY()",
-            "Dino_Doux",
+            "EnemyBullet",
             "90",
             "150",
             ""
@@ -3287,7 +3366,7 @@
             "FireBullet",
             "Dino_Vita.CenterX()",
             "Dino_Vita.CenterY()",
-            "Dino_Doux",
+            "EnemyBullet",
             "90",
             "180",
             ""
@@ -3377,7 +3456,7 @@
             "FireBullet",
             "Dino_Vita.CenterX()",
             "Dino_Vita.CenterY()",
-            "Dino_Doux",
+            "EnemyBullet",
             "90",
             "80",
             ""
@@ -3438,7 +3517,7 @@
             "value": "CollisionNP"
           },
           "parameters": [
-            "Pancakes",
+            "EnemyBullet",
             "borderBackground",
             "",
             "",
@@ -3446,7 +3525,60 @@
           ]
         }
       ],
-      "actions": []
+      "actions": [
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "EnemyBullet",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Pancakes",
+            "EnemyBullet",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Health::Health::Hit"
+          },
+          "parameters": [
+            "Pancakes",
+            "Health",
+            "10",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+          },
+          "parameters": [
+            "Health",
+            "-",
+            "10",
+            ""
+          ]
+        }
+      ]
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
