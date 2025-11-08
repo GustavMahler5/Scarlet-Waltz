@@ -25,16 +25,6 @@
   "objectsGroups": [],
   "variables": [
     {
-      "name": "PatternSwitchInterval",
-      "type": "number",
-      "value": 0.5
-    },
-    {
-      "name": "CurrentFiringPattern",
-      "type": "number",
-      "value": 0
-    },
-    {
       "name": "DinoVitaInitialY",
       "type": "number",
       "value": 0
@@ -48,6 +38,55 @@
       "name": "DinoVitaStartX",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "firingPatternPhaseOne",
+      "type": "array",
+      "children": [
+        {
+          "type": "number",
+          "value": 0
+        },
+        {
+          "type": "number",
+          "value": 1
+        },
+        {
+          "type": "number",
+          "value": 2
+        },
+        {
+          "type": "number",
+          "value": 3
+        },
+        {
+          "type": "number",
+          "value": 3
+        },
+        {
+          "type": "number",
+          "value": 2
+        },
+        {
+          "type": "number",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "PatternSwitchInterval",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "PatternIndex",
+      "type": "number",
+      "value": -1
+    },
+    {
+      "name": "FiringPatternFinished",
+      "type": "boolean",
+      "value": true
     }
   ],
   "instances": [
@@ -130,6 +169,22 @@
       "x": 1024,
       "y": 608,
       "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "NewText",
+      "persistentUuid": "f57a6944-edd7-459a-a66a-d45620f81581",
+      "width": 0,
+      "x": 1088,
+      "y": 320,
+      "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -2373,7 +2428,14 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "extraBorder": 200,
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "unseenGraceDistance": 10000
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -2585,6 +2647,49 @@
         "BarLeftPadding": 10,
         "PreviousHighValueDuration": 0
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "NewText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "current",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "current",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "0;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -2610,6 +2715,9 @@
       },
       {
         "objectName": "Health"
+      },
+      {
+        "objectName": "NewText"
       }
     ]
   },
@@ -2715,6 +2823,16 @@
             "\"linear\"",
             "1",
             "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternIndex",
+            "=",
+            "-1"
           ]
         }
       ]
@@ -3112,6 +3230,16 @@
             "PatternSwitchInterval",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "BooleanVariable"
+          },
+          "parameters": [
+            "FiringPatternFinished",
+            "True",
+            ""
+          ]
         }
       ],
       "actions": [
@@ -3120,9 +3248,9 @@
             "value": "SetNumberVariable"
           },
           "parameters": [
-            "CurrentFiringPattern",
+            "PatternIndex",
             "=",
-            "RandomInRange(0, 3)"
+            "mod((PatternIndex + 1), VariableChildCount(firingPatternPhaseOne))"
           ]
         }
       ]
@@ -3136,7 +3264,7 @@
             "value": "NumberVariable"
           },
           "parameters": [
-            "CurrentFiringPattern",
+            "firingPatternPhaseOne[PatternIndex]",
             "=",
             "0"
           ]
@@ -3214,6 +3342,17 @@
             "True",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Pattern 0\""
+          ]
         }
       ]
     },
@@ -3226,7 +3365,7 @@
             "value": "NumberVariable"
           },
           "parameters": [
-            "CurrentFiringPattern",
+            "firingPatternPhaseOne[PatternIndex]",
             "=",
             "1"
           ]
@@ -3304,6 +3443,17 @@
             "True",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Pattern 1\""
+          ]
         }
       ]
     },
@@ -3316,7 +3466,7 @@
             "value": "NumberVariable"
           },
           "parameters": [
-            "CurrentFiringPattern",
+            "firingPatternPhaseOne[PatternIndex]",
             "=",
             "2"
           ]
@@ -3394,6 +3544,17 @@
             "True",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Pattern 2\""
+          ]
         }
       ]
     },
@@ -3406,7 +3567,7 @@
             "value": "NumberVariable"
           },
           "parameters": [
-            "CurrentFiringPattern",
+            "firingPatternPhaseOne[PatternIndex]",
             "=",
             "3"
           ]
@@ -3505,6 +3666,17 @@
             "Tween",
             "\"MoveLeft\"",
             "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Pattern 3\""
           ]
         }
       ]
@@ -3700,6 +3872,10 @@
     {
       "name": "StayOnScreen",
       "type": "StayOnScreen::StayOnScreen"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
     },
     {
       "name": "TopDownMovement",
