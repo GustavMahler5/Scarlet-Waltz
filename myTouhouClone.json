@@ -1422,6 +1422,20 @@
         "name": "default",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Laser-weapon 8.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Arcade/Sound effects/Laser-weapon/7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+          "name": "gdevelop-asset-store"
+        }
       }
     ],
     "resourceFolders": []
