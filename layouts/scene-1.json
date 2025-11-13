@@ -25,6 +25,11 @@
   "objectsGroups": [],
   "variables": [
     {
+      "name": "CurrentSpiralAngle",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "DinoVitaInitialY",
       "type": "number",
       "value": 0
@@ -38,6 +43,26 @@
       "name": "DinoVitaStartX",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "PatternSwitchInterval",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "PatternIndex",
+      "type": "number",
+      "value": -1
+    },
+    {
+      "name": "FiringPatternFinished",
+      "type": "boolean",
+      "value": true
+    },
+    {
+      "name": "phaseNumber",
+      "type": "number",
+      "value": 1
     },
     {
       "name": "firingPatternPhaseOne",
@@ -74,19 +99,26 @@
       ]
     },
     {
-      "name": "PatternSwitchInterval",
-      "type": "number",
-      "value": 1
-    },
-    {
-      "name": "PatternIndex",
-      "type": "number",
-      "value": -1
-    },
-    {
-      "name": "FiringPatternFinished",
-      "type": "boolean",
-      "value": true
+      "name": "firingPatternPhaseTwo",
+      "type": "array",
+      "children": [
+        {
+          "type": "number",
+          "value": 0
+        },
+        {
+          "type": "number",
+          "value": 1
+        },
+        {
+          "type": "number",
+          "value": 0
+        },
+        {
+          "type": "number",
+          "value": 1
+        }
+      ]
     }
   ],
   "instances": [
@@ -142,13 +174,14 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 56,
       "keepRatio": true,
       "layer": "",
       "name": "Dino_Vita",
       "persistentUuid": "9f7906b3-48a8-495d-8c99-b7d577c4887e",
-      "width": 0,
+      "width": 64,
       "x": 640,
       "y": 72,
       "zOrder": 4,
@@ -2745,7 +2778,7 @@
             "FireBullet",
             "Pancakes.X()",
             "Pancakes.Y()",
-            "EnemyBullet",
+            "Dino_Doux",
             "Pancakes.X()",
             "Pancakes.Angle() - 90 ",
             "500",
@@ -2833,6 +2866,31 @@
             "PatternIndex",
             "=",
             "-1"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9TCFBQX0R05ADMR6764RCXX",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"PhaseTimer\""
           ]
         }
       ]
@@ -3240,6 +3298,16 @@
             "True",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "1"
+          ]
         }
       ],
       "actions": [
@@ -3256,108 +3324,56 @@
       ]
     },
     {
-      "aiGeneratedEventId": "01K9DEBNBEP2K81WG0E4280654",
+      "aiGeneratedEventId": "01K9TEVM4Y81W2AYGH86NF3X89",
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
           "type": {
-            "value": "NumberVariable"
+            "value": "RepeatEveryXSeconds::Repeat"
           },
           "parameters": [
-            "firingPatternPhaseOne[PatternIndex]",
-            "=",
-            "0"
-          ]
-        },
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::IsReadyToShoot"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "FireBullet",
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "FireBullet",
-            "=",
-            "4",
+            "",
+            "\"PatternSwitchTimer\"",
+            "PatternSwitchInterval",
             ""
           ]
         },
         {
           "type": {
-            "value": "FireBullet::FireBullet::SetFiringArcOp"
+            "value": "BooleanVariable"
           },
           "parameters": [
-            "Dino_Vita",
-            "FireBullet",
-            "=",
-            "40",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::Fire"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "FireBullet",
-            "Dino_Vita.CenterX()",
-            "Dino_Vita.CenterY()",
-            "EnemyBullet",
-            "90",
-            "400",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::SetCooldownOp"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "FireBullet",
-            "=",
-            "0.0001",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetBooleanObjectVariable"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "dinoMoving",
+            "FiringPatternFinished",
             "True",
             ""
           ]
         },
         {
           "type": {
-            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+            "value": "NumberVariable"
           },
           "parameters": [
-            "NewText",
-            "Text",
+            "phaseNumber",
             "=",
-            "\"Pattern 0\""
+            "2"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternIndex",
+            "=",
+            "mod(PatternIndex + 1, VariableChildCount(firingPatternPhaseTwo))"
           ]
         }
       ]
     },
     {
-      "aiGeneratedEventId": "01K9DEBNBEP2K81WG0E4280654",
+      "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -3365,7 +3381,7 @@
             "value": "NumberVariable"
           },
           "parameters": [
-            "firingPatternPhaseOne[PatternIndex]",
+            "firingPatternPhaseOne[Variable(PatternIndex)]",
             "=",
             "1"
           ]
@@ -3379,6 +3395,16 @@
             "FireBullet",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "1"
+          ]
         }
       ],
       "actions": [
@@ -3390,7 +3416,7 @@
             "Dino_Vita",
             "FireBullet",
             "=",
-            "12",
+            "6",
             ""
           ]
         },
@@ -3402,7 +3428,7 @@
             "Dino_Vita",
             "FireBullet",
             "=",
-            "120",
+            "200",
             ""
           ]
         },
@@ -3441,7 +3467,7 @@
             "Dino_Vita",
             "dinoMoving",
             "True",
-            ""
+            "True"
           ]
         },
         {
@@ -3454,11 +3480,33 @@
             "=",
             "\"Pattern 1\""
           ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "no",
+            "20",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternSwitchInterval",
+            "=",
+            "1"
+          ]
         }
       ]
     },
     {
-      "aiGeneratedEventId": "01K9DEBNBEP2K81WG0E4280654",
+      "aiGeneratedEventId": "01K9TEWR3ZM7FPWJY0PNDWRVD6",
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -3466,7 +3514,7 @@
             "value": "NumberVariable"
           },
           "parameters": [
-            "firingPatternPhaseOne[PatternIndex]",
+            "firingPatternPhaseOne[Variable(PatternIndex)]",
             "=",
             "2"
           ]
@@ -3480,6 +3528,16 @@
             "FireBullet",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "1"
+          ]
         }
       ],
       "actions": [
@@ -3491,7 +3549,7 @@
             "Dino_Vita",
             "FireBullet",
             "=",
-            "6",
+            "4",
             ""
           ]
         },
@@ -3542,7 +3600,7 @@
             "Dino_Vita",
             "dinoMoving",
             "True",
-            ""
+            "True"
           ]
         },
         {
@@ -3555,11 +3613,189 @@
             "=",
             "\"Pattern 2\""
           ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "no",
+            "20",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternSwitchInterval",
+            "=",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9TEX5VHKAZ25K3CFA6CKHG7",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "firingPatternPhaseOne[Variable(PatternIndex)]",
+            "=",
+            "3"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "18",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "360",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::Fire"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "EnemyBullet",
+            "90",
+            "80",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.2",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "False",
+            "False"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Pattern 3\""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "no",
+            "20",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternSwitchInterval",
+            "=",
+            "1.5"
+          ]
         }
       ]
     },
     {
       "aiGeneratedEventId": "01K9DEBNBEP2K81WG0E4280654",
+      "disabled": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -3580,6 +3816,16 @@
             "Dino_Vita",
             "FireBullet",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "1"
           ]
         }
       ],
@@ -3678,6 +3924,28 @@
             "=",
             "\"Pattern 3\""
           ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "",
+            "20",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternSwitchInterval",
+            "=",
+            "2"
+          ]
         }
       ]
     },
@@ -3753,9 +4021,923 @@
       ]
     },
     {
+      "aiGeneratedEventId": "01K9TEXNA9E5PJ0YR26YEW1EER",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"PhaseTimer\"",
+            ">=",
+            "10"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternIndex",
+            "=",
+            "-1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanVariable"
+          },
+          "parameters": [
+            "FiringPatternFinished",
+            "True",
+            "True"
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"PhaseTimer\""
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9TE1MCNHFP4DX8VSCTXCNF2",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "RepeatEveryXSeconds::RepeatTimer::Repeat2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "RepeatTimer",
+            "\"PatternSwitchTimer2\"",
+            "PatternSwitchInterval",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BooleanVariable"
+          },
+          "parameters": [
+            "FiringPatternFinished",
+            "true",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "2"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternIndex",
+            "=",
+            "mod((PatternIndex + 1), VariableChildCount(firingPatternPhaseTwo))"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9TDS3SZ1M3KRNZ54D06Q1B2",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "firingPatternPhaseTwo.PatternIndex",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "2"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "16",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "360",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::Fire"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "EnemyBullet",
+            "90",
+            "80",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.5",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "False",
+            "False"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Pattern 4\""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "no",
+            "20",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternSwitchInterval",
+            "=",
+            "0.5"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9TDSNXT5ZW79D3FXZFNKWBJ",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "firingPatternPhaseTwo[PatternIndex]",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "2"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "8",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "360",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::Fire"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "EnemyBullet",
+            "90",
+            "80",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.5",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "False",
+            "False"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Pattern 5\""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "no",
+            "20",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternSwitchInterval",
+            "=",
+            "0.5"
+          ]
+        }
+      ]
+    },
+    {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
       "actions": []
+    },
+    {
+      "aiGeneratedEventId": "01K9TETF37YCYGETAFHRABHPYG",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "firingPatternPhaseTwo[Variable(PatternIndex)]",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "4",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "20",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::FireTowardObject"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "EnemyBullet",
+            "Pancakes",
+            "200",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.5",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "True",
+            "False"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::ResumeTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::ResumeTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\""
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Targeted Burst\""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "no",
+            "20",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternSwitchInterval",
+            "=",
+            "1.5"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9TF6GH66AXSCHKGPPG1C47A",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "StringVariable"
+          },
+          "parameters": [
+            "firingPatternPhaseTwo[PatternIndex]",
+            "=",
+            "\"0\""
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "14",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "360",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::Fire"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "Dino_Vita.CenterX()",
+            "Dino_Vita.CenterY()",
+            "EnemyBullet",
+            "CurrentSpiralAngle",
+            "150",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "CurrentSpiralAngle",
+            "+",
+            "19"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0.3",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanObjectVariable"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "dinoMoving",
+            "True",
+            "True"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "NewText",
+            "Text",
+            "=",
+            "\"Spiral Flower Pattern\""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "no",
+            "20",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "PatternSwitchInterval",
+            "=",
+            "0.5"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01K9TE0S3X2FD24YAXJQNXRW1K",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "firingPatternPhaseTwo[PatternIndex]",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "2",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            "=",
+            "0",
+            ""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Repeat",
+          "repeatExpression": "12",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::Fire"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                "Dino_Vita.CenterX()",
+                "Dino_Vita.CenterY()",
+                "EnemyBullet",
+                "360 / 12 * LoopIndex",
+                "250",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LoopIndex",
+                "+",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::SetCooldownOp"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                "=",
+                "0.01",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "dinoMoving",
+                "False",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::StopTween"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"MoveRight\"",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::StopTween"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"MoveLeft\"",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "NewText",
+                "Text",
+                "=",
+                "\"Pattern Flower\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                "no",
+                "20",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatternSwitchInterval",
+                "=",
+                "0.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LoopIndex",
+                "+",
+                "5"
+              ]
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "name": "LoopIndex",
+          "type": "number",
+          "value": 0
+        }
+      ]
     }
   ],
   "layers": [
