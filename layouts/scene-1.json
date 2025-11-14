@@ -18,12 +18,27 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6672773998329987,
+    "zoomFactor": 0.5843784410740941,
     "windowMask": false,
     "selectedLayer": ""
   },
   "objectsGroups": [],
   "variables": [
+    {
+      "name": "LoopIndex",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "WaveAttackCooldown",
+      "type": "number",
+      "value": 2
+    },
+    {
+      "name": "WaveAttackActive",
+      "type": "boolean",
+      "value": false
+    },
     {
       "name": "CurrentSpiralAngle",
       "type": "number",
@@ -218,6 +233,23 @@
       "x": 1088,
       "y": 320,
       "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 270,
+      "customSize": true,
+      "depth": 1,
+      "height": 704,
+      "keepRatio": true,
+      "layer": "",
+      "name": "WaveAttack",
+      "persistentUuid": "9ec18c0c-7308-4eb2-bad1-9cc1a8ad55ef",
+      "width": 35,
+      "x": 640,
+      "y": 402,
+      "zOrder": 9,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -2463,9 +2495,9 @@
       "effects": [],
       "behaviors": [
         {
-          "extraBorder": 200,
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 200,
           "unseenGraceDistance": 10000
         }
       ],
@@ -2723,6 +2755,1713 @@
         "lineHeight": 0,
         "color": "0;0;0"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "46a93cb6302f2ae0f81693e074f82c279a395027f37e6140b1b450989181726c",
+      "name": "WaveAttack",
+      "preScale": 1.0897247358851683,
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "HitPlayer",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 200,
+          "unseenGraceDistance": 10000
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.125,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_7.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Idle",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.125,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_7.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Idle_8.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Activate",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.0833,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_7.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_8.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_9.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_10.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_11.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Activate_12.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Deactivate",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.125,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_7.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_8.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Laser_Deactivate_9.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "waveattack",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "waveattack3",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 0
+                      },
+                      {
+                        "x": 22,
+                        "y": 32
+                      },
+                      {
+                        "x": 8,
+                        "y": 32
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "1aba26476f2e2c328412cf53c3588c7a34cc763d19a467cb4d3c89beac60c93a",
+      "name": "EnemyBullet2",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 200,
+          "unseenGraceDistance": 10000
+        }
+      ],
+      "animations": [
+        {
+          "name": "Small Red Ball",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Small Red Ball2",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 16,
+                        "y": 0
+                      },
+                      {
+                        "x": 16,
+                        "y": 16
+                      },
+                      {
+                        "x": 0,
+                        "y": 16
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "2a7c7f303422aeee7dd294abbedcc9ed6f5c4448eddb6547d207e7cc0c6b5d2c",
+      "name": "EnemyBullet3",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 200,
+          "unseenGraceDistance": 10000
+        }
+      ],
+      "animations": [
+        {
+          "name": "Small Blue Ball",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Small Blue Ball",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 16,
+                        "y": 0
+                      },
+                      {
+                        "x": 16,
+                        "y": 16
+                      },
+                      {
+                        "x": 0,
+                        "y": 16
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "c65bdb865675d2f217f56d05b20bf846b017c982c0272f50a44fd8e283985aae",
+      "name": "EnemyBullet4",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 200,
+          "unseenGraceDistance": 10000
+        }
+      ],
+      "animations": [
+        {
+          "name": "Tank Bullet 3",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Tank Bullet 3",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 26,
+                        "y": 0
+                      },
+                      {
+                        "x": 26,
+                        "y": 17
+                      },
+                      {
+                        "x": 0,
+                        "y": 17
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "flying",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Tank Bullet 3_flying.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 26,
+                        "y": 0
+                      },
+                      {
+                        "x": 26,
+                        "y": 17
+                      },
+                      {
+                        "x": 0,
+                        "y": 17
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -2751,6 +4490,18 @@
       },
       {
         "objectName": "NewText"
+      },
+      {
+        "objectName": "WaveAttack"
+      },
+      {
+        "objectName": "EnemyBullet2"
+      },
+      {
+        "objectName": "EnemyBullet3"
+      },
+      {
+        "objectName": "EnemyBullet4"
       }
     ]
   },
@@ -3506,7 +5257,7 @@
       ]
     },
     {
-      "aiGeneratedEventId": "01K9TEWR3ZM7FPWJY0PNDWRVD6",
+      "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -3574,7 +5325,7 @@
             "FireBullet",
             "Dino_Vita.CenterX()",
             "Dino_Vita.CenterY()",
-            "EnemyBullet",
+            "EnemyBullet2",
             "90",
             "180",
             ""
@@ -3621,7 +5372,7 @@
           "parameters": [
             "",
             "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-            "no",
+            "",
             "20",
             "1"
           ]
@@ -3639,7 +5390,7 @@
       ]
     },
     {
-      "aiGeneratedEventId": "01K9TEX5VHKAZ25K3CFA6CKHG7",
+      "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -3707,7 +5458,7 @@
             "FireBullet",
             "Dino_Vita.CenterX()",
             "Dino_Vita.CenterY()",
-            "EnemyBullet",
+            "EnemyBullet3",
             "90",
             "80",
             ""
@@ -3776,7 +5527,7 @@
           "parameters": [
             "",
             "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-            "no",
+            "",
             "20",
             "1"
           ]
@@ -4447,7 +6198,7 @@
       "actions": []
     },
     {
-      "aiGeneratedEventId": "01K9TETF37YCYGETAFHRABHPYG",
+      "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -4515,7 +6266,7 @@
             "FireBullet",
             "Dino_Vita.CenterX()",
             "Dino_Vita.CenterY()",
-            "EnemyBullet",
+            "EnemyBullet4",
             "Pancakes",
             "200",
             ""
@@ -4541,7 +6292,7 @@
             "Dino_Vita",
             "dinoMoving",
             "True",
-            "False"
+            "True"
           ]
         },
         {
@@ -4582,7 +6333,7 @@
           "parameters": [
             "",
             "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-            "no",
+            "",
             "20",
             "1"
           ]
@@ -4805,6 +6556,7 @@
       ],
       "events": [
         {
+          "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
           "type": "BuiltinCommonInstructions::Repeat",
           "repeatExpression": "12",
           "conditions": [],
@@ -4818,7 +6570,7 @@
                 "FireBullet",
                 "Dino_Vita.CenterX()",
                 "Dino_Vita.CenterY()",
-                "EnemyBullet",
+                "EnemyBullet2",
                 "360 / 12 * LoopIndex",
                 "250",
                 ""
@@ -4938,6 +6690,289 @@
           "value": 0
         }
       ]
+    },
+    {
+      "aiGeneratedEventId": "01KA0DABMHE99T0V5WYD9GFJFX",
+      "colorB": 0,
+      "colorG": 0,
+      "colorR": 0,
+      "creationTime": 0,
+      "name": "Wave Attack",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "WaveAttackActive",
+                "false",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"WaveAttackTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "WaveAttackActive",
+                "True",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01KA0GF5A283NS4Y5X00R3TSTP",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"WaveAttackTimer\"",
+                ">=",
+                "WaveAttackCooldown"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "WaveAttack",
+                "ScreenWidth() / 2",
+                "5",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+              },
+              "parameters": [
+                "WaveAttack",
+                "Resizable",
+                "=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetHeight"
+              },
+              "parameters": [
+                "WaveAttack",
+                "Resizable",
+                "=",
+                "SceneWindowHeight()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "WaveAttack",
+                "=",
+                "90"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "WaveAttack",
+                "Opacity",
+                "=",
+                "100"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "WaveAttack",
+                "HitPlayer",
+                "False",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"WaveAttackTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "WaveAttackActive",
+                "False",
+                "False"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01KA0GCCKNW4CR2TY4WWZ90Z9T",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneInstancesCount"
+              },
+              "parameters": [
+                "",
+                "WaveAttack",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "WaveAttack",
+                "=",
+                "ScreenWidth() / 2"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "WaveAttack",
+                "+",
+                "200 * TimeDelta()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "WaveAttack",
+                "Pancakes",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "WaveAttack",
+                "HitPlayer",
+                "false",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Health::Health::Hit"
+              },
+              "parameters": [
+                "Pancakes",
+                "Health",
+                "10",
+                "no",
+                "no",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "WaveAttack",
+                "HitPlayer",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeColor"
+              },
+              "parameters": [
+                "Pancakes",
+                "\"255;0;0\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Health::Health::IsJustDamaged"
+                  },
+                  "parameters": [
+                    "Pancakes",
+                    "Health",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeColor"
+                  },
+                  "parameters": [
+                    "Pancakes",
+                    "\"255;255;255\""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
     }
   ],
   "layers": [

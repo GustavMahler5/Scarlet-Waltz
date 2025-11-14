@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 243,
+    "build": 245,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -1436,6 +1436,470 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Arcade/Sound effects/Laser-weapon/7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "file": "assets/Emote Circle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Emote Circle.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Emotes/Normal/Emote/2d1c151286d52dab33fcc262138ac47a863a0b1c66492c9de3a0f6c1069e85f8_Emote Circle.png",
+          "name": "Emote Circle.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/2cd65f17afffd6cd3aeae7592e8f66480c81d2397c320c398d237b4594cbe75b_Laser_Activate_1.png",
+          "name": "Laser_Activate_1.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_10.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/99af64959748d162f54e3aeb211193fc2bc0353a2080839a2c010c9a04059715_Laser_Activate_10.png",
+          "name": "Laser_Activate_10.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_11.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/7457d6ff633144198bd5f41c09b24915f8b88749b6f4f49e3148f5ae4fb99a30_Laser_Activate_11.png",
+          "name": "Laser_Activate_11.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_12.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/c2f3f8652709d4410c41d36bddbf5ea41ba5e1679bdb2fb15ca13a9eb1b6e6dd_Laser_Activate_12.png",
+          "name": "Laser_Activate_12.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/e52fc9812137619dc0af7261e166b039cbb0b7ed7b71f143fb3627a0289b59ef_Laser_Activate_2.png",
+          "name": "Laser_Activate_2.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/ef94b55dadbda8a279ea6ff22d45ca332cfcdd6ed814b8ea39e2605fb2c48e27_Laser_Activate_3.png",
+          "name": "Laser_Activate_3.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/3203d36856fbd998a2e2c4aa7941d6df43bbe27db53f1ace1fbf43592d1f5810_Laser_Activate_4.png",
+          "name": "Laser_Activate_4.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/1843b01d6cd6aef801847f2bf21321fcb48a757a907d4946d67c0fd5da15bec2_Laser_Activate_5.png",
+          "name": "Laser_Activate_5.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/1a8568b8ca6c630d9089162f9cef09969cde74b3eb2d9754c4c7d6a341afb412_Laser_Activate_6.png",
+          "name": "Laser_Activate_6.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_7.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/51b67a7530f9b5cfa2248b0fde97f574c18cf9b05d60288ce0ea3f7ffc664750_Laser_Activate_7.png",
+          "name": "Laser_Activate_7.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_8.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/92dccdca8cd4b9dc1ed73797beb37fea1d3f9b82b862bcec4b8b37445633fdd7_Laser_Activate_8.png",
+          "name": "Laser_Activate_8.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Activate_9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Activate_9.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/06b5c2a1ea6236b8d2c7d7b11caf52a50422784d30263e64b05a3e5a63050fee_Laser_Activate_9.png",
+          "name": "Laser_Activate_9.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/250f72345c8d66c62e77d36612d545c490abe7072650ab5055d26c8a697179c5_Laser_Deactivate_1.png",
+          "name": "Laser_Deactivate_1.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/5b5acfce134501c402d69c65331a1376bde0ffbd7892786507c8f88796b0f8d5_Laser_Deactivate_2.png",
+          "name": "Laser_Deactivate_2.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/82cb91ae28cd5de5fecb2925d2678fb26a877632850514c052aaa00860f5025c_Laser_Deactivate_3.png",
+          "name": "Laser_Deactivate_3.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/95c15a873a436898dc7feb8623f2ff38a823a83514d2898a7879a6391b99e1a0_Laser_Deactivate_4.png",
+          "name": "Laser_Deactivate_4.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/591d2d60d46fc2d1eff953b47e7f8b5f19ddce84f0c2f87d07e6f4d31fbab3b0_Laser_Deactivate_5.png",
+          "name": "Laser_Deactivate_5.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/5b5acfce134501c402d69c65331a1376bde0ffbd7892786507c8f88796b0f8d5_Laser_Deactivate_6.png",
+          "name": "Laser_Deactivate_6.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_7.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/ae59ca95cfd52e8a593315ac26542599a662a40266164c198004e531d7b45d2b_Laser_Deactivate_7.png",
+          "name": "Laser_Deactivate_7.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_8.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/fbb7164fb3306a833eff23319ed1e356be33a09482133f6db0f296755ed909c9_Laser_Deactivate_8.png",
+          "name": "Laser_Deactivate_8.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Deactivate_9.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Deactivate_9.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/58b1e01ed4b7acbf51531a7ff1185737f5ae7abe66384e5930d85b0965541fa2_Laser_Deactivate_9.png",
+          "name": "Laser_Deactivate_9.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Idle_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Idle_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/ef82c6d91f1cf4099e36980119d310571bcbafdb1e337773e9e783c73c76034c_Laser_Idle_1.png",
+          "name": "Laser_Idle_1.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Idle_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Idle_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/2bd7ec0ebd1aed88dbe4ea96b5bde3cfebf4226fe59fa95da741f5adeb91b1d1_Laser_Idle_2.png",
+          "name": "Laser_Idle_2.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Idle_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Idle_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/9bdf214f7f23fa5616ffc3e753dc1e91b3bc5259c3a7458213de6c33896d8d7f_Laser_Idle_3.png",
+          "name": "Laser_Idle_3.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Idle_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Idle_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/014f60d2c82c02ecd8dfd01f1c03e926b47ba2b1ea4ce62448da95f33447a53d_Laser_Idle_4.png",
+          "name": "Laser_Idle_4.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Idle_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Idle_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/630beca0b9851b491e79f50b73fd54d5d184fb26a413a7da3a41dbd824e66abf_Laser_Idle_5.png",
+          "name": "Laser_Idle_5.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Idle_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Idle_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/d3105d67e80a2b3ce009d855c79aa3e1ca5f51e98c2f85611eedb201cf05e2e9_Laser_Idle_6.png",
+          "name": "Laser_Idle_6.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Idle_7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Idle_7.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/9b34aff6a349b813cabe8fbff87786f97a1b2e514bce7808b584710e8acad782_Laser_Idle_7.png",
+          "name": "Laser_Idle_7.png"
+        }
+      },
+      {
+        "file": "assets/Laser_Idle_8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Laser_Idle_8.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Sci-Fi Lab/Trap/20a9499d8783c776961ef53385afcffc58782873645d0e90726bf0862dfb6589_Laser_Idle_8.png",
+          "name": "Laser_Idle_8.png"
+        }
+      },
+      {
+        "file": "assets/Small Red Ball.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Small Red Ball.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Rolling Ball Pack/Balls/9e26a2e40eaf354f74e07f0d078b64f5f12856d9fe986087e78b8ff3acf93831_Small Red Ball.png",
+          "name": "Small Red Ball.png"
+        }
+      },
+      {
+        "file": "assets/Small Blue Ball.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Small Blue Ball.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Rolling Ball Pack/Balls/c32ec5f86032fbdd9e3ab54f1da6e7a4829e4e5c8edb7ec4ceae10e24d88b34e_Small Blue Ball.png",
+          "name": "Small Blue Ball.png"
+        }
+      },
+      {
+        "file": "assets/Tank Bullet 3.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"assets/Tank Bullet 3.png\",\"extension\":\".png\"}",
+        "name": "Tank Bullet 3.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Tank pack (80 assets)/Projectile/f455bb67534554c314c6a35a42c9227a039a73b9400bcf5617d960fe25d4d43e_Tank Bullet 3.png",
+          "name": "Tank Bullet 3.png"
+        }
+      },
+      {
+        "file": "assets/Tank Bullet 3_flying.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Tank Bullet 3_flying.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Tank pack (80 assets)/Projectile/f827c77a0765f3a2eb797b7b800aab143695341051d3973d033d67e0ba794b3c_Tank Bullet 3_flying.png",
+          "name": "Tank Bullet 3_flying.png"
+        }
+      },
+      {
+        "file": "assets/Small Red Ball2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Small Red Ball",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Small Red Ball3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Small Red Ball2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Small Blue Ball2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Small Blue Ball",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Tank Bullet4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Tank Bullet 3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/waveattack.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"assets/waveattack.png\"}",
+        "name": "waveattack",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/waveattack2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "waveattack2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/waveattack3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "waveattack3",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
