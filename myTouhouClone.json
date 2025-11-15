@@ -1900,6 +1900,42 @@
         "name": "waveattack3",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/tiled_Empty Cloud Background.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "tiled_Empty Cloud Background.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Generic Backgrounds/1835a8e778f048485605f0cecdca221dccb5d4b05821f101c1fc05d239f422b2_tiled_Empty Cloud Background.png",
+          "name": "tiled_Empty Cloud Background.png"
+        }
+      },
+      {
+        "file": "assets/Small Red Ball4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Small Red Ball3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Small Blue Ball3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Small Blue Ball2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Tank Bullet5.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Tank Bullet4",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -1949,6 +1985,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/panelspritecontinuousbar"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/parallax"
     }
   ],
   "externalLayouts": []
