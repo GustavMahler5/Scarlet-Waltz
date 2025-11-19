@@ -1322,7 +1322,7 @@
       {
         "file": "assets/Main Ship Auto Cannon Bullet_1.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"assets/Main Ship Auto Cannon Bullet_1.png\",\"extension\":\".png\"}",
         "name": "Main Ship Auto Cannon Bullet_1.png",
         "smoothed": false,
         "userAdded": false,
@@ -1334,7 +1334,7 @@
       {
         "file": "assets/Main Ship Auto Cannon Bullet_2.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"assets/Main Ship Auto Cannon Bullet_2.png\",\"extension\":\".png\"}",
         "name": "Main Ship Auto Cannon Bullet_2.png",
         "smoothed": false,
         "userAdded": false,
@@ -1346,7 +1346,7 @@
       {
         "file": "assets/Main Ship Auto Cannon Bullet_3.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"assets/Main Ship Auto Cannon Bullet_3.png\",\"extension\":\".png\"}",
         "name": "Main Ship Auto Cannon Bullet_3.png",
         "smoothed": false,
         "userAdded": false,
@@ -1358,7 +1358,7 @@
       {
         "file": "assets/Main Ship Auto Cannon Bullet_4.png",
         "kind": "image",
-        "metadata": "",
+        "metadata": "{\"localFilePath\":\"assets/Main Ship Auto Cannon Bullet_4.png\",\"extension\":\".png\"}",
         "name": "Main Ship Auto Cannon Bullet_4.png",
         "smoothed": false,
         "userAdded": false,
@@ -1936,6 +1936,190 @@
         "name": "Tank Bullet4",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/cloud 8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "cloud 8.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Generic Backgrounds/Background Objects/Retina/8a35cd09be4dfc4399dc4fa080027afa87e160ef4d8f4928ee8609b53c3e2c4e_cloud 8.png",
+          "name": "cloud 8.png"
+        }
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_5.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Main Ship Auto Cannon Bullet_1",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_5.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Main Ship Auto Cannon Bullet_2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_5.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Main Ship Auto Cannon Bullet_3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_5.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Main Ship Auto Cannon Bullet_4",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_6.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Main Ship Auto Cannon Bullet_5",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_6.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Main Ship Auto Cannon Bullet_6",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_7.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Main Ship Auto Cannon Bullet_7",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Main Ship Auto Cannon Bullet_8.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Main Ship Auto Cannon Bullet_8",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Snowflake_No Shadow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Snowflake_No Shadow.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/32x32 Fantasy Icons Pack v2/Icons/New Icons/3502f03553fa538328c80f7f719146ada904f0a0236dccfc3d323c4531c00408_Snowflake_No Shadow.png",
+          "name": "Snowflake_No Shadow.png"
+        }
+      },
+      {
+        "file": "assets/Snowflake_Shadow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Snowflake_Shadow.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/32x32 Fantasy Icons Pack v2/Icons/New Icons/79fc8acf5f7c074667fca263ab293dc406cc3415fc3b94649ae35ee068d18e19_Snowflake_Shadow.png",
+          "name": "Snowflake_Shadow.png"
+        }
+      },
+      {
+        "file": "assets/Sparks.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Sparks.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Particles/PixiJS/1be94c18bc3de19355d118a226f03e10a4f18307277f00f3559d265a9b27bbef_Sparks.png",
+          "name": "Sparks.png"
+        }
+      },
+      {
+        "file": "assets/Explosion 1_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Explosion 1_1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter by Pixel boy/Effect/ac0865e79d255ea36b086e35d776ef8f02877a3a25cd6760ee01b7c5af4a5951_Explosion 1_1.png",
+          "name": "Explosion 1_1.png"
+        }
+      },
+      {
+        "file": "assets/Explosion 1_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Explosion 1_2.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter by Pixel boy/Effect/0d7e0b36ef8cc2af99e7f088e8958f36188a520ee7d3e4883d404b0e8ade4b30_Explosion 1_2.png",
+          "name": "Explosion 1_2.png"
+        }
+      },
+      {
+        "file": "assets/Explosion 1_3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Explosion 1_3.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter by Pixel boy/Effect/ef0f05d3adc80d24ef01852020c56cfce4e57f3fcab1ce0b5de65b97b232c86e_Explosion 1_3.png",
+          "name": "Explosion 1_3.png"
+        }
+      },
+      {
+        "file": "assets/Explosion 1_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Explosion 1_4.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter by Pixel boy/Effect/6761a5a6b6497776b567f1bd087d4b34cfd4d6515327b1e9b09245ef03ecdea1_Explosion 1_4.png",
+          "name": "Explosion 1_4.png"
+        }
+      },
+      {
+        "file": "assets/Explosion 1_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Explosion 1_5.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter by Pixel boy/Effect/8e785e7e4ccf8267d3778ca1f175f332d2683ea42b7d9c115e0d08421a0dfb24_Explosion 1_5.png",
+          "name": "Explosion 1_5.png"
+        }
+      },
+      {
+        "file": "assets/Explosion 1_6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Explosion 1_6.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter by Pixel boy/Effect/410bdaa5ec1911e183e257846203a64cca51553d0813e6659cb5703abed9efa1_Explosion 1_6.png",
+          "name": "Explosion 1_6.png"
+        }
       }
     ],
     "resourceFolders": []
