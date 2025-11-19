@@ -97,11 +97,7 @@
         },
         {
           "type": "number",
-          "value": 3
-        },
-        {
-          "type": "number",
-          "value": 3
+          "value": 0
         },
         {
           "type": "number",
@@ -110,6 +106,10 @@
         {
           "type": "number",
           "value": 1
+        },
+        {
+          "type": "number",
+          "value": 2
         }
       ]
     },
@@ -180,7 +180,7 @@
       "name": "Health",
       "persistentUuid": "8a00272a-5d87-41b4-a48c-f42a8d87270b",
       "width": 192,
-      "x": 1024,
+      "x": 960,
       "y": 608,
       "zOrder": 7,
       "numberProperties": [],
@@ -196,7 +196,7 @@
       "name": "NewText",
       "persistentUuid": "f57a6944-edd7-459a-a66a-d45620f81581",
       "width": 0,
-      "x": 1088,
+      "x": 1024,
       "y": 320,
       "zOrder": 8,
       "numberProperties": [],
@@ -4706,14 +4706,13 @@
       "conditions": [
         {
           "type": {
-            "value": "RepeatEveryXSeconds::RepeatTimer::Repeat2"
+            "value": "RepeatEveryXSeconds::Repeat"
           },
           "parameters": [
             "Dino_Vita",
-            "RepeatTimer",
             "\"PatternSwitchTimer\"",
             "PatternSwitchInterval",
-            ""
+            "PatternSwitchInterval"
           ]
         },
         {
@@ -4794,7 +4793,7 @@
           "parameters": [
             "PatternIndex",
             "=",
-            "mod(PatternIndex + 1, VariableChildCount(firingPatternPhaseTwo))"
+            "mod((PatternIndex + 1), VariableChildCount(firingPatternPhaseTwo))"
           ]
         }
       ]
@@ -5378,12 +5377,12 @@
       "conditions": [
         {
           "type": {
-            "value": "StringVariable"
+            "value": "NumberVariable"
           },
           "parameters": [
             "firingPatternPhaseTwo[PatternIndex]",
             "=",
-            "\"0\""
+            "0"
           ]
         },
         {
@@ -5465,7 +5464,7 @@
             "Dino_Vita",
             "FireBullet",
             "=",
-            "0.3",
+            "0.01",
             ""
           ]
         },
@@ -5476,7 +5475,7 @@
           "parameters": [
             "Dino_Vita",
             "dinoMoving",
-            "True",
+            "False",
             "True"
           ]
         },
@@ -5510,7 +5509,29 @@
           "parameters": [
             "PatternSwitchInterval",
             "=",
-            "3"
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveRight\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::StopTween"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"MoveLeft\"",
+            ""
           ]
         }
       ]
@@ -5526,7 +5547,7 @@
           "parameters": [
             "firingPatternPhaseTwo[PatternIndex]",
             "=",
-            "0"
+            "1"
           ]
         },
         {
@@ -5579,7 +5600,6 @@
       "events": [
         {
           "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
-          "disabled": true,
           "type": "BuiltinCommonInstructions::Repeat",
           "repeatExpression": "12",
           "conditions": [],
@@ -5634,7 +5654,7 @@
               "parameters": [
                 "Dino_Vita",
                 "dinoMoving",
-                "False",
+                "True",
                 "False"
               ]
             },
@@ -5690,7 +5710,7 @@
               "parameters": [
                 "PatternSwitchInterval",
                 "=",
-                "3"
+                "2"
               ]
             },
             {
@@ -5931,38 +5951,36 @@
                 "\"255;0;0\""
               ]
             }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "Health::Health::IsJustDamaged"
-                  },
-                  "parameters": [
-                    "Pancakes",
-                    "Health",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ChangeColor"
-                  },
-                  "parameters": [
-                    "Pancakes",
-                    "\"255;255;255\""
-                  ]
-                }
-              ]
-            }
           ]
         }
       ],
       "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Health::Health::IsJustDamaged"
+          },
+          "parameters": [
+            "Pancakes",
+            "Health",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ChangeColor"
+          },
+          "parameters": [
+            "Pancakes",
+            "\"255;255;255\""
+          ]
+        }
+      ]
     },
     {
       "aiGeneratedEventId": "01KA47J129NQE0D2G7YQ4Z3X9M",
