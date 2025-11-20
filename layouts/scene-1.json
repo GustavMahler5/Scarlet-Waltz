@@ -124,15 +124,15 @@
       "children": [
         {
           "type": "number",
+          "value": 1
+        },
+        {
+          "type": "number",
           "value": 0
         },
         {
           "type": "number",
           "value": 1
-        },
-        {
-          "type": "number",
-          "value": 2
         }
       ]
     }
@@ -147,7 +147,7 @@
       "name": "Pancakes",
       "persistentUuid": "09e8ba66-6d47-428c-a3be-bd54b2087364",
       "width": 0,
-      "x": 640,
+      "x": 608,
       "y": 544,
       "zOrder": 3,
       "numberProperties": [],
@@ -164,7 +164,7 @@
       "name": "Dino_Vita",
       "persistentUuid": "9f7906b3-48a8-495d-8c99-b7d577c4887e",
       "width": 96,
-      "x": 608,
+      "x": 576,
       "y": 72,
       "zOrder": 4,
       "numberProperties": [],
@@ -181,8 +181,8 @@
       "name": "HealthBar",
       "persistentUuid": "8a00272a-5d87-41b4-a48c-f42a8d87270b",
       "width": 192,
-      "x": 960,
-      "y": 608,
+      "x": 32,
+      "y": 672,
       "zOrder": 7,
       "numberProperties": [],
       "stringProperties": [],
@@ -197,8 +197,8 @@
       "name": "NewText",
       "persistentUuid": "f57a6944-edd7-459a-a66a-d45620f81581",
       "width": 0,
-      "x": 1056,
-      "y": 553,
+      "x": 33,
+      "y": 640,
       "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
@@ -246,9 +246,9 @@
       "layer": "",
       "name": "BossHealth",
       "persistentUuid": "17018e24-59e7-49c0-94ae-886d2131eae4",
-      "width": 192,
-      "x": 960,
-      "y": 96,
+      "width": 288,
+      "x": 480,
+      "y": 32,
       "zOrder": 9,
       "numberProperties": [],
       "stringProperties": [],
@@ -307,7 +307,7 @@
           "Health": 1000,
           "CurrentHealth": 0,
           "MaxHealth": 1000,
-          "DamageCooldown": 0.5,
+          "DamageCooldown": 0.3,
           "AllowOverHealing": false,
           "IsHealthJustDamaged": false,
           "DamageToBeApplied": 0,
@@ -463,10 +463,10 @@
         {
           "name": "Health",
           "type": "Health::Health",
-          "Health": 1000,
+          "Health": 50000,
           "CurrentHealth": 0,
-          "MaxHealth": 1000,
-          "DamageCooldown": 1,
+          "MaxHealth": 50000,
+          "DamageCooldown": 0,
           "AllowOverHealing": false,
           "IsHealthJustDamaged": false,
           "DamageToBeApplied": 0,
@@ -4511,20 +4511,6 @@
         },
         {
           "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "Tween",
-            "\"MoveRight\"",
-            "1000",
-            "\"linear\"",
-            "3",
-            "no"
-          ]
-        },
-        {
-          "type": {
             "value": "SetNumberVariable"
           },
           "parameters": [
@@ -4555,6 +4541,7 @@
       "events": [
         {
           "aiGeneratedEventId": "01K9DDPR7Q689TP43YBRP9CDT5",
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4603,11 +4590,26 @@
                 "Tween",
                 "\"MoveRight\""
               ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"MoveRight\"",
+                "1000",
+                "\"linear\"",
+                "3",
+                "no"
+              ]
             }
           ]
         },
         {
           "aiGeneratedEventId": "01K9DDPR7Q689TP43YBRP9CDT5",
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4884,7 +4886,7 @@
                 "Dino_Vita",
                 "FireBullet",
                 "=",
-                "6",
+                "14",
                 ""
               ]
             },
@@ -4896,7 +4898,7 @@
                 "Dino_Vita",
                 "FireBullet",
                 "=",
-                "100",
+                "150",
                 ""
               ]
             },
@@ -4911,7 +4913,7 @@
                 "Dino_Vita.CenterY()",
                 "EnemyBullet",
                 "90",
-                "150",
+                "175",
                 ""
               ]
             },
@@ -4968,7 +4970,7 @@
               "parameters": [
                 "PatternSwitchInterval",
                 "=",
-                "1"
+                "0.5"
               ]
             }
           ]
@@ -5017,7 +5019,7 @@
                 "Dino_Vita",
                 "FireBullet",
                 "=",
-                "4",
+                "9",
                 ""
               ]
             },
@@ -5029,7 +5031,7 @@
                 "Dino_Vita",
                 "FireBullet",
                 "=",
-                "80",
+                "150",
                 ""
               ]
             },
@@ -5101,7 +5103,7 @@
               "parameters": [
                 "PatternSwitchInterval",
                 "=",
-                "1"
+                "0.5"
               ]
             }
           ]
@@ -5256,7 +5258,7 @@
               "parameters": [
                 "PatternSwitchInterval",
                 "=",
-                "1.5"
+                "1"
               ]
             }
           ]
@@ -5323,6 +5325,18 @@
             },
             {
               "type": {
+                "value": "FireBullet::FireBullet::SetCooldownOp"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                "=",
+                "0.05",
+                ""
+              ]
+            },
+            {
+              "type": {
                 "value": "FireBullet::FireBullet::Fire"
               },
               "parameters": [
@@ -5344,18 +5358,6 @@
                 "CurrentSpiralAngle",
                 "+",
                 "20"
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetCooldownOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "0.05",
-                ""
               ]
             },
             {
@@ -5423,17 +5425,6 @@
                 "\"MoveLeft\"",
                 "no"
               ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NewText2",
-                "Text",
-                "=",
-                "\"Spiral Flower Pattern\""
-              ]
             }
           ]
         },
@@ -5475,13 +5466,40 @@
           "actions": [
             {
               "type": {
+                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                "=",
+                "64",
+                ""
+              ]
+            },
+            {
+              "type": {
                 "value": "FireBullet::FireBullet::SetCooldownOp"
               },
               "parameters": [
                 "Dino_Vita",
                 "FireBullet",
                 "=",
-                "1",
+                "0.5",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::Fire"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                "Dino_Vita.CenterX()",
+                "Dino_Vita.CenterY()",
+                "EnemyBullet2",
+                "90",
+                "250",
                 ""
               ]
             },
@@ -5533,7 +5551,7 @@
               },
               "parameters": [
                 "",
-                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
                 "no",
                 "20",
                 "1"
@@ -5546,39 +5564,25 @@
               "parameters": [
                 "PatternSwitchInterval",
                 "=",
-                "0.1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "LoopIndex",
-                "=",
-                "1"
+                "2"
               ]
             }
           ],
           "events": [
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Repeat",
               "repeatExpression": "12",
               "conditions": [],
               "actions": [
                 {
                   "type": {
-                    "value": "FireBullet::FireBullet::Fire"
+                    "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "Dino_Vita",
-                    "FireBullet",
-                    "Dino_Vita.CenterX()",
-                    "Dino_Vita.CenterY()",
-                    "EnemyBullet2",
-                    "(360 / 12) * LoopIndex",
-                    "250",
-                    ""
+                    "LoopIndex",
+                    "+",
+                    "1"
                   ]
                 },
                 {
@@ -5587,7 +5591,7 @@
                   },
                   "parameters": [
                     "LoopIndex",
-                    "+",
+                    "=",
                     "1"
                   ]
                 }
@@ -6286,7 +6290,7 @@
               "parameters": [
                 "EnemyBullet2",
                 "Pancakes",
-                "30",
+                "40",
                 ""
               ]
             },
@@ -6309,9 +6313,9 @@
               },
               "parameters": [
                 "",
-                "\"ding\"",
+                "3_focus_points.mp3",
                 "no",
-                "100",
+                "20",
                 "1"
               ]
             },

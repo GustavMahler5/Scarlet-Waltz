@@ -2120,6 +2120,30 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter by Pixel boy/Effect/410bdaa5ec1911e183e257846203a64cca51553d0813e6659cb5703abed9efa1_Explosion 1_6.png",
           "name": "Explosion 1_6.png"
         }
+      },
+      {
+        "file": "assets/Gun 5.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Western FPS 2D/Sound/11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+          "name": "gdevelop-asset-store"
+        }
+      },
+      {
+        "file": "3_focus_points.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "3_focus_points.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
