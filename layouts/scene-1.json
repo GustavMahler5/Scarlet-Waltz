@@ -133,6 +133,10 @@
         {
           "type": "number",
           "value": 1
+        },
+        {
+          "type": "number",
+          "value": 2
         }
       ]
     }
@@ -177,13 +181,14 @@
       "depth": 64,
       "height": 32,
       "keepRatio": true,
-      "layer": "",
+      "layer": "UI",
       "name": "HealthBar",
+      "opacity": 100,
       "persistentUuid": "8a00272a-5d87-41b4-a48c-f42a8d87270b",
       "width": 192,
       "x": 32,
       "y": 672,
-      "zOrder": 7,
+      "zOrder": 100,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -193,13 +198,14 @@
       "customSize": false,
       "height": 0,
       "keepRatio": true,
-      "layer": "",
+      "layer": "UI",
       "name": "NewText",
+      "opacity": 100,
       "persistentUuid": "f57a6944-edd7-459a-a66a-d45620f81581",
       "width": 0,
       "x": 33,
       "y": 640,
-      "zOrder": 8,
+      "zOrder": 100,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -243,13 +249,14 @@
       "depth": 64,
       "height": 32,
       "keepRatio": true,
-      "layer": "",
+      "layer": "UI",
       "name": "BossHealth",
+      "opacity": 100,
       "persistentUuid": "17018e24-59e7-49c0-94ae-886d2131eae4",
       "width": 288,
       "x": 480,
       "y": 32,
-      "zOrder": 9,
+      "zOrder": 100,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -5731,6 +5738,227 @@
               ]
             }
           ]
+        },
+        {
+          "aiGeneratedEventId": "01KAFFAK0CTP2CJTQK0B8Q5APP",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "firingPatternPhaseTwo[Variable(PatternIndex)]",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "phaseNumber",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "FiringPatternFinished",
+                "true",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentSpiralAngle",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "FiringPatternFinished",
+                "False",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatternSwitchInterval",
+                "=",
+                "5"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01KAFFAK0CTP2CJTQK0B8Q5APP",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "firingPatternPhaseTwo[Variable(PatternIndex)]",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::IsReadyToShoot"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "phaseNumber",
+                "=",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                "=",
+                "36",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::SetFiringArcOp"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                "=",
+                "360",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::Fire"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "FireBullet",
+                "Dino_Vita.CenterX()",
+                "Dino_Vita.CenterY()",
+                "EnemyBullet",
+                "CurrentSpiralAngle",
+                "160",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentSpiralAngle",
+                "+",
+                "12"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "dinoMoving",
+                "False",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "NewText",
+                "Text",
+                "=",
+                "\"Touhou Spiral\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                "no",
+                "20",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatternSwitchInterval",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::StopTween"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"MoveRight\"",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::StopTween"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"MoveLeft\"",
+                "no"
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
@@ -6434,6 +6662,23 @@
           }
         }
       ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "UI",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
     }
   ],
   "behaviorsSharedData": [
