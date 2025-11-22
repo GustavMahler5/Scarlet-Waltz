@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5843784410740941,
+    "zoomFactor": 0.5290357402156849,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -90,7 +90,23 @@
       "children": [
         {
           "type": "number",
-          "value": 0
+          "value": 1
+        },
+        {
+          "type": "number",
+          "value": 4
+        },
+        {
+          "type": "number",
+          "value": 2
+        },
+        {
+          "type": "number",
+          "value": 3
+        },
+        {
+          "type": "number",
+          "value": 2
         },
         {
           "type": "number",
@@ -106,15 +122,11 @@
         },
         {
           "type": "number",
-          "value": 3
+          "value": 2
         },
         {
           "type": "number",
           "value": 1
-        },
-        {
-          "type": "number",
-          "value": 2
         }
       ]
     },
@@ -137,6 +149,39 @@
         {
           "type": "number",
           "value": 2
+        }
+      ]
+    },
+    {
+      "name": "TurretCreated",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "LenaSpawn",
+      "type": "array",
+      "children": [
+        {
+          "type": "number",
+          "value": 200
+        },
+        {
+          "type": "number",
+          "value": 200
+        }
+      ]
+    },
+    {
+      "name": "MortSpawn",
+      "type": "array",
+      "children": [
+        {
+          "type": "number",
+          "value": 1000
+        },
+        {
+          "type": "number",
+          "value": 200
         }
       ]
     }
@@ -162,13 +207,13 @@
       "angle": 0,
       "customSize": true,
       "depth": 1,
-      "height": 56,
+      "height": 88,
       "keepRatio": true,
       "layer": "",
       "name": "Dino_Vita",
       "persistentUuid": "9f7906b3-48a8-495d-8c99-b7d577c4887e",
-      "width": 96,
-      "x": 576,
+      "width": 160,
+      "x": 544,
       "y": 72,
       "zOrder": 4,
       "numberProperties": [],
@@ -281,10 +326,10 @@
         {
           "name": "FireBullet",
           "type": "FireBullet::FireBullet",
-          "FireCooldown": 0.1,
+          "FireCooldown": 0.05,
           "HasJustFired": false,
           "RotateBullet": true,
-          "FiringArc": 10,
+          "FiringArc": 9,
           "BulletQuantity": 3,
           "AngleVariance": 0,
           "BulletSpeedVariance": 0,
@@ -314,7 +359,7 @@
           "Health": 1000,
           "CurrentHealth": 0,
           "MaxHealth": 1000,
-          "DamageCooldown": 0.3,
+          "DamageCooldown": 0.2,
           "AllowOverHealing": false,
           "IsHealthJustDamaged": false,
           "DamageToBeApplied": 0,
@@ -4388,6 +4433,2167 @@
         "BarLeftPadding": 10,
         "PreviousHighValueDuration": 0
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "9f4a1853638b034e9f200735bbe88d60110ced10000a88cb5f61bf03f6e5ea41",
+      "name": "Dino_Lena",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "FireBullet",
+          "type": "FireBullet::FireBullet",
+          "FireCooldown": 0.1,
+          "HasJustFired": false,
+          "RotateBullet": true,
+          "FiringArc": 180,
+          "BulletQuantity": 8,
+          "AngleVariance": 0,
+          "BulletSpeedVariance": 0,
+          "AmmoQuantity": 0,
+          "ShotsPerReload": 0,
+          "ReloadDuration": 1,
+          "MaxAmmo": 0,
+          "ShotsBeforeNextReload": 0,
+          "TotalShotsFired": 0,
+          "TotalBulletsCreated": 0,
+          "StartingAmmo": 0,
+          "TotalReloadsCompleted": 0,
+          "UnlimitedAmmo": true,
+          "ReloadInProgress": false,
+          "HeatIncreasePerShot": 0,
+          "HeatLevel": 0,
+          "AutomaticReloading": true,
+          "OverheatDuration": 0,
+          "LinearCoolingRate": 0.1,
+          "ExponentialCoolingRate": 0.3,
+          "BulletLayer": "",
+          "RandomizedAngle": 0
+        },
+        {
+          "name": "Health",
+          "type": "Health::Health",
+          "Health": 20000,
+          "CurrentHealth": 0,
+          "MaxHealth": 20000,
+          "DamageCooldown": 0,
+          "AllowOverHealing": false,
+          "IsHealthJustDamaged": false,
+          "DamageToBeApplied": 0,
+          "HitAtLeastOnce": false,
+          "ChanceToDodge": 0,
+          "IsJustDodged": false,
+          "HealToBeApplied": 0,
+          "HealthRegenRate": 0,
+          "HealthRegenDelay": 0,
+          "IsJustHealed": false,
+          "CurrentShieldPoints": 2.0247e-320,
+          "MaxShieldPoints": 0,
+          "ShieldDuration": 5,
+          "ShieldRegenRate": 0,
+          "BlockExcessDamage": false,
+          "ShieldRegenDelay": 0,
+          "IsShieldJustDamaged": false,
+          "ShieldDamageTaken": 2.0247e-320,
+          "FlatDamageReduction": 0,
+          "PercentDamageReduction": 0
+        },
+        {
+          "name": "RepeatTimer",
+          "type": "RepeatEveryXSeconds::RepeatTimer",
+          "TimerName": "MyTimer",
+          "TimerLength": 1,
+          "Limit": -1,
+          "Counter": 0
+        },
+        {
+          "name": "TopDownMovement",
+          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
+          "acceleration": 15000,
+          "allowDiagonals": true,
+          "angleOffset": 0,
+          "angularMaxSpeed": 180,
+          "customIsometryAngle": 30,
+          "deceleration": 800,
+          "ignoreDefaultControls": false,
+          "maxSpeed": 500,
+          "movementAngleOffset": 0,
+          "rotateObject": true,
+          "useLegacyTurnBack": false,
+          "viewpoint": "TopDown"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Idle",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.125,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Idle_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Idle_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Idle_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Idle_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Crouch",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Crouch.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hurt",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.125,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Hurt_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Hurt_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Hurt_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Hurt_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kick",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.1667,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Kick_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Kick_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Kick_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Move",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.0833,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Move_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Move_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Move_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Move_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Move_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Move_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sneak",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.0833,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Sneak_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Sneak_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Sneak_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Sneak_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Sneak_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Lena_Sneak_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 4,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 4
+                      },
+                      {
+                        "x": 19,
+                        "y": 21
+                      },
+                      {
+                        "x": 4,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "3fb273ffe77ca5ae776a6e86cde912815bac35d53e5cbfb869940edd534dee97",
+      "name": "Dino_Mort",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "FireBullet",
+          "type": "FireBullet::FireBullet",
+          "FireCooldown": 0.1,
+          "HasJustFired": false,
+          "RotateBullet": true,
+          "FiringArc": 180,
+          "BulletQuantity": 8,
+          "AngleVariance": 0,
+          "BulletSpeedVariance": 0,
+          "AmmoQuantity": 0,
+          "ShotsPerReload": 0,
+          "ReloadDuration": 1,
+          "MaxAmmo": 0,
+          "ShotsBeforeNextReload": 0,
+          "TotalShotsFired": 0,
+          "TotalBulletsCreated": 0,
+          "StartingAmmo": 0,
+          "TotalReloadsCompleted": 0,
+          "UnlimitedAmmo": true,
+          "ReloadInProgress": false,
+          "HeatIncreasePerShot": 0,
+          "HeatLevel": 0,
+          "AutomaticReloading": true,
+          "OverheatDuration": 0,
+          "LinearCoolingRate": 0.1,
+          "ExponentialCoolingRate": 0.3,
+          "BulletLayer": "",
+          "RandomizedAngle": 0
+        },
+        {
+          "name": "Health",
+          "type": "Health::Health",
+          "Health": 20000,
+          "CurrentHealth": 0,
+          "MaxHealth": 20000,
+          "DamageCooldown": 0,
+          "AllowOverHealing": false,
+          "IsHealthJustDamaged": false,
+          "DamageToBeApplied": 0,
+          "HitAtLeastOnce": false,
+          "ChanceToDodge": 0,
+          "IsJustDodged": false,
+          "HealToBeApplied": 0,
+          "HealthRegenRate": 0,
+          "HealthRegenDelay": 0,
+          "IsJustHealed": false,
+          "CurrentShieldPoints": 2.0247e-320,
+          "MaxShieldPoints": 0,
+          "ShieldDuration": 5,
+          "ShieldRegenRate": 0,
+          "BlockExcessDamage": false,
+          "ShieldRegenDelay": 0,
+          "IsShieldJustDamaged": false,
+          "ShieldDamageTaken": 2.0247e-320,
+          "FlatDamageReduction": 0,
+          "PercentDamageReduction": 0
+        },
+        {
+          "name": "RepeatTimer",
+          "type": "RepeatEveryXSeconds::RepeatTimer",
+          "TimerName": "MyTimer",
+          "TimerLength": 1,
+          "Limit": -1,
+          "Counter": 0
+        },
+        {
+          "name": "TopDownMovement",
+          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
+          "acceleration": 15000,
+          "allowDiagonals": true,
+          "angleOffset": 0,
+          "angularMaxSpeed": 180,
+          "customIsometryAngle": 30,
+          "deceleration": 800,
+          "ignoreDefaultControls": false,
+          "maxSpeed": 500,
+          "movementAngleOffset": 0,
+          "rotateObject": true,
+          "useLegacyTurnBack": false,
+          "viewpoint": "TopDown"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Idle",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.125,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Idle_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Idle_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Idle_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Idle_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Crouch",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Crouch.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hurt",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.125,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Hurt_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Hurt_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Hurt_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Hurt_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kick",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.1667,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Kick_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Kick_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Kick_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Move",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.0833,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Move_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Move_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Move_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Move_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Move_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Move_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sneak",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.0833,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Sneak_1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Sneak_2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Sneak_3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Sneak_4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Sneak_5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Dino Mort_Sneak_6.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 6,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 21
+                      },
+                      {
+                        "x": 6,
+                        "y": 21
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "8b8be7b7b8b7668239853688d572407c519b5f1007976f5b6fce1245fccef8bd",
+      "name": "SupportBoss",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "FireBullet",
+          "type": "FireBullet::FireBullet",
+          "FireCooldown": 0.1,
+          "HasJustFired": false,
+          "RotateBullet": true,
+          "FiringArc": 45,
+          "BulletQuantity": 1,
+          "AngleVariance": 0,
+          "BulletSpeedVariance": 0,
+          "AmmoQuantity": 0,
+          "ShotsPerReload": 0,
+          "ReloadDuration": 1,
+          "MaxAmmo": 0,
+          "ShotsBeforeNextReload": 0,
+          "TotalShotsFired": 0,
+          "TotalBulletsCreated": 0,
+          "StartingAmmo": 0,
+          "TotalReloadsCompleted": 0,
+          "UnlimitedAmmo": true,
+          "ReloadInProgress": false,
+          "HeatIncreasePerShot": 0,
+          "HeatLevel": 0,
+          "AutomaticReloading": true,
+          "OverheatDuration": 0,
+          "LinearCoolingRate": 0.1,
+          "ExponentialCoolingRate": 0.3,
+          "BulletLayer": "",
+          "RandomizedAngle": 0
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Bolt Yellow Powerup.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 34,
+                        "y": 0
+                      },
+                      {
+                        "x": 34,
+                        "y": 33
+                      },
+                      {
+                        "x": 0,
+                        "y": 33
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -4446,6 +6652,15 @@
       },
       {
         "objectName": "Explosion_1"
+      },
+      {
+        "objectName": "Dino_Lena"
+      },
+      {
+        "objectName": "Dino_Mort"
+      },
+      {
+        "objectName": "SupportBoss"
       }
     ]
   },
@@ -4542,6 +6757,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Enemy Movement",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -4786,6 +7002,34 @@
                 "=",
                 "mod((PatternIndex + 1), VariableChildCount(firingPatternPhaseOne))"
               ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Dino_Lena",
+                "FireBullet"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Dino_Mort",
+                "FireBullet"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "TurretCreated",
+                "False",
+                ""
+              ]
             }
           ]
         },
@@ -4852,755 +7096,132 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
-          "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "firingPatternPhaseOne[Variable(PatternIndex)]",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::IsReadyToShoot"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "phaseNumber",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "14",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetFiringArcOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "150",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "Dino_Vita.CenterX()",
-                "Dino_Vita.CenterY()",
-                "EnemyBullet",
-                "90",
-                "180",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetCooldownOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "0.1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanObjectVariable"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "dinoMoving",
-                "True",
-                "True"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NewText",
-                "Text",
-                "=",
-                "\"Pattern 1\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                "no",
-                "20",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatternSwitchInterval",
-                "=",
-                "0.5"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "firingPatternPhaseOne[Variable(PatternIndex)]",
-                "=",
-                "2"
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::IsReadyToShoot"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "phaseNumber",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "9",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetFiringArcOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "150",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "Dino_Vita.CenterX()",
-                "Dino_Vita.CenterY()",
-                "EnemyBullet3",
-                "85",
-                "180",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetCooldownOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "0.1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanObjectVariable"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "dinoMoving",
-                "True",
-                "True"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NewText",
-                "Text",
-                "=",
-                "\"Pattern 2\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                "",
-                "20",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatternSwitchInterval",
-                "=",
-                "0.5"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "firingPatternPhaseOne[Variable(PatternIndex)]",
-                "=",
-                "3"
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::IsReadyToShoot"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "phaseNumber",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "64",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetFiringArcOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "360",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "Dino_Vita.CenterX()",
-                "Dino_Vita.CenterY()",
-                "EnemyBullet3",
-                "CurrentSpiralAngle",
-                "100",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetCooldownOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "0.3",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanObjectVariable"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "dinoMoving",
-                "False",
-                "False"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::StopTween"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "Tween",
-                "\"MoveRight\"",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::StopTween"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "Tween",
-                "\"MoveLeft\"",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NewText",
-                "Text",
-                "=",
-                "\"Pattern 3\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                "",
-                "20",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatternSwitchInterval",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "CurrentSpiralAngle",
-                "+",
-                "25"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KAEN88J53YEA80GJ50797MTY",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "firingPatternPhaseTwo[PatternIndex]",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::IsReadyToShoot"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "phaseNumber",
-                "=",
-                "2"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "14",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetFiringArcOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "360",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetCooldownOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "0.05",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "Dino_Vita.CenterX()",
-                "Dino_Vita.CenterY()",
-                "EnemyBullet",
-                "CurrentSpiralAngle",
-                "125",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "CurrentSpiralAngle",
-                "+",
-                "20"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanObjectVariable"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "dinoMoving",
-                "False",
-                "False"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NewText",
-                "Text",
-                "=",
-                "\"Spiral Flower Pattern\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                "no",
-                "20",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatternSwitchInterval",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::StopTween"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "Tween",
-                "\"MoveRight\"",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::StopTween"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "Tween",
-                "\"MoveLeft\"",
-                "no"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "firingPatternPhaseTwo[Variable(PatternIndex)]",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::IsReadyToShoot"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "phaseNumber",
-                "=",
-                "2"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "64",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetCooldownOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "0.5",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "Dino_Vita.CenterX()",
-                "Dino_Vita.CenterY()",
-                "EnemyBullet2",
-                "90",
-                "250",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanObjectVariable"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "dinoMoving",
-                "True",
-                "True"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::ResumeTween"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "Tween",
-                "\"MoveRight\""
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::ResumeTween"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "Tween",
-                "\"MoveLeft\""
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NewText",
-                "Text",
-                "=",
-                "\"Pattern Flower\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
-                "no",
-                "20",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatternSwitchInterval",
-                "=",
-                "2"
-              ]
-            }
-          ],
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Phase 1",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "disabled": true,
-              "type": "BuiltinCommonInstructions::Repeat",
-              "repeatExpression": "12",
-              "conditions": [],
+              "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseOne[Variable(PatternIndex)]",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
               "actions": [
                 {
                   "type": {
-                    "value": "SetNumberVariable"
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
                   },
                   "parameters": [
-                    "LoopIndex",
-                    "+",
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "14",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "150",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet",
+                    "90",
+                    "180",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "True",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Pattern 1\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "no",
+                    "20",
                     "1"
                   ]
                 },
@@ -5609,368 +7230,1317 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "LoopIndex",
+                    "PatternSwitchInterval",
                     "=",
                     "1"
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+            },
             {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "firingPatternPhaseOne[Variable(PatternIndex)]",
-                "=",
-                "2"
+              "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseOne[Variable(PatternIndex)]",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "9",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "150",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet",
+                    "85",
+                    "180",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "True",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Pattern 2\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "",
+                    "20",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "1"
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "FireBullet::FireBullet::IsReadyToShoot"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                ""
+              "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseOne[Variable(PatternIndex)]",
+                    "=",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "64",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "360",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet3",
+                    "CurrentSpiralAngle",
+                    "100",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.3",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "False",
+                    "False"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::StopTween"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveRight\"",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::StopTween"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveLeft\"",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Pattern 3\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "",
+                    "20",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentSpiralAngle",
+                    "+",
+                    "25"
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "phaseNumber",
-                "=",
-                "2"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseOne[Variable(PatternIndex)]",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "TurretCreated",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Dino_Lena",
+                        "LenaSpawn[0]",
+                        "LenaSpawn[1]",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Explosion_1",
+                        "Dino_Lena.CenterX()",
+                        "Dino_Lena.CenterY()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Dino_Mort",
+                        "MortSpawn[0]",
+                        "MortSpawn[1]",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "Explosion_1",
+                        "Dino_Mort.CenterX()",
+                        "Dino_Mort.CenterY()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetCooldownOp"
+                      },
+                      "parameters": [
+                        "Dino_Mort",
+                        "FireBullet",
+                        "=",
+                        "0",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetCooldownOp"
+                      },
+                      "parameters": [
+                        "Dino_Lena",
+                        "FireBullet",
+                        "=",
+                        "0",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "TurretCreated",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "3_focus_points.mp3",
+                        "",
+                        "20",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "LenaSpawn[0]",
+                        "+",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MortSpawn[0]",
+                        "-",
+                        "100"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::IsReadyToShoot"
+                      },
+                      "parameters": [
+                        "Dino_Mort",
+                        "FireBullet",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "TurretCreated",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                      },
+                      "parameters": [
+                        "Dino_Mort",
+                        "FireBullet",
+                        "=",
+                        "8",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "Dino_Mort",
+                        "FireBullet",
+                        "Dino_Mort.CenterX()",
+                        "Dino_Mort.CenterY()",
+                        "EnemyBullet4",
+                        "135",
+                        "400",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetCooldownOp"
+                      },
+                      "parameters": [
+                        "Dino_Mort",
+                        "FireBullet",
+                        "=",
+                        "0.01",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::IsReadyToShoot"
+                      },
+                      "parameters": [
+                        "Dino_Lena",
+                        "FireBullet",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "TurretCreated",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                      },
+                      "parameters": [
+                        "Dino_Lena",
+                        "FireBullet",
+                        "=",
+                        "8",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "Dino_Lena",
+                        "FireBullet",
+                        "Dino_Lena.CenterX()",
+                        "Dino_Lena.CenterY()",
+                        "EnemyBullet4",
+                        "45",
+                        "400",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetCooldownOp"
+                      },
+                      "parameters": [
+                        "Dino_Lena",
+                        "FireBullet",
+                        "=",
+                        "0.01",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "PatternSwitchInterval",
+                        "=",
+                        "0.4"
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "8",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetFiringArcOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "100",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "Dino_Vita.CenterX()",
-                "Dino_Vita.CenterY()",
-                "EnemyBullet",
-                "90",
-                "180",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetCooldownOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "0.1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanObjectVariable"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "dinoMoving",
-                "True",
-                "True"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NewText",
-                "Text",
-                "=",
-                "\"Pattern 2\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                "",
-                "20",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatternSwitchInterval",
-                "=",
-                "2"
-              ]
-            }
-          ]
+          "parameters": []
         },
         {
-          "aiGeneratedEventId": "01KAFFAK0CTP2CJTQK0B8Q5APP",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Phase 2",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "firingPatternPhaseTwo[Variable(PatternIndex)]",
-                "=",
-                "2"
+              "aiGeneratedEventId": "01KAEN88J53YEA80GJ50797MTY",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseTwo[PatternIndex]",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "14",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "360",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.05",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet",
+                    "CurrentSpiralAngle",
+                    "125",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentSpiralAngle",
+                    "+",
+                    "20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "False",
+                    "False"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Spiral Flower Pattern\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "no",
+                    "20",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::StopTween"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveRight\"",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::StopTween"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveLeft\"",
+                    "no"
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "phaseNumber",
-                "=",
-                "2"
+              "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseTwo[Variable(PatternIndex)]",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "64",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.5",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet2",
+                    "90",
+                    "250",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "True",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::ResumeTween"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveRight\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::ResumeTween"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveLeft\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Pattern Flower\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+                    "no",
+                    "20",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Repeat",
+                  "repeatExpression": "12",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "LoopIndex",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "LoopIndex",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "FiringPatternFinished",
-                "true",
-                ""
+              "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseOne[Variable(PatternIndex)]",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "8",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "100",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet",
+                    "90",
+                    "180",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "True",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Pattern 2\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "",
+                    "20",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "2"
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01KAFFAK0CTP2CJTQK0B8Q5APP",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseTwo[Variable(PatternIndex)]",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "FiringPatternFinished",
+                    "true",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentSpiralAngle",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "FiringPatternFinished",
+                    "False",
+                    "False"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "5"
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01KAFFAK0CTP2CJTQK0B8Q5APP",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseTwo[Variable(PatternIndex)]",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "36",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "360",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet",
+                    "CurrentSpiralAngle",
+                    "160",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentSpiralAngle",
+                    "+",
+                    "12"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "False",
+                    "False"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Touhou Spiral\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "no",
+                    "20",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::StopTween"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveRight\"",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::StopTween"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveLeft\"",
+                    "no"
+                  ]
+                }
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "CurrentSpiralAngle",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "FiringPatternFinished",
-                "False",
-                "False"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatternSwitchInterval",
-                "=",
-                "5"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01KAFFAK0CTP2CJTQK0B8Q5APP",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "firingPatternPhaseTwo[Variable(PatternIndex)]",
-                "=",
-                "2"
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::IsReadyToShoot"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "phaseNumber",
-                "=",
-                "2"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "36",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::SetFiringArcOp"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "=",
-                "360",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "FireBullet",
-                "Dino_Vita.CenterX()",
-                "Dino_Vita.CenterY()",
-                "EnemyBullet",
-                "CurrentSpiralAngle",
-                "160",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "CurrentSpiralAngle",
-                "+",
-                "12"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanObjectVariable"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "dinoMoving",
-                "False",
-                "False"
-              ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "NewText",
-                "Text",
-                "=",
-                "\"Touhou Spiral\""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                "no",
-                "20",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatternSwitchInterval",
-                "=",
-                "5"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::StopTween"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "Tween",
-                "\"MoveRight\"",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::StopTween"
-              },
-              "parameters": [
-                "Dino_Vita",
-                "Tween",
-                "\"MoveLeft\"",
-                "no"
-              ]
-            }
-          ]
+          "parameters": []
         }
       ],
       "parameters": []
@@ -6222,7 +8792,7 @@
           "parameters": [
             "Dino_Vita",
             "Health",
-            "10",
+            "50",
             "",
             "",
             ""
@@ -6605,6 +9175,107 @@
           "parameters": [
             "Explosion_1",
             "Explosion_1"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01KAPE68TZ74FBZRK3TBY3HQ2M",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::HasJustFired"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "FireBullet",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"SupportBossWindow\""
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"SupportBossShot\""
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01KAPE68TZ74FBZRK3TBY3HQ2M",
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"SupportBossWindow\"",
+            "<",
+            "3"
+          ]
+        },
+        {
+          "type": {
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"SupportBossShot\"",
+            ">",
+            "0.25"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"SupportBossShot\""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "SupportBoss",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::FireTowardObject"
+              },
+              "parameters": [
+                "SupportBoss",
+                "FireBullet",
+                "SupportBoss.X()",
+                "SupportBoss.Y()",
+                "EnemyBullet",
+                "Pancakes",
+                "300",
+                ""
+              ]
+            }
           ]
         }
       ]

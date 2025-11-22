@@ -2144,6 +2144,30 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Gold things.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gold things.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter/PNG/Power-ups/0caa77c23f4a8855cdeae6b40102bf52b547d3554ca0998c76cff63f7d6db3a0_Gold things.png",
+          "name": "Gold things.png"
+        }
+      },
+      {
+        "file": "assets/Bolt Yellow Powerup.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Bolt Yellow Powerup.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Space Shooter/PNG/Power-ups/4f19d1253c602cac102cdca9f15a858d57b0efc18b098ae2c0e6747a3dab4b88_Bolt Yellow Powerup.png",
+          "name": "Bolt Yellow Powerup.png"
+        }
       }
     ],
     "resourceFolders": []
