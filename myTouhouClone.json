@@ -7,7 +7,7 @@
     "revision": 0
   },
   "properties": {
-    "adaptGameResolutionAtRuntime": true,
+    "adaptGameResolutionAtRuntime": false,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
     "folderProject": true,
@@ -16,7 +16,7 @@
     "pixelsRounding": false,
     "projectUuid": "dab62605-1dde-4d26-9064-db7f57dff3c0",
     "scaleMode": "linear",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "",
     "templateSlug": "",
     "version": "1.0.0",
     "name": "myTouhouClone",
@@ -3091,6 +3091,21 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Open Font License/ecf7f6cb89e16c44e3b5a9c8abb703ba6cbc52eb8529353125f4f5caed404144_Silkscreen-Bold.ttf",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "file": "videoplayback.mp4",
+        "kind": "video",
+        "metadata": "",
+        "name": "videoplayback.mp4",
+        "userAdded": false
+      },
+      {
+        "file": "unnamed (1).jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "unnamed (1).jpg",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []

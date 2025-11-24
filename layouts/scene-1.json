@@ -1,13 +1,13 @@
 {
-  "b": 255,
+  "b": 0,
   "disableInputWhenNotFocused": true,
   "mangledName": "scene_321",
   "name": "scene 1",
-  "r": 255,
+  "r": 0,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
   "title": "",
-  "v": 255,
+  "v": 0,
   "uiSettings": {
     "grid": true,
     "gridType": "rectangular",
@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.6244537826600003,
+    "zoomFactor": 0.5117784035210191,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -330,8 +330,8 @@
       "name": "Pancakes",
       "persistentUuid": "09e8ba66-6d47-428c-a3be-bd54b2087364",
       "width": 32,
-      "x": 416,
-      "y": 1056,
+      "x": 368,
+      "y": 1168,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -347,7 +347,7 @@
       "name": "Dino_Vita",
       "persistentUuid": "9f7906b3-48a8-495d-8c99-b7d577c4887e",
       "width": 128,
-      "x": 416,
+      "x": 352,
       "y": 139,
       "zOrder": 104,
       "numberProperties": [],
@@ -365,8 +365,8 @@
       "opacity": 100,
       "persistentUuid": "8a00272a-5d87-41b4-a48c-f42a8d87270b",
       "width": 192,
-      "x": 64,
-      "y": 1120,
+      "x": 32,
+      "y": 1216,
       "zOrder": 100,
       "numberProperties": [],
       "stringProperties": [],
@@ -382,42 +382,9 @@
       "opacity": 100,
       "persistentUuid": "f57a6944-edd7-459a-a66a-d45620f81581",
       "width": 0,
-      "x": 96,
-      "y": 1088,
+      "x": 33,
+      "y": 1184,
       "zOrder": 100,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 720,
-      "keepRatio": true,
-      "layer": "",
-      "name": "NewBackground",
-      "persistentUuid": "7e1eb1ea-be2c-4399-98b1-92fb21346173",
-      "width": 1280,
-      "x": -32,
-      "y": 16,
-      "zOrder": -2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 1280,
-      "keepRatio": true,
-      "layer": "",
-      "name": "borderBackground",
-      "persistentUuid": "65473656-6e80-4d6d-8c73-330655db77e0",
-      "width": 720,
-      "x": 0,
-      "y": 0,
-      "zOrder": -1,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -433,8 +400,8 @@
       "opacity": 100,
       "persistentUuid": "17018e24-59e7-49c0-94ae-886d2131eae4",
       "width": 256,
-      "x": 288,
-      "y": 64,
+      "x": 32,
+      "y": 32,
       "zOrder": 100,
       "numberProperties": [],
       "stringProperties": [],
@@ -450,9 +417,43 @@
       "name": "vortex",
       "persistentUuid": "eff1e4bc-5385-4d22-ba44-039d80e27fe4",
       "width": 196,
-      "x": 316,
+      "x": 252,
       "y": 64,
       "zOrder": 103,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 1280,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Background",
+      "persistentUuid": "1c610c17-97a6-48e1-965d-1d174c2b6cc2",
+      "width": 1568,
+      "x": -832,
+      "y": 0,
+      "zOrder": -13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 1280,
+      "keepRatio": true,
+      "layer": "",
+      "name": "borderBackground",
+      "persistentUuid": "6125f3a6-3e89-415f-b12a-8fe1213c883c",
+      "width": 736,
+      "x": 0,
+      "y": 0,
+      "zOrder": -12,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -474,19 +475,25 @@
       ],
       "effects": [
         {
-          "effectType": "Shockwave",
+          "effectType": "Brightness",
           "name": "Effect",
           "doubleParameters": {
-            "amplitude": 50,
-            "brightness": 1,
-            "centerX": 0.5,
-            "centerY": 0.5,
-            "radius": 0,
-            "speed": 500,
-            "time": 0,
-            "wavelength": 200
+            "brightness": 0.7
           },
           "stringParameters": {},
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Glow",
+          "name": "Effect2",
+          "doubleParameters": {
+            "distance": 15,
+            "innerStrength": 0.5,
+            "outerStrength": 1
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
           "booleanParameters": {}
         }
       ],
@@ -647,7 +654,17 @@
           "value": true
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Effect2",
+          "doubleParameters": {
+            "brightness": 0.8
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "FireBullet",
@@ -2878,7 +2895,29 @@
           "value": 0
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Effect",
+          "doubleParameters": {
+            "brightness": 0.8
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "MotionBlur",
+          "name": "Effect2",
+          "doubleParameters": {
+            "kernelSize": 5,
+            "offset": 0,
+            "velocityX": 0,
+            "velocityY": 0
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "DestroyOutside",
@@ -4819,7 +4858,17 @@
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Effect",
+          "doubleParameters": {
+            "brightness": 0.8
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "DestroyOutside",
@@ -10336,6 +10385,85 @@
           ]
         }
       ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Background",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "KawaseBlur",
+          "name": "Effect",
+          "doubleParameters": {
+            "blur": 2,
+            "padding": 0,
+            "pixelizeX": 1,
+            "pixelizeY": 1,
+            "quality": 3
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "unnamed (1).jpg",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 3408,
+                        "y": 0
+                      },
+                      {
+                        "x": 3408,
+                        "y": 3027
+                      },
+                      {
+                        "x": 0,
+                        "y": 3027
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -10412,6 +10540,9 @@
       },
       {
         "objectName": "vortex"
+      },
+      {
+        "objectName": "Background"
       }
     ]
   },
@@ -10513,6 +10644,42 @@
             "Sticker",
             "Dino_Vita",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+          },
+          "parameters": [
+            "Background",
+            "Tween",
+            "\"videotween\"",
+            "1000",
+            "\"linear\"",
+            "60",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "OpacityCapability::OpacityBehavior::SetValue"
+          },
+          "parameters": [
+            "Background",
+            "Opacity",
+            "=",
+            "50"
+          ]
+        },
+        {
+          "type": {
+            "value": "OpacityCapability::OpacityBehavior::SetValue"
+          },
+          "parameters": [
+            "borderBackground",
+            "Opacity",
+            "=",
+            "0"
           ]
         }
       ]
@@ -14688,26 +14855,27 @@
                 },
                 {
                   "type": {
-                    "value": "TiledSpriteObject::SetColor"
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
                   },
                   "parameters": [
                     "borderBackground",
-                    "\"178;233;170\""
+                    "Opacity",
+                    "=",
+                    "150"
                   ]
                 },
                 {
                   "type": {
-                    "value": "Tween::TweenBehavior::AddObjectColorTween2"
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
                   },
                   "parameters": [
                     "borderBackground",
                     "Tween",
-                    "\"TweenColor\"",
-                    "\"216;240;246\"",
+                    "\"TweenOpacity\"",
+                    "0",
                     "\"linear\"",
                     "1",
-                    "",
-                    "\"linear\""
+                    ""
                   ]
                 }
               ]
