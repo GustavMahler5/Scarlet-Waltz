@@ -10702,6 +10702,18 @@
             "=",
             "SceneWindowWidth()*(7/8)"
           ]
+        },
+        {
+          "type": {
+            "value": "PlayMusic"
+          },
+          "parameters": [
+            "",
+            "[作業用BGM] デザイアドリーム [東方神霊廟_スタッフロール] [r6TPd5PsSxE].mp3",
+            "no",
+            "50",
+            "1"
+          ]
         }
       ]
     },
@@ -11306,7 +11318,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 1",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -13231,8 +13242,8 @@
                       "parameters": [
                         "",
                         "Dino_Lena",
-                        "LenaSpawn[0]",
-                        "LenaSpawn[1]",
+                        "LenaSpawnOriginal[0]",
+                        "LenaSpawnOriginal[1]",
                         ""
                       ]
                     },
@@ -13255,8 +13266,8 @@
                       "parameters": [
                         "",
                         "Dino_Mort",
-                        "MortSpawn[0]",
-                        "MortSpawn[1]",
+                        "MortSpawnOriginal[0]",
+                        "MortSpawnOriginal[1]",
                         ""
                       ]
                     },
@@ -14100,8 +14111,8 @@
                       "parameters": [
                         "",
                         "Dino_Lena",
-                        "LenaSpawn[0]",
-                        "LenaSpawn[1] + 1200",
+                        "LenaSpawnOriginal[0]",
+                        "LenaSpawnOriginal[1] + 1200",
                         ""
                       ]
                     },
@@ -14112,8 +14123,8 @@
                       "parameters": [
                         "",
                         "Dino_Mort",
-                        "MortSpawn[0]",
-                        "MortSpawn[1] + 1200",
+                        "MortSpawnOriginal[0]",
+                        "MortSpawnOriginal[1] + 1200",
                         ""
                       ]
                     },

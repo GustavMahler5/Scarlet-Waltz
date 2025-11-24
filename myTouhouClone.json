@@ -3106,6 +3106,16 @@
         "name": "unnamed (1).jpg",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "[作業用BGM] デザイアドリーム [東方神霊廟_スタッフロール] [r6TPd5PsSxE].mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "[作業用BGM] デザイアドリーム [東方神霊廟_スタッフロール] [r6TPd5PsSxE].mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
