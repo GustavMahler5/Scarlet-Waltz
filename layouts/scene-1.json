@@ -9,7 +9,7 @@
   "title": "",
   "v": 0,
   "uiSettings": {
-    "grid": true,
+    "grid": false,
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
@@ -17,18 +17,13 @@
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": true,
-    "zoomFactor": 0.5117784035210191,
+    "snap": false,
+    "zoomFactor": 0.6040838749988892,
     "windowMask": false,
     "selectedLayer": ""
   },
   "objectsGroups": [],
   "variables": [
-    {
-      "name": "PrevCameraY",
-      "type": "number",
-      "value": 0
-    },
     {
       "name": "Health",
       "type": "number",
@@ -38,16 +33,6 @@
       "name": "LoopIndex",
       "type": "number",
       "value": 0
-    },
-    {
-      "name": "WaveAttackCooldown",
-      "type": "number",
-      "value": 2
-    },
-    {
-      "name": "WaveAttackActive",
-      "type": "boolean",
-      "value": false
     },
     {
       "name": "CurrentSpiralAngle",
@@ -62,12 +47,12 @@
     {
       "name": "DinoVitaInitialY",
       "type": "number",
-      "value": 0
+      "value": 1389
     },
     {
       "name": "DinoVitaInitialX",
       "type": "number",
-      "value": 0
+      "value": 352
     },
     {
       "name": "DinoVitaStartX",
@@ -92,7 +77,7 @@
     {
       "name": "phaseNumber",
       "type": "number",
-      "value": 4
+      "value": 3
     },
     {
       "name": "TurretCreated",
@@ -100,13 +85,12 @@
       "value": false
     },
     {
-      "folded": true,
       "name": "LenaSpawn",
       "type": "array",
       "children": [
         {
           "type": "number",
-          "value": 190
+          "value": 90
         },
         {
           "type": "number",
@@ -115,13 +99,12 @@
       ]
     },
     {
-      "folded": true,
       "name": "LenaSpawnOriginal",
       "type": "array",
       "children": [
         {
           "type": "number",
-          "value": 190
+          "value": 90
         },
         {
           "type": "number",
@@ -130,7 +113,6 @@
       ]
     },
     {
-      "folded": true,
       "name": "MortSpawn",
       "type": "array",
       "children": [
@@ -145,7 +127,6 @@
       ]
     },
     {
-      "folded": true,
       "name": "MortSpawnOriginal",
       "type": "array",
       "children": [
@@ -433,7 +414,7 @@
       "layer": "",
       "name": "Background",
       "persistentUuid": "1c610c17-97a6-48e1-965d-1d174c2b6cc2",
-      "width": 1568,
+      "width": 1555,
       "x": -832,
       "y": 0,
       "zOrder": -13,
@@ -534,7 +515,7 @@
           "Health": 1000,
           "CurrentHealth": 0,
           "MaxHealth": 1000,
-          "DamageCooldown": 0.2,
+          "DamageCooldown": 0.01,
           "AllowOverHealing": false,
           "IsHealthJustDamaged": false,
           "DamageToBeApplied": 0,
@@ -7710,7 +7691,17 @@
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Effect",
+          "doubleParameters": {
+            "brightness": 0.6
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "animations": [
         {
@@ -10595,16 +10586,6 @@
       "actions": [
         {
           "type": {
-            "value": "SetBooleanVariable"
-          },
-          "parameters": [
-            "WaveAttackActive",
-            "False",
-            "False"
-          ]
-        },
-        {
-          "type": {
             "value": "SetNumberVariable"
           },
           "parameters": [
@@ -10654,9 +10635,9 @@
             "Background",
             "Tween",
             "\"videotween\"",
-            "1000",
+            "0",
             "\"linear\"",
-            "60",
+            "20",
             ""
           ]
         },
@@ -10680,6 +10661,112 @@
             "Opacity",
             "=",
             "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "LenaSpawnOriginal[0]",
+            "=",
+            "SceneWindowWidth()/8"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "LenaSpawn[0]",
+            "=",
+            "SceneWindowWidth()/8"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "MortSpawnOriginal[0]",
+            "=",
+            "SceneWindowWidth()*(7/8)"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "MortSpawn[0]",
+            "=",
+            "SceneWindowWidth()*(7/8)"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Background",
+            "Tween",
+            "\"videotween\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "MettreX"
+          },
+          "parameters": [
+            "Background",
+            "=",
+            "-832"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+          },
+          "parameters": [
+            "Background",
+            "Tween",
+            "\"videotween\"",
+            "0",
+            "\"linear\"",
+            "20",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "OpacityCapability::OpacityBehavior::SetValue"
+          },
+          "parameters": [
+            "Background",
+            "Opacity",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+          },
+          "parameters": [
+            "Background",
+            "Tween",
+            "\"tweenopacity\"",
+            "50",
+            "\"linear\"",
+            "1",
+            ""
           ]
         }
       ]
@@ -12588,7 +12675,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "0.05",
+                    "0.01",
                     ""
                   ]
                 },
@@ -12603,7 +12690,7 @@
                     "SceneWindowHeight()/2",
                     "EnemyBullet",
                     "CurrentSpiralAngle",
-                    "300",
+                    "1000",
                     ""
                   ]
                 },
@@ -12614,7 +12701,7 @@
                   "parameters": [
                     "CurrentSpiralAngle",
                     "+",
-                    "0.5"
+                    "0.4"
                   ]
                 },
                 {
@@ -12754,7 +12841,7 @@
                       "parameters": [
                         "",
                         "Dino_Lena",
-                        "LenaSpawn[0] + 300",
+                        "MortSpawn[0] - 100",
                         "LenaSpawn[1]",
                         ""
                       ]
@@ -12766,7 +12853,7 @@
                       "parameters": [
                         "",
                         "Dino_Lena",
-                        "LenaSpawn[0] + 400",
+                        "MortSpawn[0]",
                         "LenaSpawn[1] + 400",
                         ""
                       ]
@@ -12802,7 +12889,7 @@
                       "parameters": [
                         "",
                         "Explosion_1",
-                        "LenaSpawn[0] + 300",
+                        "MortSpawn[0] - 100",
                         "LenaSpawn[1]",
                         ""
                       ]
@@ -12814,7 +12901,7 @@
                       "parameters": [
                         "",
                         "Explosion_1",
-                        "LenaSpawn[0] + 400",
+                        "MortSpawn[0]",
                         "LenaSpawn[1] + 400",
                         ""
                       ]
