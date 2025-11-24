@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.6040838749988892,
+    "zoomFactor": 0.4335774304702394,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -47,7 +47,7 @@
     {
       "name": "DinoVitaInitialY",
       "type": "number",
-      "value": 1389
+      "value": 139
     },
     {
       "name": "DinoVitaInitialX",
@@ -77,7 +77,7 @@
     {
       "name": "phaseNumber",
       "type": "number",
-      "value": 3
+      "value": -1
     },
     {
       "name": "TurretCreated",
@@ -85,6 +85,7 @@
       "value": false
     },
     {
+      "folded": true,
       "name": "LenaSpawn",
       "type": "array",
       "children": [
@@ -99,6 +100,7 @@
       ]
     },
     {
+      "folded": true,
       "name": "LenaSpawnOriginal",
       "type": "array",
       "children": [
@@ -113,6 +115,7 @@
       ]
     },
     {
+      "folded": true,
       "name": "MortSpawn",
       "type": "array",
       "children": [
@@ -127,6 +130,7 @@
       ]
     },
     {
+      "folded": true,
       "name": "MortSpawnOriginal",
       "type": "array",
       "children": [
@@ -226,7 +230,6 @@
       ]
     },
     {
-      "folded": true,
       "name": "firingPatternPhaseFour",
       "type": "array",
       "children": [
@@ -241,17 +244,28 @@
       ]
     },
     {
-      "folded": true,
       "name": "firingPatternPhaseFive",
       "type": "array",
       "children": [
+        {
+          "type": "number",
+          "value": 1
+        },
         {
           "type": "number",
           "value": 0
         },
         {
           "type": "number",
+          "value": 2
+        },
+        {
+          "type": "number",
           "value": 0
+        },
+        {
+          "type": "number",
+          "value": 3
         },
         {
           "type": "number",
@@ -329,26 +343,8 @@
       "persistentUuid": "9f7906b3-48a8-495d-8c99-b7d577c4887e",
       "width": 128,
       "x": 352,
-      "y": 139,
+      "y": -85,
       "zOrder": 104,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 64,
-      "height": 32,
-      "keepRatio": true,
-      "layer": "UI",
-      "name": "HealthBar",
-      "opacity": 100,
-      "persistentUuid": "8a00272a-5d87-41b4-a48c-f42a8d87270b",
-      "width": 192,
-      "x": 32,
-      "y": 1216,
-      "zOrder": 100,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -363,26 +359,8 @@
       "opacity": 100,
       "persistentUuid": "f57a6944-edd7-459a-a66a-d45620f81581",
       "width": 0,
-      "x": 33,
-      "y": 1184,
-      "zOrder": 100,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "depth": 64,
-      "height": 32,
-      "keepRatio": true,
-      "layer": "UI",
-      "name": "BossHealth",
-      "opacity": 100,
-      "persistentUuid": "17018e24-59e7-49c0-94ae-886d2131eae4",
-      "width": 256,
       "x": 32,
-      "y": 32,
+      "y": 1184,
       "zOrder": 100,
       "numberProperties": [],
       "stringProperties": [],
@@ -399,7 +377,7 @@
       "persistentUuid": "eff1e4bc-5385-4d22-ba44-039d80e27fe4",
       "width": 196,
       "x": 252,
-      "y": 64,
+      "y": -160,
       "zOrder": 103,
       "numberProperties": [],
       "stringProperties": [],
@@ -435,6 +413,40 @@
       "x": 0,
       "y": 0,
       "zOrder": -12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 64,
+      "height": 32,
+      "keepRatio": true,
+      "layer": "",
+      "name": "BossHealth",
+      "persistentUuid": "27502356-0064-4015-ba24-4807dbc16638",
+      "width": 224,
+      "x": 32,
+      "y": 32,
+      "zOrder": 105,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 64,
+      "height": 35,
+      "keepRatio": true,
+      "layer": "",
+      "name": "HealthBar",
+      "persistentUuid": "5e0b47a0-e1b5-4a56-9a55-b436eab97e75",
+      "width": 224,
+      "x": 32,
+      "y": 1216,
+      "zOrder": 106,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -680,9 +692,9 @@
         {
           "name": "Health",
           "type": "Health::Health",
-          "Health": 1000,
+          "Health": 10000,
           "CurrentHealth": 0,
-          "MaxHealth": 1000,
+          "MaxHealth": 10000,
           "DamageCooldown": 0,
           "AllowOverHealing": false,
           "IsHealthJustDamaged": false,
@@ -3079,7 +3091,17 @@
           "value": 1000
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Effect",
+          "doubleParameters": {
+            "brightness": 0.7
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "content": {
         "InitialValue": 1000,
@@ -5055,7 +5077,7 @@
       "color": {
         "b": 0,
         "g": 0,
-        "r": 0
+        "r": 116
       },
       "content": {
         "bold": false,
@@ -5077,7 +5099,7 @@
         "verticalTextAlignment": "top",
         "characterSize": 20,
         "lineHeight": 0,
-        "color": "0;0;0"
+        "color": "116;0;0"
       }
     },
     {
@@ -5379,11 +5401,21 @@
           "value": 1000
         }
       ],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Effect",
+          "doubleParameters": {
+            "brightness": 0.7
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [],
       "content": {
-        "InitialValue": 1000,
-        "MaxValue": 1000,
+        "InitialValue": 10000,
+        "MaxValue": 10000,
         "BarTopPadding": 8,
         "BarRightPadding": 10,
         "BarBottomPadding": 8,
@@ -10589,16 +10621,6 @@
             "value": "SetNumberVariable"
           },
           "parameters": [
-            "DinoVitaStartX",
-            "=",
-            "Dino_Vita.X()"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
             "PatternIndex",
             "=",
             "-1"
@@ -10629,6 +10651,16 @@
         },
         {
           "type": {
+            "value": "MettreX"
+          },
+          "parameters": [
+            "Pancakes",
+            "=",
+            "SceneWindowWidth()/2"
+          ]
+        },
+        {
+          "type": {
             "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
           },
           "parameters": [
@@ -10637,7 +10669,7 @@
             "\"videotween\"",
             "0",
             "\"linear\"",
-            "20",
+            "15",
             ""
           ]
         },
@@ -10711,8 +10743,106 @@
             "",
             "[作業用BGM] デザイアドリーム [東方神霊廟_スタッフロール] [r6TPd5PsSxE].mp3",
             "no",
-            "50",
+            "45",
             "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"TweenInitiate\"",
+            "DinoVitaInitialX",
+            "DinoVitaInitialY",
+            "\"linear\"",
+            "7",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Health::Health::SetChanceToDodgeOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Health",
+            "=",
+            "1",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "OpacityCapability::OpacityBehavior::SetValue"
+          },
+          "parameters": [
+            "HealthBar",
+            "Opacity",
+            "=",
+            "200"
+          ]
+        },
+        {
+          "type": {
+            "value": "OpacityCapability::OpacityBehavior::SetValue"
+          },
+          "parameters": [
+            "BossHealth",
+            "Opacity",
+            "=",
+            "200"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Tween::HasFinished"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"TweenInitiate\""
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "-1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "phaseNumber",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "Health::Health::SetChanceToDodgeOp"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Health",
+            "=",
+            "0",
+            ""
           ]
         }
       ]
@@ -11366,7 +11496,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "14",
+                    "18",
                     ""
                   ]
                 },
@@ -11378,7 +11508,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "150",
+                    "340",
                     ""
                   ]
                 },
@@ -11393,7 +11523,7 @@
                     "Dino_Vita.CenterY()",
                     "EnemyBullet",
                     "90",
-                    "180",
+                    "250",
                     ""
                   ]
                 },
@@ -11439,7 +11569,116 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "no",
-                    "3",
+                    "5",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "2"
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet",
+                    "CurrentSpiralAngle2",
+                    "300",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentSpiralAngle2",
+                    "+",
+                    "10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "True",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Pattern 1\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "no",
+                    "5",
                     "1"
                   ]
                 },
@@ -11499,7 +11738,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "9",
+                    "13",
                     ""
                   ]
                 },
@@ -11526,7 +11765,7 @@
                     "Dino_Vita.CenterY()",
                     "EnemyBullet",
                     "85",
-                    "180",
+                    "150",
                     ""
                   ]
                 },
@@ -11538,7 +11777,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "0.1",
+                    "0.001",
                     ""
                   ]
                 },
@@ -11572,7 +11811,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -11659,7 +11898,7 @@
                     "Dino_Vita.CenterY()",
                     "EnemyBullet3",
                     "CurrentSpiralAngle",
-                    "100",
+                    "200",
                     ""
                   ]
                 },
@@ -11727,7 +11966,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -11738,7 +11977,7 @@
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "1"
+                    "1.5"
                   ]
                 },
                 {
@@ -11943,7 +12182,7 @@
                         "Dino_Mort",
                         "FireBullet",
                         "=",
-                        "8",
+                        "5",
                         ""
                       ]
                     },
@@ -11957,7 +12196,7 @@
                         "Dino_Mort.CenterX()",
                         "Dino_Mort.CenterY()",
                         "EnemyBullet4",
-                        "135",
+                        "115",
                         "600",
                         ""
                       ]
@@ -11971,6 +12210,18 @@
                         "FireBullet",
                         "=",
                         "0.01",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetFiringArcOp"
+                      },
+                      "parameters": [
+                        "Dino_Mort",
+                        "FireBullet",
+                        "=",
+                        "30",
                         ""
                       ]
                     }
@@ -12009,7 +12260,7 @@
                         "Dino_Lena",
                         "FireBullet",
                         "=",
-                        "8",
+                        "5",
                         ""
                       ]
                     },
@@ -12023,7 +12274,7 @@
                         "Dino_Lena.CenterX()",
                         "Dino_Lena.CenterY()",
                         "EnemyBullet4",
-                        "45",
+                        "65",
                         "600",
                         ""
                       ]
@@ -12048,6 +12299,18 @@
                         "PatternSwitchInterval",
                         "=",
                         "0.4"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetFiringArcOp"
+                      },
+                      "parameters": [
+                        "Dino_Lena",
+                        "FireBullet",
+                        "=",
+                        "45",
+                        ""
                       ]
                     }
                   ]
@@ -12193,7 +12456,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "no",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -12326,7 +12589,7 @@
                     "",
                     "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
                     "no",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -12459,7 +12722,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -12557,7 +12820,7 @@
                   "parameters": [
                     "CurrentSpiralAngle",
                     "+",
-                    "12"
+                    "17"
                   ]
                 },
                 {
@@ -12590,7 +12853,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "no",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -12745,7 +13008,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "no",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -13160,7 +13423,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "no",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -13171,7 +13434,7 @@
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "20"
+                    "10"
                   ]
                 }
               ],
@@ -13337,7 +13600,7 @@
                         "Dino_Lena",
                         "FireBullet",
                         "=",
-                        "0.2",
+                        "0.4",
                         ""
                       ]
                     },
@@ -13349,7 +13612,7 @@
                         "Dino_Mort",
                         "FireBullet",
                         "=",
-                        "0.2",
+                        "0.4",
                         ""
                       ]
                     },
@@ -13361,7 +13624,7 @@
                         "Dino_Lena",
                         "FireBullet",
                         "=",
-                        "4",
+                        "3",
                         ""
                       ]
                     },
@@ -13373,7 +13636,7 @@
                         "Dino_Mort",
                         "FireBullet",
                         "=",
-                        "4",
+                        "3",
                         ""
                       ]
                     },
@@ -13474,9 +13737,9 @@
                         "Dino_Lena",
                         "Tween",
                         "\"SineTween\"",
-                        "Dino_Lena.PointX(\"Center\") + 200",
+                        "Dino_Vita.PointX(\"Center\") + 200",
                         "\"linear\"",
-                        "15",
+                        "20",
                         ""
                       ]
                     }
@@ -13530,9 +13793,9 @@
                         "Dino_Mort",
                         "Tween",
                         "\"SineTween\"",
-                        "Dino_Mort.PointX(\"Center\") - 200",
+                        "Dino_Vita.PointX(\"Center\") - 200",
                         "\"linear\"",
-                        "15",
+                        "20",
                         ""
                       ]
                     }
@@ -13577,12 +13840,107 @@
               "actions": [
                 {
                   "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "36",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "360",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentSpiralAngle",
+                    "+",
+                    "13"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet3",
+                    "CurrentSpiralAngle",
+                    "160",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "False",
+                    "False"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Touhou Spiral\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "no",
+                    "5",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "2"
+                    "3"
                   ]
                 }
               ]
@@ -13601,7 +13959,6 @@
           "events": [
             {
               "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
-              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -13611,7 +13968,7 @@
                   "parameters": [
                     "firingPatternPhaseFive[Variable(PatternIndex)]",
                     "=",
-                    "0"
+                    "1"
                   ]
                 },
                 {
@@ -13655,7 +14012,7 @@
                   "parameters": [
                     "CurrentFiringArc",
                     "+",
-                    "7"
+                    "13"
                   ]
                 },
                 {
@@ -13727,7 +14084,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "no",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -13738,7 +14095,469 @@
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"TweenTopThird\"",
+                    "SceneWindowHeight()/4",
+                    "\"linear\"",
+                    "1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"TweenCenterX\"",
+                    "SceneWindowWidth()/2",
+                    "\"linear\"",
+                    "1",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet",
+                        "90",
+                        "150",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet",
+                        "90",
+                        "300",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseFive[Variable(PatternIndex)]",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentFiringArc",
+                    "+",
+                    "13"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "CurrentFiringArc",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet",
+                    "90",
+                    "75",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.01",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "True",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Pattern 1\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "no",
+                    "5",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"TweenTopThird\"",
+                    "SceneWindowHeight()/4",
+                    "\"linear\"",
+                    "1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"TweenCenterX\"",
+                    "SceneWindowWidth()/4",
+                    "\"linear\"",
+                    "1",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet",
+                        "90",
+                        "150",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet",
+                        "90",
+                        "300",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "firingPatternPhaseFive[Variable(PatternIndex)]",
+                    "=",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::IsReadyToShoot"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentFiringArc",
+                    "+",
+                    "13"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetFiringArcOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "CurrentFiringArc",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet",
+                    "90",
+                    "75",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::SetCooldownOp"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "FireBullet",
+                    "=",
+                    "0.01",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "dinoMoving",
+                    "True",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText",
+                    "Text",
+                    "=",
+                    "\"Pattern 1\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "no",
+                    "5",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"TweenTopThird\"",
+                    "SceneWindowHeight()/4",
+                    "\"linear\"",
+                    "1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"TweenCenterX\"",
+                    "SceneWindowWidth()/(4/3)",
+                    "\"linear\"",
+                    "1",
+                    ""
                   ]
                 }
               ],
@@ -13906,7 +14725,7 @@
                     "",
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "no",
-                    "3",
+                    "5",
                     "1"
                   ]
                 },
@@ -13917,7 +14736,7 @@
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "1"
+                    "10"
                   ]
                 },
                 {
@@ -14672,6 +15491,7 @@
           ]
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -15041,7 +15861,7 @@
                   "parameters": [
                     "BossHealth",
                     "=",
-                    "1000",
+                    "10000",
                     ""
                   ]
                 },
@@ -15146,7 +15966,7 @@
                     "",
                     "3_focus_points.mp3",
                     "no",
-                    "20",
+                    "10",
                     "1"
                   ]
                 },
