@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4335774304702394,
+    "zoomFactor": 0.6897782140104533,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -192,14 +192,9 @@
       ]
     },
     {
-      "folded": true,
       "name": "firingPatternPhaseTwo",
       "type": "array",
       "children": [
-        {
-          "type": "number",
-          "value": 0
-        },
         {
           "type": "number",
           "value": 1
@@ -210,19 +205,18 @@
         },
         {
           "type": "number",
-          "value": 3
+          "value": 1
+        },
+        {
+          "type": "number",
+          "value": 0
         }
       ]
     },
     {
-      "folded": true,
       "name": "firingPatternPhaseThree",
       "type": "array",
       "children": [
-        {
-          "type": "number",
-          "value": 0
-        },
         {
           "type": "number",
           "value": 0
@@ -310,6 +304,31 @@
     },
     {
       "name": "GameOver",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "Charge",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "StartHealth",
+      "type": "number",
+      "value": 1000
+    },
+    {
+      "name": "Phase3Init",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "GameInit",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "Deathblow",
       "type": "boolean",
       "value": false
     }
@@ -421,14 +440,14 @@
       "angle": 0,
       "customSize": true,
       "depth": 64,
-      "height": 32,
+      "height": 22,
       "keepRatio": true,
       "layer": "",
       "name": "BossHealth",
       "persistentUuid": "27502356-0064-4015-ba24-4807dbc16638",
-      "width": 224,
-      "x": 32,
-      "y": 32,
+      "width": 699,
+      "x": 7,
+      "y": 8,
       "zOrder": 105,
       "numberProperties": [],
       "stringProperties": [],
@@ -447,6 +466,56 @@
       "x": 32,
       "y": 1216,
       "zOrder": 106,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 64,
+      "height": 32,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Charge_Bar",
+      "persistentUuid": "db59eb68-8f83-4d13-aa93-d9359ae0f91e",
+      "width": 352,
+      "x": 352,
+      "y": 1216,
+      "zOrder": 107,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "SupportBoss",
+      "persistentUuid": "fc735816-2540-4c47-8cc4-41131b95a7b1",
+      "width": 0,
+      "x": 1100,
+      "y": 223,
+      "zOrder": 108,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 32,
+      "height": 1337,
+      "keepRatio": true,
+      "layer": "",
+      "name": "TwoChoicesDialogBox",
+      "persistentUuid": "fb9ee11f-bf16-46e8-8f47-0adc4b383cdb",
+      "width": 720,
+      "x": 0,
+      "y": 1,
+      "zOrder": -14,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -2897,10 +2966,10 @@
       ],
       "behaviors": [
         {
+          "extraBorder": 0,
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
-          "extraBorder": 200,
-          "unseenGraceDistance": 10000
+          "unseenGraceDistance": 0
         }
       ],
       "animations": [
@@ -3139,1461 +3208,6 @@
         "lineHeight": 0,
         "color": "0;0;0"
       }
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "46a93cb6302f2ae0f81693e074f82c279a395027f37e6140b1b450989181726c",
-      "name": "WaveAttack",
-      "preScale": 1.0897247358851683,
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [
-        {
-          "name": "HitPlayer",
-          "type": "boolean",
-          "value": false
-        }
-      ],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "DestroyOutside",
-          "type": "DestroyOutsideBehavior::DestroyOutside",
-          "extraBorder": 200,
-          "unseenGraceDistance": 10000
-        }
-      ],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": true,
-              "timeBetweenFrames": 0.125,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_5.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_6.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_7.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Idle",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": true,
-              "timeBetweenFrames": 0.125,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_5.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_6.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_7.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Idle_8.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Activate",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.0833,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_5.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_6.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_7.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_8.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_9.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_10.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_11.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Activate_12.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Deactivate",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.125,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_2.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_3.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_4.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_5.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_6.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_7.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_8.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Laser_Deactivate_9.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "waveattack",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "metadata": "{\"pskl\":{}}",
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "waveattack3",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 0
-                      },
-                      {
-                        "x": 22,
-                        "y": 32
-                      },
-                      {
-                        "x": 8,
-                        "y": 32
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
     },
     {
       "adaptCollisionMaskAutomatically": true,
@@ -4965,85 +3579,6 @@
       ]
     },
     {
-      "assetStoreId": "349bc496cd936f6b354be7e533e806787567c33b6f2e732a5b9cbaa3b2468955",
-      "height": 1024,
-      "name": "NewBackground",
-      "texture": "tiled_Empty Cloud Background.png",
-      "type": "TiledSpriteObject::TiledSprite",
-      "width": 1024,
-      "variables": [],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "VerticalTiledSpriteParallax",
-          "type": "Parallax::VerticalTiledSpriteParallax",
-          "ParallaxFactor": 1,
-          "FollowedLayer": "",
-          "OffsetY": 0
-        }
-      ]
-    },
-    {
-      "adaptCollisionMaskAutomatically": true,
-      "assetStoreId": "e33941951a5104fa7e71d2913ab3de46ff86c7f6ca89062d9b5677fa33b61d89",
-      "name": "cloud",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": true,
-              "timeBetweenFrames": 0.025,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "cloud 8.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 0,
-                        "y": 0
-                      },
-                      {
-                        "x": 500,
-                        "y": 0
-                      },
-                      {
-                        "x": 500,
-                        "y": 292
-                      },
-                      {
-                        "x": 0,
-                        "y": 292
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "assetStoreId": "",
       "bold": false,
       "italic": false,
@@ -5085,53 +3620,6 @@
         "lineHeight": 0,
         "color": "116;0;0"
       }
-    },
-    {
-      "additive": false,
-      "assetStoreId": "fbaccae9c3423a1349db7f8ac8ab78af68ecf516160606c139f8fae1adbde445",
-      "destroyWhenNoParticles": true,
-      "emitterAngleA": 0,
-      "emitterAngleB": 100,
-      "emitterForceMax": 600,
-      "emitterForceMin": 200,
-      "flow": 600,
-      "jumpForwardInTimeOnCreation": 0,
-      "maxParticleNb": 1000,
-      "name": "ParrySpark",
-      "particleAlpha1": 255,
-      "particleAlpha2": 79,
-      "particleAlphaRandomness1": 0,
-      "particleAlphaRandomness2": 0,
-      "particleAngle1": 0,
-      "particleAngle2": 0,
-      "particleAngleRandomness1": 0,
-      "particleAngleRandomness2": 0,
-      "particleBlue1": 255,
-      "particleBlue2": 255,
-      "particleColor1": "255;255;255",
-      "particleColor2": "159;243;255",
-      "particleGravityX": 0,
-      "particleGravityY": 0,
-      "particleGreen1": 255,
-      "particleGreen2": 243,
-      "particleLifeTimeMax": 0.5,
-      "particleLifeTimeMin": 0.20000000298023224,
-      "particleRed1": 255,
-      "particleRed2": 159,
-      "particleSize1": 50,
-      "particleSize2": 100,
-      "particleSizeRandomness1": 0,
-      "particleSizeRandomness2": 0,
-      "rendererParam1": 1,
-      "rendererParam2": 1,
-      "rendererType": "Quad",
-      "tank": -1,
-      "textureParticleName": "Sparks.png",
-      "type": "ParticleSystem::ParticleEmitter",
-      "zoneRadius": 0,
-      "variables": [],
-      "effects": [],
-      "behaviors": []
     },
     {
       "adaptCollisionMaskAutomatically": true,
@@ -5382,7 +3870,7 @@
         {
           "name": "Health",
           "type": "number",
-          "value": 1000
+          "value": 10000
         }
       ],
       "effects": [
@@ -5398,13 +3886,15 @@
       ],
       "behaviors": [],
       "content": {
-        "InitialValue": 10000,
-        "MaxValue": 10000,
+        "InitialValue": 1000,
+        "MaxValue": 1000,
         "BarTopPadding": 8,
         "BarRightPadding": 10,
         "BarBottomPadding": 8,
         "BarLeftPadding": 10,
-        "PreviousHighValueDuration": 0
+        "PreviousHighValueDuration": 0,
+        "ShowLabel": false,
+        "EasingDuration": 0.25
       }
     },
     {
@@ -7680,13 +6170,24 @@
           "effectType": "Brightness",
           "name": "Effect",
           "doubleParameters": {
-            "brightness": 0.6
+            "brightness": 0.4
           },
           "stringParameters": {},
           "booleanParameters": {}
         }
       ],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Sticker",
+          "type": "Sticker::Sticker",
+          "OnlyFollowPosition": false,
+          "IsDestroyedWithParent": true
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -10439,6 +8940,195 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "ebc9bc64e9525d8e827938e246f37b4398590f18a3444735dc50edbea0317f03",
+      "name": "Charge_Bar",
+      "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+      "variant": "Wood Blue Bar",
+      "variables": [
+        {
+          "name": "Charge",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Brightness",
+          "name": "Effect",
+          "doubleParameters": {
+            "brightness": 0.7
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "content": {
+        "InitialValue": 0,
+        "MaxValue": 5,
+        "BarTopPadding": 8,
+        "BarRightPadding": 10,
+        "BarBottomPadding": 8,
+        "BarLeftPadding": 10,
+        "PreviousHighValueDuration": 0
+      }
+    },
+    {
+      "additive": true,
+      "assetStoreId": "edb6923baf2b0b51dac8f4ce53b1ec10a09243ca57fb694722d79eb5ed6a62b7",
+      "destroyWhenNoParticles": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 360,
+      "emitterForceMax": 10,
+      "emitterForceMin": 5,
+      "flow": 100,
+      "jumpForwardInTimeOnCreation": 0,
+      "maxParticleNb": 300,
+      "name": "Magic",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 0,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 255,
+      "particleBlue2": 236,
+      "particleColor1": "43;151;255",
+      "particleColor2": "127;0;236",
+      "particleGravityX": 0,
+      "particleGravityY": 0,
+      "particleGreen1": 151,
+      "particleGreen2": 0,
+      "particleLifeTimeMax": 4,
+      "particleLifeTimeMin": 2,
+      "particleRed1": 43,
+      "particleRed2": 127,
+      "particleSize1": 30,
+      "particleSize2": 0,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "rendererParam1": 1,
+      "rendererParam2": 1,
+      "rendererType": "Quad",
+      "tank": -1,
+      "textureParticleName": "Assets\\ExplosionFog-Texture-2.png",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 3,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "additive": true,
+      "assetStoreId": "edb6923baf2b0b51dac8f4ce53b1ec10a09243ca57fb694722d79eb5ed6a62b7",
+      "destroyWhenNoParticles": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 360,
+      "emitterForceMax": 8,
+      "emitterForceMin": 5,
+      "flow": 2,
+      "jumpForwardInTimeOnCreation": 0,
+      "maxParticleNb": 300,
+      "name": "Magic2",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 0,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 255,
+      "particleBlue2": 255,
+      "particleColor1": "252;0;255",
+      "particleColor2": "119;0;255",
+      "particleGravityX": 0,
+      "particleGravityY": 0,
+      "particleGreen1": 0,
+      "particleGreen2": 0,
+      "particleLifeTimeMax": 8,
+      "particleLifeTimeMin": 4,
+      "particleRed1": 252,
+      "particleRed2": 119,
+      "particleSize1": 0,
+      "particleSize2": 40,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "rendererParam1": 1,
+      "rendererParam2": 1,
+      "rendererType": "Quad",
+      "tank": -1,
+      "textureParticleName": "DarkMagicSmoke.png",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 3,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "additive": true,
+      "assetStoreId": "edb6923baf2b0b51dac8f4ce53b1ec10a09243ca57fb694722d79eb5ed6a62b7",
+      "destroyWhenNoParticles": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 360,
+      "emitterForceMax": 90,
+      "emitterForceMin": 50,
+      "flow": 60,
+      "jumpForwardInTimeOnCreation": 0,
+      "maxParticleNb": 300,
+      "name": "StarSparks",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 0,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 242,
+      "particleBlue2": 255,
+      "particleColor1": "74;255;242",
+      "particleColor2": "0;33;255",
+      "particleGravityX": 0,
+      "particleGravityY": 0,
+      "particleGreen1": 255,
+      "particleGreen2": 33,
+      "particleLifeTimeMax": 1,
+      "particleLifeTimeMin": 0.2,
+      "particleRed1": 74,
+      "particleRed2": 0,
+      "particleSize1": 10,
+      "particleSize2": 0,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "rendererParam1": 1,
+      "rendererParam2": 1,
+      "rendererType": "Quad",
+      "tank": -1,
+      "textureParticleName": "Glow.png",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 30,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "assetStoreId": "9d5de415b6e469c681701ea42d3b1c486fee31d6ef591a2d3e226f639ab486ff",
+      "name": "TwoChoicesDialogBox",
+      "type": "TwoChoicesDialogBoxes::TwoChoicesDialogBox",
+      "variant": "Semi-transparent black and white",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "EnableEscape": false,
+        "LabelButtonID1": "",
+        "TextMessage": "\nMOVE with WASD\n\n\nSHOOT with LEFT MOUSE BUTTON to inflict VITALITY DAMAGE on BOSS\n\n\nPARRY WHITE PROJECTILES with SPACE to build CHARGE\n\n\nWhen METER is CHARGED and BOSS VITALITY is DEPLETED, RIGHT CLICK to RELEASE CHARGE and inflict FATAL DAMAGE\n\n\nPress any key to start"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -10454,57 +9144,6 @@
         "objectName": "Dino_Doux"
       },
       {
-        "objectName": "Dino_Shadow"
-      },
-      {
-        "objectName": "borderBackground"
-      },
-      {
-        "objectName": "EnemyBullet"
-      },
-      {
-        "objectName": "HealthBar"
-      },
-      {
-        "objectName": "BossHealth"
-      },
-      {
-        "objectName": "NewText"
-      },
-      {
-        "objectName": "WaveAttack"
-      },
-      {
-        "objectName": "EnemyBullet2"
-      },
-      {
-        "objectName": "explosion"
-      },
-      {
-        "objectName": "EnemyBullet3"
-      },
-      {
-        "objectName": "Main_Ship_Round_Shield"
-      },
-      {
-        "objectName": "EnemyBullet4"
-      },
-      {
-        "objectName": "NewBackground"
-      },
-      {
-        "objectName": "NewText2"
-      },
-      {
-        "objectName": "cloud"
-      },
-      {
-        "objectName": "ParrySpark"
-      },
-      {
-        "objectName": "Explosion_1"
-      },
-      {
         "objectName": "Dino_Lena"
       },
       {
@@ -10514,10 +9153,64 @@
         "objectName": "SupportBoss"
       },
       {
+        "objectName": "Dino_Shadow"
+      },
+      {
+        "objectName": "HealthBar"
+      },
+      {
+        "objectName": "BossHealth"
+      },
+      {
+        "objectName": "Charge_Bar"
+      },
+      {
+        "objectName": "EnemyBullet"
+      },
+      {
+        "objectName": "EnemyBullet2"
+      },
+      {
+        "objectName": "EnemyBullet3"
+      },
+      {
+        "objectName": "EnemyBullet4"
+      },
+      {
+        "objectName": "explosion"
+      },
+      {
+        "objectName": "Explosion_1"
+      },
+      {
         "objectName": "vortex"
       },
       {
+        "objectName": "Main_Ship_Round_Shield"
+      },
+      {
         "objectName": "Background"
+      },
+      {
+        "objectName": "borderBackground"
+      },
+      {
+        "objectName": "NewText"
+      },
+      {
+        "objectName": "NewText2"
+      },
+      {
+        "objectName": "Magic"
+      },
+      {
+        "objectName": "Magic2"
+      },
+      {
+        "objectName": "StarSparks"
+      },
+      {
+        "objectName": "TwoChoicesDialogBox"
       }
     ]
   },
@@ -10624,20 +9317,6 @@
         },
         {
           "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
-          },
-          "parameters": [
-            "Background",
-            "Tween",
-            "\"videotween\"",
-            "0",
-            "\"linear\"",
-            "15",
-            ""
-          ]
-        },
-        {
-          "type": {
             "value": "OpacityCapability::OpacityBehavior::SetValue"
           },
           "parameters": [
@@ -10700,33 +9379,6 @@
         },
         {
           "type": {
-            "value": "PlayMusic"
-          },
-          "parameters": [
-            "",
-            "[作業用BGM] デザイアドリーム [東方神霊廟_スタッフロール] [r6TPd5PsSxE].mp3",
-            "no",
-            "45",
-            "1"
-          ]
-        },
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "Tween",
-            "\"TweenInitiate\"",
-            "DinoVitaInitialX",
-            "DinoVitaInitialY",
-            "\"linear\"",
-            "7",
-            ""
-          ]
-        },
-        {
-          "type": {
             "value": "Health::Health::SetChanceToDodgeOp"
           },
           "parameters": [
@@ -10757,6 +9409,148 @@
             "Opacity",
             "=",
             "200"
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+          },
+          "parameters": [
+            "SupportBoss",
+            "FireBullet",
+            "=",
+            "128",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetFiringArcOp"
+          },
+          "parameters": [
+            "SupportBoss",
+            "FireBullet",
+            "=",
+            "360",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::SetCooldownOp"
+          },
+          "parameters": [
+            "SupportBoss",
+            "FireBullet",
+            "=",
+            "0.5",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ActivateBehavior"
+          },
+          "parameters": [
+            "Pancakes",
+            "FireBullet",
+            "no"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01KA47J129NQE0D2G7YQ4Z3X9M",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "AnyKeyPressed"
+          },
+          "parameters": [
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BooleanVariable"
+          },
+          "parameters": [
+            "GameInit",
+            "=",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+          },
+          "parameters": [
+            "Background",
+            "Tween",
+            "\"videotween\"",
+            "0",
+            "\"linear\"",
+            "15",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlayMusic"
+          },
+          "parameters": [
+            "",
+            "[作業用BGM] デザイアドリーム [東方神霊廟_スタッフロール] [r6TPd5PsSxE].mp3",
+            "no",
+            "45",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+          },
+          "parameters": [
+            "Dino_Vita",
+            "Tween",
+            "\"TweenInitiate\"",
+            "DinoVitaInitialX",
+            "DinoVitaInitialY",
+            "\"linear\"",
+            "7",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetBooleanVariable"
+          },
+          "parameters": [
+            "GameInit",
+            "True",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ActivateBehavior"
+          },
+          "parameters": [
+            "Pancakes",
+            "FireBullet",
+            "yes"
+          ]
+        },
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "TwoChoicesDialogBox",
+            ""
           ]
         }
       ]
@@ -11407,6 +10201,41 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::Fire"
+              },
+              "parameters": [
+                "SupportBoss",
+                "FireBullet",
+                "SceneWindowWidth()/2",
+                "SceneWindowHeight()/2",
+                "EnemyBullet2",
+                "90",
+                "300",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+                "no",
+                "5",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
@@ -11982,6 +10811,51 @@
               "actions": [],
               "events": [
                 {
+                  "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::IsReadyToShoot"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "SceneWindowWidth()/2",
+                        "SceneWindowHeight()/2",
+                        "EnemyBullet2",
+                        "90",
+                        "300",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+                        "no",
+                        "5",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -12089,25 +10963,44 @@
                         "10",
                         "1"
                       ]
-                    },
+                    }
+                  ],
+                  "events": [
                     {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "LenaSpawn[0]",
-                        "+",
-                        "100"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "MortSpawn[0]",
-                        "-",
-                        "100"
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "LenaSpawn[0]",
+                            "<",
+                            "200"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "LenaSpawn[0]",
+                            "+",
+                            "100"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "MortSpawn[0]",
+                            "-",
+                            "100"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -12430,13 +11323,28 @@
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "3"
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"TweenCenter\"",
+                    "SceneWindowWidth()/2",
+                    "SceneWindowHeight()/3",
+                    "\"linear\"",
+                    "1",
+                    ""
                   ]
                 }
               ]
             },
             {
-              "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
+              "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -12479,7 +11387,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "128",
+                    "14",
                     ""
                   ]
                 },
@@ -12491,7 +11399,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "360",
+                    "CurrentFiringArc",
                     ""
                   ]
                 },
@@ -12504,142 +11412,9 @@
                     "FireBullet",
                     "Dino_Vita.CenterX()",
                     "Dino_Vita.CenterY()",
-                    "EnemyBullet2",
+                    "EnemyBullet3",
                     "90",
-                    "400",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FireBullet::FireBullet::SetCooldownOp"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "FireBullet",
-                    "=",
-                    "0.5",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "NewText",
-                    "Text",
-                    "=",
-                    "\"Pattern Flower\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
-                    "no",
-                    "5",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "PatternSwitchInterval",
-                    "=",
-                    "2"
-                  ]
-                }
-              ]
-            },
-            {
-              "aiGeneratedEventId": "01KA0DNRTZ9QJ3MKZ5MYDE2ENY",
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "firingPatternPhaseOne[Variable(PatternIndex)]",
-                    "=",
-                    "2"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FireBullet::FireBullet::IsReadyToShoot"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "FireBullet",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "phaseNumber",
-                    "=",
-                    "2"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "FireBullet",
-                    "=",
-                    "8",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FireBullet::FireBullet::SetFiringArcOp"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "FireBullet",
-                    "=",
-                    "100",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FireBullet::FireBullet::Fire"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "FireBullet",
-                    "Dino_Vita.CenterX()",
-                    "Dino_Vita.CenterY()",
-                    "EnemyBullet",
-                    "90",
-                    "180",
+                    "225",
                     ""
                   ]
                 },
@@ -12694,9 +11469,19 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
+                    "CurrentFiringArc",
+                    "+",
+                    "23"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "2"
+                    "3"
                   ]
                 }
               ]
@@ -12712,7 +11497,7 @@
                   "parameters": [
                     "firingPatternPhaseTwo[Variable(PatternIndex)]",
                     "=",
-                    "3"
+                    "2"
                   ]
                 },
                 {
@@ -12772,7 +11557,7 @@
                     "Dino_Vita.CenterY()",
                     "EnemyBullet",
                     "CurrentSpiralAngle",
-                    "160",
+                    "200",
                     ""
                   ]
                 },
@@ -12845,6 +11630,116 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "phaseNumber",
+                    "=",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Phase3Init",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Main_Ship_Round_Shield",
+                    "SceneWindowWidth()/2",
+                    "SceneWindowHeight()/2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetY"
+                  },
+                  "parameters": [
+                    "Main_Ship_Round_Shield",
+                    "Scale",
+                    "*",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetX"
+                  },
+                  "parameters": [
+                    "Main_Ship_Round_Shield",
+                    "Scale",
+                    "*",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Main_Ship_Round_Shield",
+                    "Opacity",
+                    "=",
+                    "150"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"MoveRight\"",
+                    "SceneWindowWidth() - 100",
+                    "\"linear\"",
+                    "1",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"Moveup\"",
+                    "DinoVitaInitialY",
+                    "\"linear\"",
+                    "1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Phase3Init",
+                    "True",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
               "aiGeneratedEventId": "01KAEN88J53YEA80GJ50797MTY",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -12888,7 +11783,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "22",
+                    "17",
                     ""
                   ]
                 },
@@ -12933,6 +11828,18 @@
                 },
                 {
                   "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "no",
+                    "5",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -12948,7 +11855,7 @@
                   "parameters": [
                     "Dino_Vita",
                     "dinoMoving",
-                    "False",
+                    "True",
                     "False"
                   ]
                 },
@@ -12965,18 +11872,6 @@
                 },
                 {
                   "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                    "no",
-                    "5",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -12984,54 +11879,93 @@
                     "=",
                     "40"
                   ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Main_Ship_Round_Shield",
-                    "SceneWindowWidth()/2",
-                    "SceneWindowHeight()/2",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ScalableCapability::ScalableBehavior::SetY"
-                  },
-                  "parameters": [
-                    "Main_Ship_Round_Shield",
-                    "Scale",
-                    "*",
-                    "2"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ScalableCapability::ScalableBehavior::SetX"
-                  },
-                  "parameters": [
-                    "Main_Ship_Round_Shield",
-                    "Scale",
-                    "*",
-                    "2"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "OpacityCapability::OpacityBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "Main_Ship_Round_Shield",
-                    "Opacity",
-                    "=",
-                    "100"
-                  ]
                 }
               ],
               "events": [
+                {
+                  "aiGeneratedEventId": "01K9DDPR7Q689TP43YBRP9CDT5",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Tween::HasFinished"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "Tween",
+                        "\"MoveLeft\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "Tween",
+                        "\"MoveRight\"",
+                        "SceneWindowWidth() - 100",
+                        "\"linear\"",
+                        "2",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "Tween",
+                        "\"MoveLeft\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "aiGeneratedEventId": "01K9DDPR7Q689TP43YBRP9CDT5",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Tween::HasFinished"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "Tween",
+                        "\"MoveRight\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "Tween",
+                        "\"MoveLeft\"",
+                        "100",
+                        "\"linear\"",
+                        "2",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::RemoveTween"
+                      },
+                      "parameters": [
+                        "Dino_Vita",
+                        "Tween",
+                        "\"MoveRight\""
+                      ]
+                    }
+                  ]
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -13055,7 +11989,7 @@
                         "",
                         "Dino_Lena",
                         "LenaSpawn[0]",
-                        "LenaSpawn[1] + 400",
+                        "LenaSpawn[1] + 800",
                         ""
                       ]
                     },
@@ -13091,7 +12025,7 @@
                         "",
                         "Dino_Lena",
                         "MortSpawn[0]",
-                        "LenaSpawn[1] + 400",
+                        "LenaSpawn[1] + 800",
                         ""
                       ]
                     },
@@ -13398,6 +12332,21 @@
                     "PatternSwitchInterval",
                     "=",
                     "10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                  },
+                  "parameters": [
+                    "Dino_Vita",
+                    "Tween",
+                    "\"TweenInitiate\"",
+                    "DinoVitaInitialX",
+                    "DinoVitaInitialY",
+                    "\"linear\"",
+                    "1",
+                    ""
                   ]
                 }
               ],
@@ -14058,7 +13007,7 @@
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "4"
+                    "5"
                   ]
                 },
                 {
@@ -14275,7 +13224,7 @@
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "4"
+                    "5"
                   ]
                 },
                 {
@@ -14492,7 +13441,7 @@
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
-                    "4"
+                    "5"
                   ]
                 },
                 {
@@ -15454,6 +14403,7 @@
           ]
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -15564,6 +14514,33 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::Value"
+              },
+              "parameters": [
+                "BossHealth",
+                "<=",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Deathblow",
+                "False",
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
           "aiGeneratedEventId": "01KAF0H7MK6JKHJ20S2TDETS4G",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -15575,6 +14552,16 @@
                 "BossHealth",
                 "<=",
                 "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Deathblow",
+                "True",
                 ""
               ]
             }
@@ -15650,6 +14637,24 @@
             },
             {
               "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Dino_Lena",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Dino_Mort",
+                ""
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -15697,9 +14702,97 @@
                 "=",
                 "MortSpawnOriginal[1]"
               ]
+            },
+            {
+              "type": {
+                "value": "Tween::StopTween"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"MoveLeft\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::StopTween"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"MoveRight\"",
+                ""
+              ]
             }
           ],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::Value"
+                  },
+                  "parameters": [
+                    "HealthBar",
+                    "=",
+                    "StartHealth",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "NewText2",
+                    "SceneWindowWidth()/2 - 200",
+                    "SceneWindowHeight()/2 - 45",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::Font"
+                  },
+                  "parameters": [
+                    "NewText2",
+                    "ecf7f6cb89e16c44e3b5a9c8abb703ba6cbc52eb8529353125f4f5caed404144_Silkscreen-Bold.ttf"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText2",
+                    "Text",
+                    "=",
+                    "\"Perfect!\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::Text::SetFontSize"
+                  },
+                  "parameters": [
+                    "NewText2",
+                    "=",
+                    "25"
+                  ]
+                }
+              ]
+            },
             {
               "aiGeneratedEventId": "01KASVXVB2GP0A2PWQJ6HZGMY7",
               "type": "BuiltinCommonInstructions::Standard",
@@ -15755,6 +14848,59 @@
                     "0",
                     "\"linear\"",
                     "1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "NewText2",
+                    "SceneWindowWidth()/2 - 200",
+                    "SceneWindowHeight()/2 - 75",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::Font"
+                  },
+                  "parameters": [
+                    "NewText2",
+                    "ecf7f6cb89e16c44e3b5a9c8abb703ba6cbc52eb8529353125f4f5caed404144_Silkscreen-Bold.ttf"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "NewText2",
+                    "Text",
+                    "=",
+                    "\"+100 Health Bonus!\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::Text::SetFontSize"
+                  },
+                  "parameters": [
+                    "NewText2",
+                    "=",
+                    "25"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+                  },
+                  "parameters": [
+                    "HealthBar",
+                    "+",
+                    "100",
                     ""
                   ]
                 }
@@ -15844,7 +14990,7 @@
                     "value": "Delete"
                   },
                   "parameters": [
-                    "explosion",
+                    "NewText2",
                     ""
                   ]
                 },
@@ -15857,6 +15003,16 @@
                     "Animation",
                     "=",
                     "\"Idle\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "StartHealth",
+                    "=",
+                    "HealthBar.Value()"
                   ]
                 }
               ]
@@ -15871,8 +15027,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
-      "name": "Parry",
+      "name": "Parry and Charge Release",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -15893,20 +15048,8 @@
           "actions": [],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "EnemyBullet2",
+              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
-                {
-                  "type": {
-                    "value": "Distance"
-                  },
-                  "parameters": [
-                    "EnemyBullet2",
-                    "Pancakes",
-                    "40",
-                    ""
-                  ]
-                },
                 {
                   "type": {
                     "value": "BooleanObjectVariable"
@@ -15915,6 +15058,17 @@
                     "EnemyBullet2",
                     "parried",
                     "false",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "EnemyBullet2",
+                    "Pancakes",
+                    "40",
                     ""
                   ]
                 }
@@ -15950,6 +15104,217 @@
                     "Explosion_1",
                     "Pancakes.PointX(\"XPos\")",
                     "Pancakes.PointY(\"YPos\")",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+                  },
+                  "parameters": [
+                    "Charge_Bar",
+                    "+",
+                    "1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Charge",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Right\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::Value"
+              },
+              "parameters": [
+                "Charge_Bar",
+                ">=",
+                "5",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Main_Ship_Round_Shield",
+                    "Pancakes.CenterX()",
+                    "Pancakes.CenterY()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Main_Ship_Round_Shield",
+                    "Scale",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Sticker::Sticker::Stick"
+                  },
+                  "parameters": [
+                    "Main_Ship_Round_Shield",
+                    "Sticker",
+                    "Pancakes",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+                  },
+                  "parameters": [
+                    "Main_Ship_Round_Shield",
+                    "Tween",
+                    "\"ChargeRelease\"",
+                    "0.1",
+                    "\"linear\"",
+                    "1",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Tween::HasFinished"
+              },
+              "parameters": [
+                "Main_Ship_Round_Shield",
+                "Tween",
+                "\"ChargeRelease\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "aiGeneratedEventId": "01KASVXVB2GP0A2PWQJ6HZGMY7",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "explosion",
+                    "SceneWindowWidth()/2",
+                    "SceneWindowHeight()/2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "explosion",
+                    "Scale",
+                    "=",
+                    "30"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "explosion",
+                    "Opacity",
+                    "=",
+                    "80"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "borderBackground",
+                    "Opacity",
+                    "=",
+                    "150"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "borderBackground",
+                    "Tween",
+                    "\"TweenOpacity\"",
+                    "0",
+                    "\"linear\"",
+                    "1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Main_Ship_Round_Shield",
                     ""
                   ]
                 }
@@ -16184,10 +15549,6 @@
     {
       "name": "Tween",
       "type": "Tween::TweenBehavior"
-    },
-    {
-      "name": "VerticalTiledSpriteParallax",
-      "type": "Parallax::VerticalTiledSpriteParallax"
     }
   ]
 }
