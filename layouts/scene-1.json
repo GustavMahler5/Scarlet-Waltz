@@ -726,22 +726,6 @@
           "Counter": 0
         },
         {
-          "name": "TopDownMovement",
-          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
-          "acceleration": 15000,
-          "allowDiagonals": true,
-          "angleOffset": 0,
-          "angularMaxSpeed": 180,
-          "customIsometryAngle": 30,
-          "deceleration": 800,
-          "ignoreDefaultControls": false,
-          "maxSpeed": 500,
-          "movementAngleOffset": 0,
-          "rotateObject": true,
-          "useLegacyTurnBack": false,
-          "viewpoint": "TopDown"
-        },
-        {
           "name": "Tween",
           "type": "Tween::TweenBehavior"
         }
@@ -5499,22 +5483,6 @@
           "Counter": 0
         },
         {
-          "name": "TopDownMovement",
-          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
-          "acceleration": 15000,
-          "allowDiagonals": true,
-          "angleOffset": 0,
-          "angularMaxSpeed": 180,
-          "customIsometryAngle": 30,
-          "deceleration": 800,
-          "ignoreDefaultControls": false,
-          "maxSpeed": 500,
-          "movementAngleOffset": 0,
-          "rotateObject": true,
-          "useLegacyTurnBack": false,
-          "viewpoint": "TopDown"
-        },
-        {
           "name": "Tween",
           "type": "Tween::TweenBehavior"
         }
@@ -6532,22 +6500,6 @@
           "TimerLength": 1,
           "Limit": -1,
           "Counter": 0
-        },
-        {
-          "name": "TopDownMovement",
-          "type": "TopDownMovementBehavior::TopDownMovementBehavior",
-          "acceleration": 15000,
-          "allowDiagonals": true,
-          "angleOffset": 0,
-          "angularMaxSpeed": 180,
-          "customIsometryAngle": 30,
-          "deceleration": 800,
-          "ignoreDefaultControls": false,
-          "maxSpeed": 500,
-          "movementAngleOffset": 0,
-          "rotateObject": true,
-          "useLegacyTurnBack": false,
-          "viewpoint": "TopDown"
         },
         {
           "name": "Tween",
@@ -10599,6 +10551,17 @@
             "700",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "OpacityCapability::OpacityBehavior::SetValue"
+          },
+          "parameters": [
+            "Dino_Doux",
+            "Opacity",
+            "=",
+            "50"
+          ]
         }
       ]
     },
@@ -10681,7 +10644,7 @@
             "Background",
             "Opacity",
             "=",
-            "50"
+            "60"
           ]
         },
         {
@@ -12925,7 +12888,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "28",
+                    "22",
                     ""
                   ]
                 },
