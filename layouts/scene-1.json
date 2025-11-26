@@ -10918,7 +10918,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Attack Patterns",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -10963,7 +10962,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 1",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11894,7 +11892,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 2",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -12329,6 +12326,65 @@
                     "2"
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::IsReadyToShoot"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet2",
+                        "90",
+                        "300",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+                        "no",
+                        "5",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetCooldownOp"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "=",
+                        "1",
+                        ""
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ],
@@ -12339,7 +12395,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 3",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -12607,6 +12662,63 @@
                 }
               ],
               "events": [
+                {
+                  "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::IsReadyToShoot"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "SceneWindowWidth()/2",
+                        "SceneWindowHeight()/2",
+                        "EnemyBullet2",
+                        "90",
+                        "300",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+                        "no",
+                        "5",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetCooldownOp"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "=",
+                        "3",
+                        ""
+                      ]
+                    }
+                  ]
+                },
                 {
                   "aiGeneratedEventId": "01K9DDPR7Q689TP43YBRP9CDT5",
                   "type": "BuiltinCommonInstructions::Standard",
@@ -12914,7 +13026,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 4",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -13591,7 +13702,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 5",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -13777,6 +13887,63 @@
                 }
               ],
               "events": [
+                {
+                  "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::IsReadyToShoot"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet2",
+                        "90",
+                        "300",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+                        "no",
+                        "5",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetCooldownOp"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "=",
+                        "1",
+                        ""
+                      ]
+                    }
+                  ]
+                },
                 {
                   "aiGeneratedEventId": "01K9TEW9QG2T5SB4PYECEVJDVP",
                   "type": "BuiltinCommonInstructions::Standard",
@@ -14798,7 +14965,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 6",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -15173,7 +15339,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 7",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -16097,6 +16262,63 @@
                 }
               ],
               "events": [
+                {
+                  "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::IsReadyToShoot"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet2",
+                        "90",
+                        "300",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
+                        "no",
+                        "5",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::SetCooldownOp"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "=",
+                        "3",
+                        ""
+                      ]
+                    }
+                  ]
+                },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
@@ -17826,6 +18048,16 @@
                 "\"MoveRight\"",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "Deathblow",
+                "False",
+                ""
+              ]
             }
           ],
           "events": [
@@ -18634,7 +18866,7 @@
                 "value": "CollisionNP"
               },
               "parameters": [
-                "Dino_Vita",
+                "Pancakes",
                 "EnemyBullet5",
                 "",
                 "",
