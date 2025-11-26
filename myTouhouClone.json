@@ -3223,6 +3223,58 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Dialog Boxes/6b410f07a3a02e721a49d41795e84b56707ef28ac4d095d55f1fd1093760e134_8BitOperatorPlus8Regular_Edited.fnt",
           "name": "8BitOperatorPlus8Regular_Edited.fnt"
         }
+      },
+      {
+        "file": "assets/Small Blue Ball4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "Small Blue Ball3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/HelloWorld.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "HelloWorld",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/HelloWorld2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "HelloWorld2",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Star Gold.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"assets/Star Gold.png\",\"extension\":\".png\"}",
+        "name": "Star Gold.png",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Breakable Physics/Star/80254157b7c3e874fc5c872eac09af4a337ee1b92e48fe67421d354547a471fc_Star Gold.png",
+          "name": "Star Gold.png"
+        }
+      },
+      {
+        "file": "assets/HelloWorld3.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "HelloWorld3",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/HelloWorld4.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "HelloWorld4",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
