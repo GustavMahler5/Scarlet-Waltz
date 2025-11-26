@@ -576,7 +576,7 @@
       "width": 720,
       "x": 0,
       "y": 1,
-      "zOrder": -14,
+      "zOrder": 109,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -616,6 +616,19 @@
           },
           "stringParameters": {
             "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Glow",
+          "name": "Effect3",
+          "doubleParameters": {
+            "distance": 20,
+            "innerStrength": 1,
+            "outerStrength": 2
+          },
+          "stringParameters": {
+            "color": "206;190;0"
           },
           "booleanParameters": {}
         }
@@ -825,7 +838,7 @@
           "Health": 10000,
           "CurrentHealth": 0,
           "MaxHealth": 10000,
-          "DamageCooldown": 0,
+          "DamageCooldown": 0.01,
           "AllowOverHealing": false,
           "IsHealthJustDamaged": false,
           "DamageToBeApplied": 0,
@@ -3281,9 +3294,9 @@
       "effects": [],
       "behaviors": [
         {
-          "extraBorder": 0,
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 0,
           "unseenGraceDistance": 0
         }
       ],
@@ -3450,9 +3463,9 @@
       "effects": [],
       "behaviors": [
         {
-          "extraBorder": 0,
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 0,
           "unseenGraceDistance": 0
         }
       ],
@@ -3528,9 +3541,9 @@
       ],
       "behaviors": [
         {
-          "extraBorder": 200,
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 200,
           "unseenGraceDistance": 1
         }
       ],
@@ -9184,7 +9197,7 @@
       "content": {
         "EnableEscape": false,
         "LabelButtonID1": "",
-        "TextMessage": "\nMOVE with WASD\n\n\nSHOOT with LEFT MOUSE BUTTON to inflict VITALITY DAMAGE on BOSS\n\n\nPARRY WHITE WAVE ATTACKS with SPACE to build CHARGE\n\n\nWhen METER is CHARGED, RIGHT CLICK to RELEASE CHARGE and inflict FATAL DAMAGE\n\n\nPress any key to start"
+        "TextMessage": "\nMOVE with WASD\n\n\nSHOOT with LEFT MOUSE BUTTON to inflict VITALITY DAMAGE on BOSS\n\n\nPARRY WHITE WAVE ATTACKS with SPACE to build CHARGE\n\n\nWhen METER is CHARGED, RIGHT CLICK  when the boss is below 50% VITALITY to RELEASE CHARGE and inflict FATAL DAMAGE\n\n\nPress any key to start"
       }
     },
     {
@@ -9203,9 +9216,9 @@
       "effects": [],
       "behaviors": [
         {
-          "extraBorder": 0,
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 0,
           "unseenGraceDistance": 0
         },
         {
@@ -9929,6 +9942,17 @@
             "FireBullet",
             "no"
           ]
+        },
+        {
+          "type": {
+            "value": "EffectCapability::EffectBehavior::EnableEffect"
+          },
+          "parameters": [
+            "Pancakes",
+            "Effect",
+            "\"Effect3\"",
+            "no"
+          ]
         }
       ]
     },
@@ -10299,7 +10323,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Timers",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -11558,9 +11581,9 @@
                       },
                       "parameters": [
                         "",
-                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
-                        "no",
-                        "5",
+                        "3_focus_points.mp3",
+                        "",
+                        "10",
                         "1"
                       ]
                     }
@@ -12361,18 +12384,6 @@
                     },
                     {
                       "type": {
-                        "value": "PlaySound"
-                      },
-                      "parameters": [
-                        "",
-                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
-                        "no",
-                        "5",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "FireBullet::FireBullet::SetCooldownOp"
                       },
                       "parameters": [
@@ -12381,6 +12392,18 @@
                         "=",
                         "1",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "3_focus_points.mp3",
+                        "",
+                        "10",
+                        "1"
                       ]
                     }
                   ]
@@ -12514,7 +12537,7 @@
                   "parameters": [
                     "CurrentSpiralAngle",
                     "=",
-                    "270"
+                    "265"
                   ]
                 }
               ]
@@ -12625,7 +12648,7 @@
                   "parameters": [
                     "CurrentSpiralAngle",
                     "+",
-                    "0.7"
+                    "0.5"
                   ]
                 },
                 {
@@ -12695,18 +12718,6 @@
                     },
                     {
                       "type": {
-                        "value": "PlaySound"
-                      },
-                      "parameters": [
-                        "",
-                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
-                        "no",
-                        "5",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "FireBullet::FireBullet::SetCooldownOp"
                       },
                       "parameters": [
@@ -12715,6 +12726,18 @@
                         "=",
                         "3",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "3_focus_points.mp3",
+                        "",
+                        "10",
+                        "1"
                       ]
                     }
                   ]
@@ -13010,7 +13033,7 @@
                         "Dino_Lena",
                         "FireBullet",
                         "=",
-                        "0.05",
+                        "0.08",
                         ""
                       ]
                     }
@@ -13920,18 +13943,6 @@
                     },
                     {
                       "type": {
-                        "value": "PlaySound"
-                      },
-                      "parameters": [
-                        "",
-                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
-                        "no",
-                        "5",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "FireBullet::FireBullet::SetCooldownOp"
                       },
                       "parameters": [
@@ -13940,6 +13951,18 @@
                         "=",
                         "1",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "3_focus_points.mp3",
+                        "",
+                        "10",
+                        "1"
                       ]
                     }
                   ]
@@ -14083,7 +14106,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "0.01",
+                    "0.02",
                     ""
                   ]
                 },
@@ -14300,7 +14323,7 @@
                     "Dino_Vita",
                     "FireBullet",
                     "=",
-                    "0.01",
+                    "0.02",
                     ""
                   ]
                 },
@@ -16289,20 +16312,8 @@
                         "Dino_Vita.CenterY()",
                         "EnemyBullet2",
                         "90",
-                        "300",
+                        "400",
                         ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlaySound"
-                      },
-                      "parameters": [
-                        "",
-                        "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
-                        "no",
-                        "5",
-                        "1"
                       ]
                     },
                     {
@@ -16315,6 +16326,18 @@
                         "=",
                         "3",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "3_focus_points.mp3",
+                        "",
+                        "10",
+                        "1"
                       ]
                     }
                   ]
@@ -17502,27 +17525,6 @@
                 "\"MoveRight\"",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
-              },
-              "parameters": [
-                "Charge_Bar",
-                "=",
-                "0",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Charge",
-                "=",
-                "0"
-              ]
             }
           ],
           "events": [
@@ -17598,6 +17600,44 @@
                     "Score",
                     "+",
                     "10000"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Deathblow",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Charge",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+                  },
+                  "parameters": [
+                    "Charge_Bar",
+                    "=",
+                    "0",
+                    ""
                   ]
                 }
               ]
@@ -17689,7 +17729,7 @@
                     "NewText2",
                     "Text",
                     "=",
-                    "\"+100 Health Bonus!\""
+                    "\"+150 Health Bonus!\""
                   ]
                 },
                 {
@@ -17709,7 +17749,18 @@
                   "parameters": [
                     "HealthBar",
                     "+",
-                    "100",
+                    "150",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Health::Health::Heal"
+                  },
+                  "parameters": [
+                    "Pancakes",
+                    "Health",
+                    "150",
                     ""
                   ]
                 },
@@ -18214,7 +18265,7 @@
                     "NewText2",
                     "Text",
                     "=",
-                    "\"+100 Health Bonus!\""
+                    "\"+150 Health Bonus!\""
                   ]
                 },
                 {
@@ -18234,7 +18285,18 @@
                   "parameters": [
                     "HealthBar",
                     "+",
-                    "100",
+                    "150",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Health::Health::Heal"
+                  },
+                  "parameters": [
+                    "Pancakes",
+                    "Health",
+                    "150",
                     ""
                   ]
                 }
@@ -18423,7 +18485,6 @@
       "events": [
         {
           "aiGeneratedEventId": "01KAF0CGSVNABQMHB467XFVANN",
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -18459,7 +18520,7 @@
                   "parameters": [
                     "EnemyBullet2",
                     "Pancakes",
-                    "40",
+                    "50",
                     ""
                   ]
                 }
@@ -18528,7 +18589,96 @@
                     "+",
                     "1000"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "Health::Health::SetChanceToDodgeOp"
+                  },
+                  "parameters": [
+                    "Pancakes",
+                    "Health",
+                    "=",
+                    "1",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"iFrames\""
+                  ]
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"iFrames\"",
+                ">=",
+                "0.2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Health::Health::SetChanceToDodgeOp"
+              },
+              "parameters": [
+                "Pancakes",
+                "Health",
+                "=",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "RemoveTimer"
+              },
+              "parameters": [
+                "",
+                "\"iFrames\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::Value"
+              },
+              "parameters": [
+                "Charge_Bar",
+                ">=",
+                "10",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
+              },
+              "parameters": [
+                "Pancakes",
+                "Effect",
+                "\"Effect3\"",
+                "yes"
               ]
             }
           ]
@@ -18555,9 +18705,53 @@
                 "10",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::Value"
+              },
+              "parameters": [
+                "BossHealth",
+                "<=",
+                "5000",
+                ""
+              ]
             }
           ],
-          "actions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Charge",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+              },
+              "parameters": [
+                "Charge_Bar",
+                "=",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
+              },
+              "parameters": [
+                "Pancakes",
+                "Effect",
+                "\"Effect3\"",
+                "no"
+              ]
+            }
+          ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -18753,6 +18947,11 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         }
       ],
       "parameters": []
