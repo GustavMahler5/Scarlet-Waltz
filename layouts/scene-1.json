@@ -10189,6 +10189,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Enemy Movement",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -17196,7 +17197,6 @@
           ]
         },
         {
-          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -18479,6 +18479,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Parry and Charge Release",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
