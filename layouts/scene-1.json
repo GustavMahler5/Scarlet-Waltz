@@ -3942,8 +3942,8 @@
       ],
       "behaviors": [],
       "content": {
-        "InitialValue": 1000,
-        "MaxValue": 1000,
+        "InitialValue": 10000,
+        "MaxValue": 10000,
         "BarTopPadding": 8,
         "BarRightPadding": 10,
         "BarBottomPadding": 8,
