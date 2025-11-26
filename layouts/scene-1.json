@@ -18616,11 +18616,31 @@
       "conditions": [
         {
           "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+            "value": "BuiltinCommonInstructions::Or"
           },
-          "parameters": [
-            "EnemyBullet5",
-            "Animation"
+          "parameters": [],
+          "subInstructions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+              },
+              "parameters": [
+                "EnemyBullet5",
+                "Animation"
+              ]
+            },
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "EnemyBullet5",
+                "",
+                "",
+                ""
+              ]
+            }
           ]
         }
       ],
