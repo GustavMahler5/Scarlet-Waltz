@@ -3098,114 +3098,6 @@
                       }
                     ]
                   ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Main Ship Auto Cannon Bullet_6",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 11
-                      },
-                      {
-                        "x": 24,
-                        "y": 11
-                      },
-                      {
-                        "x": 24,
-                        "y": 21
-                      },
-                      {
-                        "x": 8,
-                        "y": 21
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Main Ship Auto Cannon Bullet_7",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 11
-                      },
-                      {
-                        "x": 24,
-                        "y": 11
-                      },
-                      {
-                        "x": 24,
-                        "y": 21
-                      },
-                      {
-                        "x": 8,
-                        "y": 21
-                      }
-                    ]
-                  ]
-                },
-                {
-                  "hasCustomCollisionMask": true,
-                  "image": "Main Ship Auto Cannon Bullet_8",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 16,
-                    "y": 16
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 8,
-                        "y": 11
-                      },
-                      {
-                        "x": 24,
-                        "y": 11
-                      },
-                      {
-                        "x": 24,
-                        "y": 21
-                      },
-                      {
-                        "x": 8,
-                        "y": 21
-                      }
-                    ]
-                  ]
                 }
               ]
             }
@@ -9361,7 +9253,14 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "extraBorder": 0,
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "unseenGraceDistance": 0
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -11003,7 +10902,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Attack Patterns",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -11141,17 +11039,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "PlaySound"
                   },
                   "parameters": [
@@ -11235,17 +11122,6 @@
                     "CurrentSpiralAngle2",
                     "+",
                     "10"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
                   ]
                 },
                 {
@@ -11372,17 +11248,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
@@ -11501,17 +11366,6 @@
                     "=",
                     "0.3",
                     ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "False",
-                    "False"
                   ]
                 },
                 {
