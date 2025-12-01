@@ -13,8 +13,10 @@
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
+    "gridDepth": 32,
     "gridOffsetX": 0,
     "gridOffsetY": 0,
+    "gridOffsetZ": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
@@ -631,6 +633,16 @@
             "color": "206;190;0"
           },
           "booleanParameters": {}
+        },
+        {
+          "disabled": true,
+          "effectType": "Pixelate",
+          "name": "Effect4",
+          "doubleParameters": {
+            "size": 5
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
         }
       ],
       "behaviors": [
@@ -733,6 +745,7 @@
           "directions": [
             {
               "looping": true,
+              "metadata": "{\"pskl\":{}}",
               "timeBetweenFrames": 0.025,
               "sprites": [
                 {
@@ -9036,7 +9049,7 @@
       "behaviors": [],
       "content": {
         "InitialValue": 0,
-        "MaxValue": 10,
+        "MaxValue": 5,
         "BarTopPadding": 8,
         "BarRightPadding": 10,
         "BarBottomPadding": 8,
@@ -9260,7 +9273,7 @@
             {
               "looping": false,
               "metadata": "{\"pskl\":{}}",
-              "timeBetweenFrames": 1,
+              "timeBetweenFrames": 0.8,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
@@ -9582,6 +9595,47 @@
         "lineHeight": 0,
         "color": "116;0;0"
       }
+    },
+    {
+      "assetStoreId": "90c9b872a1439405f56d1591e01d6b9fe5dadc4dc1c3afc0bdd98f763b340fa0",
+      "name": "TinyBlueButton",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Tiny Blue Button",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "content": {
+        "LabelText": "Button",
+        "PressedLabelOffsetY": 2
+      }
+    },
+    {
+      "assetStoreId": "f0c3d7ae6099e3b9b8beed4e30b555107550b4fb2a5879e984a014b1e06865bf",
+      "name": "TransparentButtonWithWhiteBlueBorder",
+      "type": "PanelSpriteButton::PanelSpriteButton",
+      "variant": "Transparent Button With White Blue Border",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "content": {
+        "LeftPadding": 0,
+        "RightPadding": 0,
+        "PressedLabelOffsetY": 4,
+        "BottomPadding": 6,
+        "TopPadding": 0,
+        "HoveredFadeOutDuration": 0,
+        "LabelText": "Button"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -9676,6 +9730,12 @@
       },
       {
         "objectName": "TwoChoicesDialogBox"
+      },
+      {
+        "objectName": "TinyBlueButton"
+      },
+      {
+        "objectName": "TransparentButtonWithWhiteBlueBorder"
       }
     ]
   },
@@ -15211,6 +15271,21 @@
                     "Tween",
                     "\"MoveRight\""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "SupportBoss",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet2",
+                    "90",
+                    "300",
+                    ""
+                  ]
                 }
               ]
             },
@@ -15262,6 +15337,21 @@
                     "Dino_Vita",
                     "Tween",
                     "\"MoveLeft\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FireBullet::FireBullet::Fire"
+                  },
+                  "parameters": [
+                    "SupportBoss",
+                    "FireBullet",
+                    "Dino_Vita.CenterX()",
+                    "Dino_Vita.CenterY()",
+                    "EnemyBullet2",
+                    "90",
+                    "300",
+                    ""
                   ]
                 }
               ]
@@ -15530,7 +15620,7 @@
                       "parameters": [
                         "CurrentSpiralAngle",
                         ">=",
-                        "170"
+                        "200"
                       ]
                     }
                   ],
@@ -15542,6 +15632,21 @@
                       "parameters": [
                         "SwayLeft",
                         "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet2",
+                        "90",
+                        "300",
                         ""
                       ]
                     }
@@ -15646,7 +15751,7 @@
                   "parameters": [
                     "Dino_Vita",
                     "Tween",
-                    "\"TweenTopRight\"",
+                    "\"TweenTopLeft\"",
                     "50",
                     "150",
                     "\"linear\"",
@@ -15808,7 +15913,7 @@
                       "parameters": [
                         "CurrentSpiralAngle",
                         "<=",
-                        "30"
+                        "20"
                       ]
                     }
                   ],
@@ -15820,6 +15925,21 @@
                       "parameters": [
                         "SwayLeft",
                         "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "FireBullet::FireBullet::Fire"
+                      },
+                      "parameters": [
+                        "SupportBoss",
+                        "FireBullet",
+                        "Dino_Vita.CenterX()",
+                        "Dino_Vita.CenterY()",
+                        "EnemyBullet2",
+                        "90",
+                        "300",
                         ""
                       ]
                     }
@@ -15835,6 +15955,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 8",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -17303,6 +17424,40 @@
                 "Pancakes",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "TransparentButtonWithWhiteBlueBorder",
+                "SceneWindowWidth()/2 - 150",
+                "SceneWindowHeight()/2",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+              },
+              "parameters": [
+                "TransparentButtonWithWhiteBlueBorder",
+                "=",
+                "\"Restart\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetSize"
+              },
+              "parameters": [
+                "TransparentButtonWithWhiteBlueBorder",
+                "Resizable",
+                "300",
+                "80"
+              ]
             }
           ]
         },
@@ -18466,7 +18621,67 @@
                     "=",
                     "35"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "TransparentButtonWithWhiteBlueBorder",
+                    "SceneWindowWidth()/2 - 150",
+                    "SceneWindowHeight()/2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::SetLabelTextOp"
+                  },
+                  "parameters": [
+                    "TransparentButtonWithWhiteBlueBorder",
+                    "=",
+                    "\"Restart\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "TransparentButtonWithWhiteBlueBorder",
+                    "Resizable",
+                    "300",
+                    "80"
+                  ]
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "TransparentButtonWithWhiteBlueBorder",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"scene 1\"",
+                ""
               ]
             }
           ]
@@ -18479,7 +18694,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Parry and Charge Release",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -18498,7 +18712,28 @@
               ]
             }
           ],
-          "actions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"iFrames\""
+              ]
+            },
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
+              },
+              "parameters": [
+                "Pancakes",
+                "Effect",
+                "\"Effect4\"",
+                "yes"
+              ]
+            }
+          ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -18602,15 +18837,6 @@
                     "1",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "ResetTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"iFrames\""
-                  ]
                 }
               ]
             }
@@ -18627,7 +18853,7 @@
                 "",
                 "\"iFrames\"",
                 ">=",
-                "0.2"
+                "0.3"
               ]
             }
           ],
@@ -18641,6 +18867,17 @@
                 "Health",
                 "=",
                 "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
+              },
+              "parameters": [
+                "Pancakes",
+                "Effect",
+                "\"Effect4\"",
                 ""
               ]
             },
@@ -18665,7 +18902,7 @@
               "parameters": [
                 "Charge_Bar",
                 ">=",
-                "10",
+                "5",
                 ""
               ]
             }
@@ -18703,7 +18940,7 @@
               "parameters": [
                 "Charge_Bar",
                 ">=",
-                "10",
+                "5",
                 ""
               ]
             },
@@ -19150,6 +19387,7 @@
       "ambientLightColorB": 200,
       "ambientLightColorG": 200,
       "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
       "camera3DFarPlaneDistance": 10000,
       "camera3DFieldOfView": 45,
       "camera3DNearPlaneDistance": 3,
@@ -19214,6 +19452,7 @@
       "ambientLightColorB": 200,
       "ambientLightColorG": 200,
       "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
       "camera3DFarPlaneDistance": 10000,
       "camera3DFieldOfView": 45,
       "camera3DNearPlaneDistance": 3,
