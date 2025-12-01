@@ -10384,6 +10384,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Timers",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -11002,6 +11003,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Attack Patterns",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -15415,7 +15417,7 @@
                     "Dino_Vita.CenterY()",
                     "EnemyBullet5",
                     "90",
-                    "200",
+                    "180",
                     ""
                   ]
                 },
@@ -15955,7 +15957,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 8",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -16231,7 +16232,7 @@
                         "Dino_Vita.CenterY()",
                         "EnemyBullet5",
                         "105",
-                        "150",
+                        "140",
                         ""
                       ]
                     }
@@ -16917,6 +16918,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Collision and Health Logic",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -17433,7 +17435,7 @@
                 "",
                 "TransparentButtonWithWhiteBlueBorder",
                 "SceneWindowWidth()/2 - 150",
-                "SceneWindowHeight()/2",
+                "SceneWindowHeight()/2 + 50",
                 ""
               ]
             },
@@ -17444,7 +17446,7 @@
               "parameters": [
                 "TransparentButtonWithWhiteBlueBorder",
                 "=",
-                "\"Restart\"",
+                "\"Play Again\"",
                 ""
               ]
             },
@@ -18630,7 +18632,7 @@
                     "",
                     "TransparentButtonWithWhiteBlueBorder",
                     "SceneWindowWidth()/2 - 150",
-                    "SceneWindowHeight()/2",
+                    "SceneWindowHeight()/2 + 50",
                     ""
                   ]
                 },
@@ -18641,7 +18643,7 @@
                   "parameters": [
                     "TransparentButtonWithWhiteBlueBorder",
                     "=",
-                    "\"Restart\"",
+                    "\"Play Again\"",
                     ""
                   ]
                 },
@@ -18694,6 +18696,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Parry and Charge Release",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -19196,31 +19199,6 @@
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
-          },
-          "parameters": [
-            "Explosion_1",
-            "Animation"
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "Explosion_1",
-            "Explosion_1"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
       "actions": [
         {
@@ -19285,6 +19263,31 @@
       "conditions": [
         {
           "type": {
+            "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+          },
+          "parameters": [
+            "Explosion_1",
+            "Animation"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "Explosion_1",
+            "Explosion_1"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
             "value": "BuiltinCommonInstructions::Or"
           },
           "parameters": [],
@@ -19336,6 +19339,18 @@
           "parameters": [
             "EnemyBullet5",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+            "no",
+            "5",
+            "1"
           ]
         }
       ]
