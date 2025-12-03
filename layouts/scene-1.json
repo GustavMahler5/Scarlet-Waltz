@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.6244537826600022,
+    "zoomFactor": 0.5117784035210203,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -3170,7 +3170,7 @@
         "shadowAngle": 90,
         "shadowBlurRadius": 2,
         "shadowColor": "0;0;0",
-        "shadowDistance": 4,
+        "shadowDistance": 3,
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
@@ -3582,7 +3582,7 @@
         "shadowAngle": 90,
         "shadowBlurRadius": 2,
         "shadowColor": "255;255;255",
-        "shadowDistance": 4,
+        "shadowDistance": 3,
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
@@ -9255,9 +9255,9 @@
       "effects": [],
       "behaviors": [
         {
-          "extraBorder": 0,
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 0,
           "unseenGraceDistance": 0
         }
       ],
@@ -9482,7 +9482,7 @@
         "shadowAngle": 90,
         "shadowBlurRadius": 2,
         "shadowColor": "255;255;255",
-        "shadowDistance": 4,
+        "shadowDistance": 3,
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
@@ -9534,6 +9534,49 @@
         "TopPadding": 0,
         "HoveredFadeOutDuration": 0,
         "LabelText": "Button"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Credits",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Credits:\n\nConcept - Jason Holtman\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nSound - Jason Holtman\nMusic - Cooper Irving\n\nSpecial Thanks - Ota Junya",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 143,
+        "g": 66,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "255;255;255",
+        "shadowDistance": 3,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Credits:\n\nConcept - Jason Holtman\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nSound - Jason Holtman\nMusic - Cooper Irving\n\nSpecial Thanks - Ota Junya",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "lineHeight": 0,
+        "color": "0;66;143"
       }
     }
   ],
@@ -9617,6 +9660,9 @@
       },
       {
         "objectName": "Score2"
+      },
+      {
+        "objectName": "Credits"
       },
       {
         "objectName": "Magic"
@@ -9972,18 +10018,6 @@
         },
         {
           "type": {
-            "value": "PlayMusic"
-          },
-          "parameters": [
-            "",
-            "BGM.mp3",
-            "no",
-            "45",
-            "1"
-          ]
-        },
-        {
-          "type": {
             "value": "Tween::TweenBehavior::AddObjectPositionTween2"
           },
           "parameters": [
@@ -10024,6 +10058,37 @@
           "parameters": [
             "TwoChoicesDialogBox",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "PlayMusic"
+          },
+          "parameters": [
+            "",
+            "JSONGAMELOOP.mp3",
+            "yes",
+            "30",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "PlayMusic"
+          },
+          "parameters": [
+            "",
+            "BGM.mp3",
+            "yes",
+            "45",
+            "1"
           ]
         }
       ]
@@ -10946,6 +11011,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 1",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11832,6 +11898,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 2",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -12335,6 +12402,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 3",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -12966,6 +13034,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 4",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -13642,6 +13711,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 5",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -14905,6 +14975,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 6",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -15309,6 +15380,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 7",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -17185,6 +17257,12 @@
                 "True",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
             }
           ],
           "actions": [
@@ -17267,8 +17345,8 @@
               "parameters": [
                 "",
                 "explosion",
-                "Pancakes.PointX(\"Center\")",
-                "Pancakes.PointY(\"Center\")",
+                "Pancakes.PointX(\"XPos\")",
+                "Pancakes.PointY(\"YPos\")",
                 ""
               ]
             },
@@ -17718,7 +17796,7 @@
                   "parameters": [
                     "",
                     "NewText2",
-                    "SceneWindowWidth()/2 - 250",
+                    "SceneWindowWidth()/2 - 275",
                     "SceneWindowHeight()/2 - 95",
                     "\"UI\""
                   ]
@@ -18152,7 +18230,7 @@
                   "parameters": [
                     "",
                     "NewText2",
-                    "SceneWindowWidth()/2 - 250",
+                    "SceneWindowWidth()/2 - 275",
                     "SceneWindowHeight()/2 - 45",
                     "\"UI\""
                   ]
@@ -18425,7 +18503,7 @@
                     "",
                     "\"PhaseTimer\"",
                     ">=",
-                    "7"
+                    "6"
                   ]
                 },
                 {
@@ -18444,7 +18522,7 @@
                     "",
                     "NewText2",
                     "SceneWindowWidth()/2 - 250",
-                    "SceneWindowHeight()/2 - 45",
+                    "SceneWindowHeight()/5",
                     "\"UI\""
                   ]
                 },
@@ -18486,7 +18564,7 @@
                     "",
                     "TransparentButtonWithWhiteBlueBorder",
                     "SceneWindowWidth()/2 - 150",
-                    "SceneWindowHeight()/2 + 50",
+                    "SceneWindowHeight()/4",
                     ""
                   ]
                 },
@@ -18510,6 +18588,37 @@
                     "Resizable",
                     "300",
                     "80"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Credits",
+                    "SceneWindowWidth()/2 - 250",
+                    "SceneWindowHeight()/2",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::Font"
+                  },
+                  "parameters": [
+                    "Credits",
+                    "ecf7f6cb89e16c44e3b5a9c8abb703ba6cbc52eb8529353125f4f5caed404144_Silkscreen-Bold.ttf"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::Text::SetFontSize"
+                  },
+                  "parameters": [
+                    "Credits",
+                    "=",
+                    "25"
                   ]
                 }
               ]
@@ -18550,7 +18659,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Parry and Charge Release",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -18710,7 +18818,7 @@
                 "",
                 "\"iFrames\"",
                 ">=",
-                "0.3"
+                "0.4"
               ]
             }
           ],
