@@ -1,9 +1,9 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 248,
+    "build": 249,
     "major": 5,
-    "minor": 5,
+    "minor": 6,
     "revision": 0
   },
   "properties": {
@@ -3436,6 +3436,86 @@
         "kind": "audio",
         "metadata": "",
         "name": "JSONGAMELOOP.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "bullet 1.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "bullet 1.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "bullet 2.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "bullet 2.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "awesome guy bullet.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "awesome guy bullet.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "damage.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "damage.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "new bullet.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "new bullet.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "even newer bullet.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "even newer bullet.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "even newer new bullet.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "even newer new bullet.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Gun 5.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets\\Gun 5.aac",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,

@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.5117784035210203,
+    "zoomFactor": 0.4950840073748916,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -796,13 +796,7 @@
       "name": "Dino_Vita",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [
-        {
-          "name": "dinoMoving",
-          "type": "boolean",
-          "value": true
-        }
-      ],
+      "variables": [],
       "effects": [
         {
           "effectType": "Brightness",
@@ -9547,7 +9541,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Credits:\n\nConcept - Jason Holtman\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nSound - Jason Holtman\nMusic - Cooper Irving\n\nSpecial Thanks - Ota Junya",
+      "string": "Credits:\n\nConcept - Jason Holtman\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nSound - Jason Holtman\n             Orb Weaver\nMusic - Orb Weaver\n\nSpecial Thanks - Ota Junya",
       "font": "",
       "textAlignment": "left",
       "characterSize": 20,
@@ -9570,7 +9564,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Credits:\n\nConcept - Jason Holtman\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nSound - Jason Holtman\nMusic - Cooper Irving\n\nSpecial Thanks - Ota Junya",
+        "text": "Credits:\n\nConcept - Jason Holtman\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nSound - Jason Holtman\n             Orb Weaver\nMusic - Orb Weaver\n\nSpecial Thanks - Ota Junya",
         "font": "",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
@@ -9695,6 +9689,16 @@
           "parameters": [
             "",
             "\"Left\""
+          ]
+        },
+        {
+          "type": {
+            "value": "FireBullet::FireBullet::IsReadyToShoot"
+          },
+          "parameters": [
+            "Pancakes",
+            "FireBullet",
+            ""
           ]
         }
       ],
@@ -10043,6 +10047,18 @@
         },
         {
           "type": {
+            "value": "PlayMusic"
+          },
+          "parameters": [
+            "",
+            "JSONGAMELOOP.mp3",
+            "yes",
+            "25",
+            ""
+          ]
+        },
+        {
+          "type": {
             "value": "ActivateBehavior"
           },
           "parameters": [
@@ -10057,18 +10073,6 @@
           },
           "parameters": [
             "TwoChoicesDialogBox",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "PlayMusic"
-          },
-          "parameters": [
-            "",
-            "JSONGAMELOOP.mp3",
-            "yes",
-            "30",
             ""
           ]
         }
@@ -10089,6 +10093,18 @@
             "yes",
             "45",
             "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "PlaySound"
+          },
+          "parameters": [
+            "",
+            "even newer new bullet.mp3",
+            "",
+            "40",
+            ""
           ]
         }
       ]
@@ -11011,7 +11027,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 1",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11105,6 +11120,35 @@
                 },
                 {
                   "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "",
+                    "5",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
                     "value": "PlaySound"
                   },
                   "parameters": [
@@ -11117,12 +11161,14 @@
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
+                    "value": "PlaySound"
                   },
                   "parameters": [
-                    "PatternSwitchInterval",
-                    "=",
-                    "2"
+                    "",
+                    "bullet 1.mp3",
+                    "",
+                    "35",
+                    ""
                   ]
                 }
               ]
@@ -11203,23 +11249,23 @@
                 },
                 {
                   "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                    "no",
-                    "5",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
                     "PatternSwitchInterval",
                     "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "",
+                    "5",
                     "1"
                   ]
                 }
@@ -11325,6 +11371,16 @@
                 },
                 {
                   "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PatternSwitchInterval",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "PlaySound"
                   },
                   "parameters": [
@@ -11332,16 +11388,6 @@
                     "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
                     "",
                     "5",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "PatternSwitchInterval",
-                    "=",
                     "1"
                   ]
                 }
@@ -11469,18 +11515,6 @@
                 },
                 {
                   "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-                    "",
-                    "5",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -11497,6 +11531,18 @@
                     "CurrentSpiralAngle",
                     "+",
                     "25"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                    "",
+                    "5",
+                    "1"
                   ]
                 }
               ]
@@ -11566,7 +11612,7 @@
                         "",
                         "3_focus_points.mp3",
                         "",
-                        "10",
+                        "8",
                         "1"
                       ]
                     }
@@ -11898,7 +11944,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 2",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11998,17 +12043,6 @@
                     "CurrentSpiralAngle",
                     "+",
                     "31"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "False",
-                    "False"
                   ]
                 },
                 {
@@ -12150,17 +12184,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
@@ -12291,17 +12314,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "False",
-                    "False"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
@@ -12402,7 +12414,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 3",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -12634,17 +12645,6 @@
                     "CurrentSpiralAngle",
                     "+",
                     "0.5"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "False"
                   ]
                 },
                 {
@@ -13034,7 +13034,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 4",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -13134,17 +13133,6 @@
                     "=",
                     "0.01",
                     ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
                   ]
                 },
                 {
@@ -13659,17 +13647,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "False",
-                    "False"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
@@ -13711,7 +13688,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 5",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -13811,17 +13787,6 @@
                     "=",
                     "0.01",
                     ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
                   ]
                 },
                 {
@@ -14099,17 +14064,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
@@ -14316,17 +14270,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
@@ -14519,17 +14462,6 @@
                     "=",
                     "0.1",
                     ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "Dino_Vita",
-                    "dinoMoving",
-                    "True",
-                    "True"
                   ]
                 },
                 {
@@ -14975,7 +14907,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 6",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -15380,7 +15311,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Phase 7",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -16844,7 +16774,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Collision and Health Logic",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -16887,6 +16816,18 @@
                 "Dino_Doux",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "even newer new bullet.mp3",
+                "",
+                "80",
+                ""
+              ]
             }
           ]
         },
@@ -16924,6 +16865,18 @@
                 "Score",
                 "+",
                 "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "damage.mp3",
+                "",
+                "35",
+                ""
               ]
             }
           ]
