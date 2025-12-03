@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4950840073748916,
+    "zoomFactor": 0.6244537826600026,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -576,8 +576,8 @@
       "name": "TwoChoicesDialogBox",
       "persistentUuid": "fb9ee11f-bf16-46e8-8f47-0adc4b383cdb",
       "width": 720,
-      "x": 0,
-      "y": 1,
+      "x": 4,
+      "y": -1,
       "zOrder": 109,
       "numberProperties": [],
       "stringProperties": [],
@@ -9541,7 +9541,7 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Credits:\n\nConcept - Jason Holtman\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nSound - Jason Holtman\n             Orb Weaver\nMusic - Orb Weaver\n\nSpecial Thanks - Ota Junya",
+      "string": "Credits:\n\nConcept - Jason Holtman \n               Hudson Lewitzke\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nBeta Art - Hudson Lewitzke\nSound - Jason Holtman\n             Orb Weaver\nMusic - Orb Weaver\nPlaytesting - Hudson Lewitzke\n\nSpecial Thanks - Ota Junya",
       "font": "",
       "textAlignment": "left",
       "characterSize": 20,
@@ -9564,7 +9564,7 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Credits:\n\nConcept - Jason Holtman\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nSound - Jason Holtman\n             Orb Weaver\nMusic - Orb Weaver\n\nSpecial Thanks - Ota Junya",
+        "text": "Credits:\n\nConcept - Jason Holtman \n               Hudson Lewitzke\nDesign - Jason Holtman\nCode - Jason Holtman\nArt - Jason Holtman\nBeta Art - Hudson Lewitzke\nSound - Jason Holtman\n             Orb Weaver\nMusic - Orb Weaver\nPlaytesting - Hudson Lewitzke\n\nSpecial Thanks - Ota Junya",
         "font": "",
         "textAlignment": "left",
         "verticalTextAlignment": "top",
@@ -9680,549 +9680,562 @@
   },
   "events": [
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Initialize",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "MouseButtonFromTextPressed"
-          },
-          "parameters": [
-            "",
-            "\"Left\""
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::IsReadyToShoot"
+              },
+              "parameters": [
+                "Pancakes",
+                "FireBullet",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::FireTowardPosition"
+              },
+              "parameters": [
+                "Pancakes",
+                "FireBullet",
+                "Pancakes.X()",
+                "Pancakes.Y()",
+                "Dino_Doux",
+                "Pancakes.X()",
+                "Pancakes.Angle() - 90 ",
+                "700",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "Dino_Doux",
+                "Opacity",
+                "=",
+                "50"
+              ]
+            }
           ]
         },
         {
-          "type": {
-            "value": "FireBullet::FireBullet::IsReadyToShoot"
-          },
-          "parameters": [
-            "Pancakes",
-            "FireBullet",
-            ""
+          "aiGeneratedEventId": "01KA47J129NQE0D2G7YQ4Z3X9M",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatternIndex",
+                "=",
+                "-1"
+              ]
+            },
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::SetEffectDoubleParameter"
+              },
+              "parameters": [
+                "Pancakes",
+                "Effect",
+                "\"Effect\"",
+                "\"brightness\"",
+                "50"
+              ]
+            },
+            {
+              "type": {
+                "value": "Sticker::Sticker::Stick"
+              },
+              "parameters": [
+                "vortex",
+                "Sticker",
+                "Dino_Vita",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Pancakes",
+                "=",
+                "SceneWindowWidth()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "Background",
+                "Opacity",
+                "=",
+                "60"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "borderBackground",
+                "Opacity",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LenaSpawnOriginal[0]",
+                "=",
+                "SceneWindowWidth()/8"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LenaSpawn[0]",
+                "=",
+                "SceneWindowWidth()/8"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MortSpawnOriginal[0]",
+                "=",
+                "SceneWindowWidth()*(7/8)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MortSpawn[0]",
+                "=",
+                "SceneWindowWidth()*(7/8)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Health::Health::SetChanceToDodgeOp"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Health",
+                "=",
+                "1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "HealthBar",
+                "Opacity",
+                "=",
+                "200"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "BossHealth",
+                "Opacity",
+                "=",
+                "200"
+              ]
+            },
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::SetBulletQuantityOp"
+              },
+              "parameters": [
+                "SupportBoss",
+                "FireBullet",
+                "=",
+                "256",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::SetFiringArcOp"
+              },
+              "parameters": [
+                "SupportBoss",
+                "FireBullet",
+                "=",
+                "360",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::SetCooldownOp"
+              },
+              "parameters": [
+                "SupportBoss",
+                "FireBullet",
+                "=",
+                "0.5",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Score2",
+                "50",
+                "SceneWindowHeight() - 100",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::Font"
+              },
+              "parameters": [
+                "Score2",
+                "ecf7f6cb89e16c44e3b5a9c8abb703ba6cbc52eb8529353125f4f5caed404144_Silkscreen-Bold.ttf"
+              ]
+            },
+            {
+              "type": {
+                "value": "ActivateBehavior"
+              },
+              "parameters": [
+                "Pancakes",
+                "FireBullet",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
+              },
+              "parameters": [
+                "Pancakes",
+                "Effect",
+                "\"Effect3\"",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Score2",
+                "Text",
+                "=",
+                "\"Score: \" + ToString(Score)"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01KA47J129NQE0D2G7YQ4Z3X9M",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "AnyKeyPressed"
+              },
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "GameInit",
+                "=",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "Background",
+                "Tween",
+                "\"videotween\"",
+                "0",
+                "\"linear\"",
+                "15",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"TweenInitiate\"",
+                "DinoVitaInitialX",
+                "DinoVitaInitialY",
+                "\"linear\"",
+                "7",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "GameInit",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlayMusic"
+              },
+              "parameters": [
+                "",
+                "JSONGAMELOOP.mp3",
+                "yes",
+                "25",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ActivateBehavior"
+              },
+              "parameters": [
+                "Pancakes",
+                "FireBullet",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "TwoChoicesDialogBox",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusic"
+              },
+              "parameters": [
+                "",
+                "BGM.mp3",
+                "yes",
+                "45",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "even newer new bullet.mp3",
+                "",
+                "40",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Tween::HasFinished"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Tween",
+                "\"TweenInitiate\""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "phaseNumber",
+                "=",
+                "-1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "phaseNumber",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Health::Health::SetChanceToDodgeOp"
+              },
+              "parameters": [
+                "Dino_Vita",
+                "Health",
+                "=",
+                "0",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Tween::HasFinished"
+              },
+              "parameters": [
+                "Background",
+                "Tween",
+                "\"videotween\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "Background",
+                "=",
+                "-832"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
+              },
+              "parameters": [
+                "Background",
+                "Tween",
+                "\"videotween\"",
+                "0",
+                "\"linear\"",
+                "20",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "Background",
+                "Opacity",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "Background",
+                "Tween",
+                "\"tweenopacity\"",
+                "50",
+                "\"linear\"",
+                "1",
+                ""
+              ]
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::FireTowardPosition"
-          },
-          "parameters": [
-            "Pancakes",
-            "FireBullet",
-            "Pancakes.X()",
-            "Pancakes.Y()",
-            "Dino_Doux",
-            "Pancakes.X()",
-            "Pancakes.Angle() - 90 ",
-            "700",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "OpacityCapability::OpacityBehavior::SetValue"
-          },
-          "parameters": [
-            "Dino_Doux",
-            "Opacity",
-            "=",
-            "50"
-          ]
-        }
-      ]
-    },
-    {
-      "aiGeneratedEventId": "01KA47J129NQE0D2G7YQ4Z3X9M",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "DepartScene"
-          },
-          "parameters": [
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "PatternIndex",
-            "=",
-            "-1"
-          ]
-        },
-        {
-          "type": {
-            "value": "EffectCapability::EffectBehavior::SetEffectDoubleParameter"
-          },
-          "parameters": [
-            "Pancakes",
-            "Effect",
-            "\"Effect\"",
-            "\"brightness\"",
-            "50"
-          ]
-        },
-        {
-          "type": {
-            "value": "Sticker::Sticker::Stick"
-          },
-          "parameters": [
-            "vortex",
-            "Sticker",
-            "Dino_Vita",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "MettreX"
-          },
-          "parameters": [
-            "Pancakes",
-            "=",
-            "SceneWindowWidth()/2"
-          ]
-        },
-        {
-          "type": {
-            "value": "OpacityCapability::OpacityBehavior::SetValue"
-          },
-          "parameters": [
-            "Background",
-            "Opacity",
-            "=",
-            "60"
-          ]
-        },
-        {
-          "type": {
-            "value": "OpacityCapability::OpacityBehavior::SetValue"
-          },
-          "parameters": [
-            "borderBackground",
-            "Opacity",
-            "=",
-            "0"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "LenaSpawnOriginal[0]",
-            "=",
-            "SceneWindowWidth()/8"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "LenaSpawn[0]",
-            "=",
-            "SceneWindowWidth()/8"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "MortSpawnOriginal[0]",
-            "=",
-            "SceneWindowWidth()*(7/8)"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "MortSpawn[0]",
-            "=",
-            "SceneWindowWidth()*(7/8)"
-          ]
-        },
-        {
-          "type": {
-            "value": "Health::Health::SetChanceToDodgeOp"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "Health",
-            "=",
-            "1",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "OpacityCapability::OpacityBehavior::SetValue"
-          },
-          "parameters": [
-            "HealthBar",
-            "Opacity",
-            "=",
-            "200"
-          ]
-        },
-        {
-          "type": {
-            "value": "OpacityCapability::OpacityBehavior::SetValue"
-          },
-          "parameters": [
-            "BossHealth",
-            "Opacity",
-            "=",
-            "200"
-          ]
-        },
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::SetBulletQuantityOp"
-          },
-          "parameters": [
-            "SupportBoss",
-            "FireBullet",
-            "=",
-            "256",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::SetFiringArcOp"
-          },
-          "parameters": [
-            "SupportBoss",
-            "FireBullet",
-            "=",
-            "360",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::SetCooldownOp"
-          },
-          "parameters": [
-            "SupportBoss",
-            "FireBullet",
-            "=",
-            "0.5",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "Score2",
-            "50",
-            "SceneWindowHeight() - 100",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "TextObject::Font"
-          },
-          "parameters": [
-            "Score2",
-            "ecf7f6cb89e16c44e3b5a9c8abb703ba6cbc52eb8529353125f4f5caed404144_Silkscreen-Bold.ttf"
-          ]
-        },
-        {
-          "type": {
-            "value": "ActivateBehavior"
-          },
-          "parameters": [
-            "Pancakes",
-            "FireBullet",
-            "no"
-          ]
-        },
-        {
-          "type": {
-            "value": "EffectCapability::EffectBehavior::EnableEffect"
-          },
-          "parameters": [
-            "Pancakes",
-            "Effect",
-            "\"Effect3\"",
-            "no"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-          },
-          "parameters": [
-            "Score2",
-            "Text",
-            "=",
-            "\"Score: \" + ToString(Score)"
-          ]
-        }
-      ]
-    },
-    {
-      "aiGeneratedEventId": "01KA47J129NQE0D2G7YQ4Z3X9M",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "AnyKeyPressed"
-          },
-          "parameters": [
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "BooleanVariable"
-          },
-          "parameters": [
-            "GameInit",
-            "=",
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
-          },
-          "parameters": [
-            "Background",
-            "Tween",
-            "\"videotween\"",
-            "0",
-            "\"linear\"",
-            "15",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionTween2"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "Tween",
-            "\"TweenInitiate\"",
-            "DinoVitaInitialX",
-            "DinoVitaInitialY",
-            "\"linear\"",
-            "7",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetBooleanVariable"
-          },
-          "parameters": [
-            "GameInit",
-            "True",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "PlayMusic"
-          },
-          "parameters": [
-            "",
-            "JSONGAMELOOP.mp3",
-            "yes",
-            "25",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "ActivateBehavior"
-          },
-          "parameters": [
-            "Pancakes",
-            "FireBullet",
-            "yes"
-          ]
-        },
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "TwoChoicesDialogBox",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "disabled": true,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "PlayMusic"
-          },
-          "parameters": [
-            "",
-            "BGM.mp3",
-            "yes",
-            "45",
-            "1"
-          ]
-        },
-        {
-          "type": {
-            "value": "PlaySound"
-          },
-          "parameters": [
-            "",
-            "even newer new bullet.mp3",
-            "",
-            "40",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "Tween::HasFinished"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "Tween",
-            "\"TweenInitiate\""
-          ]
-        },
-        {
-          "type": {
-            "value": "NumberVariable"
-          },
-          "parameters": [
-            "phaseNumber",
-            "=",
-            "-1"
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "phaseNumber",
-            "=",
-            "1"
-          ]
-        },
-        {
-          "type": {
-            "value": "Health::Health::SetChanceToDodgeOp"
-          },
-          "parameters": [
-            "Dino_Vita",
-            "Health",
-            "=",
-            "0",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "Tween::HasFinished"
-          },
-          "parameters": [
-            "Background",
-            "Tween",
-            "\"videotween\""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "MettreX"
-          },
-          "parameters": [
-            "Background",
-            "=",
-            "-832"
-          ]
-        },
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectPositionXTween2"
-          },
-          "parameters": [
-            "Background",
-            "Tween",
-            "\"videotween\"",
-            "0",
-            "\"linear\"",
-            "20",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "OpacityCapability::OpacityBehavior::SetValue"
-          },
-          "parameters": [
-            "Background",
-            "Opacity",
-            "=",
-            "0"
-          ]
-        },
-        {
-          "type": {
-            "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-          },
-          "parameters": [
-            "Background",
-            "Tween",
-            "\"tweenopacity\"",
-            "50",
-            "\"linear\"",
-            "1",
-            ""
-          ]
-        }
-      ]
+      "parameters": []
     },
     {
       "colorB": 228,
@@ -10983,50 +10996,17 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Attack Patterns",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
-          "aiGeneratedEventId": "01KAEZ28DF59BQMKYXDNGDGRY8",
-          "disabled": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "FireBullet::FireBullet::Fire"
-              },
-              "parameters": [
-                "SupportBoss",
-                "FireBullet",
-                "SceneWindowWidth()/2",
-                "SceneWindowHeight()/2",
-                "EnemyBullet2",
-                "90",
-                "300",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "11eced6b87fafec1d0cd90f71213fb28910ebd8e05a614bdbd44a1040f876472_Gun 5.aac",
-                "no",
-                "5",
-                "1"
-              ]
-            }
-          ]
-        },
-        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 1",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11944,6 +11924,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 2",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -12414,6 +12395,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 3",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -13034,6 +13016,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 4",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -13688,6 +13671,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 5",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -14907,6 +14891,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 6",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -15311,6 +15296,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 7",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -15813,6 +15799,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Phase 8",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -16774,6 +16761,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Collision and Health Logic",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -16814,18 +16802,6 @@
               },
               "parameters": [
                 "Dino_Doux",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "even newer new bullet.mp3",
-                "",
-                "80",
                 ""
               ]
             }
@@ -16873,9 +16849,9 @@
               },
               "parameters": [
                 "",
-                "damage.mp3",
+                "even newer new bullet.mp3",
                 "",
-                "35",
+                "80",
                 ""
               ]
             }
@@ -18612,6 +18588,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Parry and Charge Release",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -19113,203 +19090,216 @@
       "parameters": []
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Misc",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "Rotate"
-          },
-          "parameters": [
-            "EnemyBullet2",
-            "360",
-            ""
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Rotate"
+              },
+              "parameters": [
+                "EnemyBullet2",
+                "360",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Rotate"
+              },
+              "parameters": [
+                "Main_Ship_Round_Shield",
+                "360",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Rotate"
+              },
+              "parameters": [
+                "EnemyBullet6",
+                "300",
+                ""
+              ]
+            }
           ]
         },
         {
-          "type": {
-            "value": "Rotate"
-          },
-          "parameters": [
-            "Main_Ship_Round_Shield",
-            "360",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Rotate"
-          },
-          "parameters": [
-            "EnemyBullet6",
-            "300",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
-          },
-          "parameters": [
-            "explosion",
-            "Animation"
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "explosion",
-            "Explosion_1"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
-          },
-          "parameters": [
-            "Explosion_1",
-            "Animation"
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "Explosion_1",
-            "Explosion_1"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "BuiltinCommonInstructions::Or"
-          },
-          "parameters": [],
-          "subInstructions": [
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
             {
               "type": {
                 "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
               },
               "parameters": [
-                "EnemyBullet5",
+                "explosion",
                 "Animation"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "explosion",
+                "Explosion_1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+              },
+              "parameters": [
+                "Explosion_1",
+                "Animation"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Explosion_1",
+                "Explosion_1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                  },
+                  "parameters": [
+                    "EnemyBullet5",
+                    "Animation"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Pancakes",
+                    "EnemyBullet5",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::Fire"
+              },
+              "parameters": [
+                "EnemyBullet5",
+                "FireBullet",
+                "EnemyBullet5.CenterX()",
+                "EnemyBullet5.CenterY()",
+                "EnemyBullet6",
+                "90",
+                "200",
+                ""
               ]
             },
             {
               "type": {
-                "value": "CollisionNP"
+                "value": "Delete"
               },
               "parameters": [
-                "Pancakes",
                 "EnemyBullet5",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
                 "",
-                "",
+                "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
+                "no",
+                "5",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+              },
+              "parameters": [
+                "EnemyBullet7",
+                "Animation"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FireBullet::FireBullet::Fire"
+              },
+              "parameters": [
+                "EnemyBullet7",
+                "FireBullet",
+                "EnemyBullet7.CenterX()",
+                "EnemyBullet7.CenterY()",
+                "EnemyBullet5",
+                "90",
+                "200",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "EnemyBullet7",
                 ""
               ]
             }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::Fire"
-          },
-          "parameters": [
-            "EnemyBullet5",
-            "FireBullet",
-            "EnemyBullet5.CenterX()",
-            "EnemyBullet5.CenterY()",
-            "EnemyBullet6",
-            "90",
-            "200",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "EnemyBullet5",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "PlaySound"
-          },
-          "parameters": [
-            "",
-            "7abe0117ada1388ea6ff49d64b7917a8800e35eea70aa2d0c8cca8b3978d5acb_Laser-weapon 8.aac",
-            "no",
-            "5",
-            "1"
-          ]
-        }
-      ]
-    },
-    {
-      "disabled": true,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
-          },
-          "parameters": [
-            "EnemyBullet7",
-            "Animation"
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "FireBullet::FireBullet::Fire"
-          },
-          "parameters": [
-            "EnemyBullet7",
-            "FireBullet",
-            "EnemyBullet7.CenterX()",
-            "EnemyBullet7.CenterY()",
-            "EnemyBullet5",
-            "90",
-            "200",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "EnemyBullet7",
-            ""
-          ]
-        }
-      ]
+      "parameters": []
     }
   ],
   "layers": [
