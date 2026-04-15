@@ -48,4 +48,4 @@ What I Learned:
 
 - Designing fair but challenging gameplay systems
 
-Leading and coordinating a small creative team
+- Leading and coordinating a small creative team
